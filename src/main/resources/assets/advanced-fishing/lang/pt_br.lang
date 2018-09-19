@@ -1,0 +1,31 @@
+# Tabs
+itemGroup.tabFish=Advanced Fishing
+
+# Items
+## Fish
+item.advanced-fishing.blue_jellyfish.name=Água-Viva
+item.advanced-fishing.magma_jellyfish.name=Água-Viva de Magma
+item.advanced-fishing.mud_tuna.name=Mud Tuna
+item.advanced-fishing.frost_minnow.name=Frost Minnow
+item.advanced-fishing.piranha.name=Piranha
+item.advanced-fishing.golden_koi.name=Golden Koi
+item.advanced-fishing.specular_fish.name=Specular Fish
+item.advanced-fishing.cavefish.name=Cavefish
+item.advanced-fishing.obsidifish.name=Obsidifish
+item.advanced-fishing.nether_salmon.name=Salmão do Nether
+item.advanced-fishing.quartz_cod.name=Quartz Cod
+item.advanced-fishing.flarefin_koi.name=Flarefin Koi
+item.advanced-fishing.blaze_cod.name=Blaze Cod
+item.advanced-fishing.enderfin.name=Enderfin
+item.advanced-fishing.pearl_bass.name=Pearl Bass
+item.advanced-fishing.chorus_koi.name=Chorus Koi
+item.advanced-fishing.explosive_crucian.name=Explosive Crucian
+item.advanced-fishing.ruffe.name=Ruffe
+item.advanced-fishing.sparkling_eel.name=Sparkling Eel
+item.advanced-fishing.angelfish.name=Angelfish
+item.advanced-fishing.angler_fish.name=Angler Fish
+item.advanced-fishing.sponge_eater.name=Sponge Eater
+item.advanced-fishing.snowy_crucian.name=Snowy Crucian
+item.advanced-fishing.squid.name=Lula
+item.advanced-fishing.withered_crucian.name=Withered Crucian
+item.advanced-fishing.sandy_bass.name=Sandy Bass
