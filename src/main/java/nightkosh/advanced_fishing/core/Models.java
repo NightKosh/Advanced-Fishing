@@ -6,7 +6,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import nightkosh.advanced_fishing.item.ItemFish;
+import nightkosh.advanced_fishing.api.EnumFishType;
+import nightkosh.advanced_fishing.api.ModInfo;
 
 /**
  * Advanced Fishing
@@ -22,32 +23,32 @@ public class Models {
 
         @SubscribeEvent
         public static void registerModels(final ModelRegistryEvent event) {
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.BLUE_JELLYFISH.ordinal(), ResourcesModels.BLUE_JELLYFISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.MAGMA_JELLYFISH.ordinal(), ResourcesModels.MAGMA_JELLYFISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.MUD_TUNA.ordinal(), ResourcesModels.MUD_TUNA);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.FROST_MINNOW.ordinal(), ResourcesModels.FROST_MINNOW);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.PIRANHA.ordinal(), ResourcesModels.PIRANHA);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.GOLDEN_KOI.ordinal(), ResourcesModels.GOLDEN_KOI);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SPECULAR_FISH.ordinal(), ResourcesModels.SPECULAR_FISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.CAVEFISH.ordinal(), ResourcesModels.CAVEFISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.OBSIDIFISH.ordinal(), ResourcesModels.OBSIDIFISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.NETHER_SALMON.ordinal(), ResourcesModels.NETHER_SALMON);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.QUARTZ_COD.ordinal(), ResourcesModels.QUARTZ_COD);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.FLAREFIN_KOI.ordinal(), ResourcesModels.FLAREFIN_KOI);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.BLAZE_COD.ordinal(), ResourcesModels.BLAZE_COD);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.ENDERFIN.ordinal(), ResourcesModels.ENDERFIN);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.PEARL_BASS.ordinal(), ResourcesModels.PEARL_BASS);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.CHORUS_KOI.ordinal(), ResourcesModels.CHORUS_KOI);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.EXPLOSIVE_CRUCIAN.ordinal(), ResourcesModels.EXPLOSIVE_CRUCIAN);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.RUFFE.ordinal(), ResourcesModels.RUFFE);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SPARKLING_EEL.ordinal(), ResourcesModels.SPARKLING_EEL);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.ANGELFISH.ordinal(), ResourcesModels.ANGELFISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.ANGLER_FISH.ordinal(), ResourcesModels.ANGLER_FISH);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SPONGE_EATER.ordinal(), ResourcesModels.SPONGE_EATER);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SNOWY_CRUCIAN.ordinal(), ResourcesModels.SNOWY_CRUCIAN);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SQUID.ordinal(), ResourcesModels.SQUID);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.WITHERED_CRUCIAN.ordinal(), ResourcesModels.WITHERED_CRUCIAN);
-            ModelLoader.setCustomModelResourceLocation(Items.FISH, ItemFish.EnumFishType.SANDY_BASS.ordinal(), ResourcesModels.SANDY_BASS);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.BLUE_JELLYFISH.ordinal(), ResourcesModels.BLUE_JELLYFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.MAGMA_JELLYFISH.ordinal(), ResourcesModels.MAGMA_JELLYFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.MUD_TUNA.ordinal(), ResourcesModels.MUD_TUNA);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.FROST_MINNOW.ordinal(), ResourcesModels.FROST_MINNOW);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.PIRANHA.ordinal(), ResourcesModels.PIRANHA);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.GOLDEN_KOI.ordinal(), ResourcesModels.GOLDEN_KOI);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SPECULAR_FISH.ordinal(), ResourcesModels.SPECULAR_FISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.CAVEFISH.ordinal(), ResourcesModels.CAVEFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.OBSIDIFISH.ordinal(), ResourcesModels.OBSIDIFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.NETHER_SALMON.ordinal(), ResourcesModels.NETHER_SALMON);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.QUARTZ_COD.ordinal(), ResourcesModels.QUARTZ_COD);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.FLAREFIN_KOI.ordinal(), ResourcesModels.FLAREFIN_KOI);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.BLAZE_COD.ordinal(), ResourcesModels.BLAZE_COD);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.ENDERFIN.ordinal(), ResourcesModels.ENDERFIN);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.PEARL_BASS.ordinal(), ResourcesModels.PEARL_BASS);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.CHORUS_KOI.ordinal(), ResourcesModels.CHORUS_KOI);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.EXPLOSIVE_CRUCIAN.ordinal(), ResourcesModels.EXPLOSIVE_CRUCIAN);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.RUFFE.ordinal(), ResourcesModels.RUFFE);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SPARKLING_EEL.ordinal(), ResourcesModels.SPARKLING_EEL);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.ANGELFISH.ordinal(), ResourcesModels.ANGELFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.ANGLER_FISH.ordinal(), ResourcesModels.ANGLER_FISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SPONGE_EATER.ordinal(), ResourcesModels.SPONGE_EATER);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SNOWY_CRUCIAN.ordinal(), ResourcesModels.SNOWY_CRUCIAN);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SQUID.ordinal(), ResourcesModels.SQUID);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.WITHERED_CRUCIAN.ordinal(), ResourcesModels.WITHERED_CRUCIAN);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SANDY_BASS.ordinal(), ResourcesModels.SANDY_BASS);
 
             ModelBakery.registerItemVariants(Items.FISH, ResourcesModels.BLUE_JELLYFISH, ResourcesModels.MAGMA_JELLYFISH, ResourcesModels.MUD_TUNA,
                     ResourcesModels.PIRANHA, ResourcesModels.GOLDEN_KOI, ResourcesModels.SPECULAR_FISH, ResourcesModels.CAVEFISH, ResourcesModels.OBSIDIFISH,

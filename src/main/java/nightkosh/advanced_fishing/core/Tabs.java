@@ -13,21 +13,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class Tabs {
 
-    public static CreativeTabs fishTab;
+    public static final CreativeTabs FISH_TAB =  new CreativeTabs("tabFish") {
+        @Override
+        public ItemStack getIconItemStack() {
+            return new ItemStack(Items.FISH, 1, 5);
+        }
 
-    public static void registration() {
-
-        fishTab = new CreativeTabs("tabFish") {
-            @Override
-            public ItemStack getIconItemStack() {
-                return new ItemStack(Items.FISH, 1, 5);
-            }
-
-            @Override
-            @SideOnly(Side.CLIENT)
-            public ItemStack getTabIconItem() {
-                return new ItemStack(Items.FISH, 1, 5);
-            }
-        };
-    }
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() {
+            return new ItemStack(Items.FISH, 1, 5);
+        }
+    };
 }

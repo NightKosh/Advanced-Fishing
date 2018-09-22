@@ -5,6 +5,8 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import nightkosh.advanced_fishing.api.AdvancedFishingAPI;
+import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.item.ItemFish;
 
 /**
@@ -24,6 +26,8 @@ public class Items {
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(FISH);
+
+            AdvancedFishingAPI.FISH_ITEM = FISH;
         }
     }
 }

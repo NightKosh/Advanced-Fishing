@@ -2,6 +2,7 @@ package nightkosh.advanced_fishing.core;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.entity.item.EntityFireproofItem;
 import nightkosh.advanced_fishing.entity.projectile.EntityCustomFishHook;
 
