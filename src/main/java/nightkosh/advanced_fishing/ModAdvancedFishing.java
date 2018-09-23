@@ -36,7 +36,7 @@ public class ModAdvancedFishing {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        new Config(event.getModConfigurationDirectory()).getConfigs();
+        new Config(event.getSuggestedConfigurationFile()).getConfigs();
 
         Entity.registration();
     }
