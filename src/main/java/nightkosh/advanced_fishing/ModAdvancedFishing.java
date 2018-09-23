@@ -49,6 +49,7 @@ public class ModAdvancedFishing {
 
         Recipes.registration();
         Recipes.smeltingRecipesRegistration();
+        Recipes.addLuckPotionRecipe();
 
         proxy.registerMobsRenderers();
     }
