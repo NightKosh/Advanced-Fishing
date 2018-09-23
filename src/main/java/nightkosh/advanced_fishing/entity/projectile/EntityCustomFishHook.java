@@ -23,6 +23,7 @@ import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import nightkosh.advanced_fishing.core.CatchManager;
+import nightkosh.advanced_fishing.core.Items;
 import nightkosh.advanced_fishing.core.MaterialManager;
 import nightkosh.advanced_fishing.core.ParticlesManager;
 import nightkosh.advanced_fishing.entity.item.EntityFireproofItem;
@@ -338,7 +339,7 @@ public class EntityCustomFishHook extends AbstractFishHook {
                     this.getAngler().world.spawnEntity(new EntityXPOrb(this.getAngler().world, this.getAngler().posX, this.getAngler().posY + 0.5, this.getAngler().posZ + 0.5, this.rand.nextInt(6) + 1));
                     Item item = stack.getItem();
 
-                    if (item == net.minecraft.init.Items.FISH || item == net.minecraft.init.Items.COOKED_FISH) {
+                    if (item == net.minecraft.init.Items.FISH || item == net.minecraft.init.Items.COOKED_FISH || item == Items.FISH) {
                         this.getAngler().addStat(StatList.FISH_CAUGHT, 1);
                     }
                 }
