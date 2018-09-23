@@ -1,0 +1,34 @@
+{
+    "pools": [
+        {
+            "name": "fishing_ocean_and_beach",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "advanced-fishing:gameplay/fishing/ocean_and_beach/tier_1",
+                    "weight": 50,
+                    "quality": 4
+                },
+                {
+                    "type": "loot_table",
+                    "name": "advanced-fishing:gameplay/fishing/ocean_and_beach/tier_2",
+                    "weight": 30,
+                    "quality": 7
+                },
+                {
+                    "type": "loot_table",
+                    "name": "advanced-fishing:gameplay/fishing/ocean_and_beach/tier_3",
+                    "weight": 15,
+                    "quality": 8
+                },
+                {
+                    "type": "loot_table",
+                    "name": "advanced-fishing:gameplay/fishing/ocean_and_beach/tier_4",
+                    "weight": 5,
+                    "quality": 6
+                }
+            ]
+        }
+    ]
+}

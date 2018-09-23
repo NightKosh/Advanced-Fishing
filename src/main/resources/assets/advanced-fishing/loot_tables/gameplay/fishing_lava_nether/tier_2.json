@@ -1,0 +1,46 @@
+{
+     "pools": [
+         {
+             "name": "fishing_lava_nether_tier_2",
+             "rolls": 1,
+             "entries": [
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 1
+                         }
+                     ],
+                     "weight": 33,
+                     "entryName": "MAGMA_JELLYFISH"
+                 },
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 10
+                         }
+                     ],
+                     "weight": 33,
+                     "entryName": "QUARTZ_COD"
+                 },
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 24
+                         }
+                     ],
+                     "weight": 33,
+                     "entryName": "WITHERED_CRUCIAN"
+                 }
+             ]
+         }
+     ]
+ }

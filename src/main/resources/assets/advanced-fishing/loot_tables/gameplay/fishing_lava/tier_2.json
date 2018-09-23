@@ -1,0 +1,22 @@
+{
+     "pools": [
+         {
+             "name": "fishing_lava_tier_2",
+             "rolls": 1,
+             "entries": [
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 1
+                         }
+                     ],
+                     "weight": 100,
+                     "entryName": "MAGMA_JELLYFISH"
+                 }
+             ]
+         }
+     ]
+ }

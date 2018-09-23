@@ -39,6 +39,8 @@ public class ModAdvancedFishing {
         new Config(event.getSuggestedConfigurationFile()).getConfigs();
 
         Entity.registration();
+
+        LootTables.registration();
     }
 
     @Mod.EventHandler

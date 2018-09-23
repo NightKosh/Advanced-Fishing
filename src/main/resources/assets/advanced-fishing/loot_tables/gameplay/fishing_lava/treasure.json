@@ -1,0 +1,22 @@
+{
+    "pools": [
+        {
+            "name": "fishing_lava_treasure",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:skull",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 1
+                        }
+                    ],
+                    "weight": 100,
+                    "entryName": "WITHER SKULL"
+                }
+            ]
+        }
+    ]
+}

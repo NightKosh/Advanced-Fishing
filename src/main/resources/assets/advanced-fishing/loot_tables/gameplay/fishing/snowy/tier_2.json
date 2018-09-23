@@ -1,0 +1,22 @@
+{
+     "pools": [
+         {
+             "name": "fishing_snowy_tier_2",
+             "rolls": 1,
+             "entries": [
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 22
+                         }
+                     ],
+                     "weight": 100,
+                     "entryName": "SNOWY_CRUCIAN"
+                 }
+             ]
+         }
+     ]
+ }

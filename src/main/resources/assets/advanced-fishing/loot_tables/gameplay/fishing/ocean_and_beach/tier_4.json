@@ -1,0 +1,22 @@
+{
+     "pools": [
+         {
+            "name": "fishing_ocean_and_beach_tier_4",
+             "rolls": 1,
+             "entries": [
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 21
+                         }
+                     ],
+                     "weight": 100,
+                     "entryName": "SPONGE_EATER"
+                 }
+             ]
+         }
+     ]
+ }

@@ -1,0 +1,46 @@
+{
+    "pools": [
+        {
+            "name": "fishing_ocean_and_beach_tier_1",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:fish",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 0
+                        }
+                    ],
+                    "weight": 33,
+                    "entryName": "BLUE_JELLYFISH"
+                },
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:fish",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 19
+                        }
+                    ],
+                    "weight": 33,
+                    "entryName": "ANGELFISH"
+                },
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:fish",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 23
+                        }
+                    ],
+                    "weight": 33,
+                    "entryName": "SQUID"
+                }
+            ]
+        }
+    ]
+}
