@@ -1,4 +1,4 @@
-# Advanced Fishing
+# Advanced Fishing [![Curseforge](http://cf.way2muchnoise.eu/full_advanced-fishing_downloads.svg)](https://minecraft.curseforge.com/projects/advanced-fishing) [![Curseforge](http://cf.way2muchnoise.eu/versions/For%20MC_advanced-fishing_all.svg)](https://minecraft.curseforge.com/projects/advanced-fishing)
 
 This mod adds new 26 fishes, blaze fishing rod, luck potion recipe and overrides fishing mechanics. All of the new and vanilla fishes can be catched only in own types of biomes, dimensions and liquids.
 
