@@ -79,7 +79,7 @@ public class EntityFireproofItem extends EntityItem {
                     this.motionY *= -0.5;
                 }
 
-                if (this.getAge() != -32768) {
+                if (this.age != -32768) {
                     this.age++;
                 }
 
@@ -97,7 +97,7 @@ public class EntityFireproofItem extends EntityItem {
                 }
 
                 ItemStack item = this.getItem();
-                if (!this.world.isRemote && this.getAge() >= lifespan) {
+                if (!this.world.isRemote && this.age >= lifespan) {
                     int hook = ForgeEventFactory.onItemExpire(this, item);
                     if (hook < 0) {
                         this.setDead();
