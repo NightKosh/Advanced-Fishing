@@ -23,6 +23,8 @@ public class Models {
 
         @SubscribeEvent
         public static void registerModels(final ModelRegistryEvent event) {
+            ModelLoader.setCustomModelResourceLocation(Items.BLAZING_FISHING_POLE, 0, ResourcesModels.BLAZING_FISHING_POLE);
+
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.BLUE_JELLYFISH.ordinal(), ResourcesModels.BLUE_JELLYFISH);
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.MAGMA_JELLYFISH.ordinal(), ResourcesModels.MAGMA_JELLYFISH);
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.MUD_TUNA.ordinal(), ResourcesModels.MUD_TUNA);

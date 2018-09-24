@@ -111,42 +111,6 @@ public class CatchManager implements ICatchManager {
         } else {
             return getCatch(world, LootTables.FISHING_LAVA, luck);
         }
-
-//        List<ItemStack> list;
-//        int chance = world.rand.nextInt(100) + Math.round(luck);
-//        if (!biomeTypesList.contains(BiomeDictionary.Type.NETHER)) {
-//            if (chance < 80) {
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.OBSIDIFISH.ordinal()));
-//            } else if (chance < 95) {
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.MAGMA_JELLYFISH.ordinal()));
-//            } else {
-//                if (chance < 98) {
-//                    tempList.add(new ItemStack(Blocks.SKULL, 1, 1)); //WITHER SKULL
-//                } else {
-//                    //TODO
-////                    EnchantmentHelper.addRandomEnchantment(world.rand, new ItemStack(AFItem.ENCHANTED_SKULL, 1, 1), new RandomValueRange(40, 50).generateInt(world.rand), true);
-//                }
-//            }
-//        } else {
-//            if (chance < 40) {
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.NETHER_SALMON.ordinal()));
-//            } else if (chance < 80) {
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.MAGMA_JELLYFISH.ordinal()));
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.QUARTZ_COD.ordinal()));
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.WITHERED_CRUCIAN.ordinal()));
-//            } else if (chance < 95) {
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.FLAREFIN_KOI.ordinal()));
-//                tempList.add(new ItemStack(Items.FISH, 1, EnumFishType.BLAZE_COD.ordinal()));
-//            } else {
-//                if (chance < 98) {
-//                    tempList.add(new ItemStack(Blocks.SKULL, 1, 1)); //WITHER SKULL
-//                } else {
-//                    //TODO
-////                    EnchantmentHelper.addRandomEnchantment(world.rand, new ItemStack(AFItem.ENCHANTED_SKULL, 1, 1), new RandomValueRange(40, 50).generateInt(world.rand), true);
-//                }
-//            }
-//        }
-//        return list;
     }
 
     public static List<ItemStack> getCatch(World world, ResourceLocation lootTable, float luck) {

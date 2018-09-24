@@ -1,7 +1,9 @@
 package nightkosh.advanced_fishing.core;
 
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraft.world.storage.loot.*;
+import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraftforge.event.LootTableLoadEvent;
 import nightkosh.advanced_fishing.api.ModInfo;
 
 /**
@@ -100,5 +102,13 @@ public class LootTables {
         LootTableList.register(FISHING_LAVA_NETHER_TIER2);
         LootTableList.register(FISHING_LAVA_NETHER_TIER3);
         LootTableList.register(FISHING_LAVA_NETHER_TREASURE);
+    }
+
+    public static void inject(LootTableLoadEvent event) {
+        if (event.getName().toString().equals("minecraft:chests/nether_bridge")) {
+            LootEntry entry = new LootEntryTable(new ResourceLocation(ModInfo.ID, "inject/nether_bridge"), 1, 1, new LootCondition[0], "nether_bridge_blazing_fishing_pole");
+            LootPool pool = new LootPool(new LootEntry[]{entry}, new LootCondition[]{}, new RandomValueRange(1, 1), new RandomValueRange(0, 0), "nether_bridge_blazing_fishing_pole");
+            event.getTable().addPool(pool);
+        }
     }
 }

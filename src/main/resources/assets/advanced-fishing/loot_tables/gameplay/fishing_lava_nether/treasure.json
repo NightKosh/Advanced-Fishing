@@ -15,6 +15,41 @@
                     ],
                     "weight": 100,
                     "entryName": "WITHER SKULL"
+                },
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:blazing_fishing_pole",
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0,
+                                "max": 0.25
+                            }
+                        }
+                    ],
+                    "weight": 20,
+                    "entryName": "BLAZING FISHING POLE"
+                },
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:blazing_fishing_pole",
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0,
+                                "max": 0.25
+                            }
+                        },
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 30,
+                            "treasure": true
+                        }
+                    ],
+                    "weight": 20,
+                    "entryName": "BLAZING FISHING POLE ENCHANTED"
                 }
             ]
         }

@@ -13,14 +13,14 @@
                 {
                     "type": "loot_table",
                     "name": "advanced-fishing:gameplay/fishing_lava/tier_2",
-                    "weight": 15,
+                    "weight": 17,
                     "quality": 7
                 },
                 {
                     "type": "loot_table",
                     "name": "advanced-fishing:gameplay/fishing_lava/treasure",
-                    "weight": 5,
-                    "quality": 6
+                    "weight": 3,
+                    "quality": 5
                 }
             ]
         }

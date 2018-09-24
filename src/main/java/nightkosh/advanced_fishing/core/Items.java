@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import nightkosh.advanced_fishing.api.AdvancedFishingAPI;
 import nightkosh.advanced_fishing.api.ModInfo;
+import nightkosh.advanced_fishing.item.ItemBlazingFishingPole;
 import nightkosh.advanced_fishing.item.ItemFish;
 
 /**
@@ -19,12 +20,14 @@ import nightkosh.advanced_fishing.item.ItemFish;
 public class Items {
 
     public static final Item FISH = new ItemFish();
+    public static final Item BLAZING_FISHING_POLE = new ItemBlazingFishingPole();
 
     @Mod.EventBusSubscriber(modid = ModInfo.ID)
     public static class RegistrationHandler {
 
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
+            event.getRegistry().register(BLAZING_FISHING_POLE);
             event.getRegistry().register(FISH);
 
             AdvancedFishingAPI.FISH_ITEM = FISH;

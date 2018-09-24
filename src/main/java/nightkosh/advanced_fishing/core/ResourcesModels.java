@@ -14,6 +14,8 @@ import nightkosh.advanced_fishing.api.ModInfo;
  */
 @SideOnly(Side.CLIENT)
 public class ResourcesModels {
+    public static final ModelResourceLocation BLAZING_FISHING_POLE = new ModelResourceLocation(ModInfo.ID + ":fishing_pole/blazing/blazing_fishing_pole", "inventory");
+
     public static final ModelResourceLocation BLUE_JELLYFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.BLUE_JELLYFISH.getName(), "inventory");
     public static final ModelResourceLocation MAGMA_JELLYFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.MAGMA_JELLYFISH.getName(), "inventory");
     public static final ModelResourceLocation MUD_TUNA = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.MUD_TUNA.getName(), "inventory");
