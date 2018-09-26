@@ -71,6 +71,14 @@ public class ItemFish extends ItemFood {
             case NETHER_STURGEON:
             case QUARTZ_CHUB:
             case ENDER_SHAD:
+            case RED_SHROOMFIN:
+            case BROWN_SHROOMFIN:
+            case FUNGI_CATFISH:
+            case SWAMP_PLAICE:
+            case CRYSTAL_MULLET:
+            case CHARGED_BULLHEAD:
+            case ABYSSAL_LURKER:
+            case MAGIKARP:
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
                 break;

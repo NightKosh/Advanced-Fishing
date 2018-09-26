@@ -42,5 +42,18 @@ public class ResourcesModels {
     public static final ModelResourceLocation SQUID = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.SQUID.getName(), "inventory");
     public static final ModelResourceLocation WITHERED_CRUCIAN = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.WITHERED_CRUCIAN.getName(), "inventory");
     public static final ModelResourceLocation SANDY_BASS = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.SANDY_BASS.getName(), "inventory");
+    public static final ModelResourceLocation MANDARINFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.MANDARINFISH.getName(), "inventory");
+    public static final ModelResourceLocation RED_SHROOMFIN = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.RED_SHROOMFIN.getName(), "inventory");
+    public static final ModelResourceLocation BROWN_SHROOMFIN = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.BROWN_SHROOMFIN.getName(), "inventory");
+    public static final ModelResourceLocation FUNGI_CATFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.FUNGI_CATFISH.getName(), "inventory");
+    public static final ModelResourceLocation SWAMP_PLAICE = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.SWAMP_PLAICE.getName(), "inventory");
+    public static final ModelResourceLocation CRYSTAL_MULLET = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.CRYSTAL_MULLET.getName(), "inventory");
+    public static final ModelResourceLocation CHARGED_BULLHEAD = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.CHARGED_BULLHEAD.getName(), "inventory");
+    public static final ModelResourceLocation ABYSSAL_LURKER = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.ABYSSAL_LURKER.getName(), "inventory");
+    public static final ModelResourceLocation SUNFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.SUNFISH.getName(), "inventory");
+    public static final ModelResourceLocation GLACIER_ANCHOVY = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.GLACIER_ANCHOVY.getName(), "inventory");
+    public static final ModelResourceLocation CATFISH = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.CATFISH.getName(), "inventory");
+    public static final ModelResourceLocation PIKE = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.PIKE.getName(), "inventory");
+    public static final ModelResourceLocation MAGIKARP = new ModelResourceLocation(ModInfo.ID + ":fish/" + EnumFishType.MAGIKARP.getName(), "inventory");
 
 }

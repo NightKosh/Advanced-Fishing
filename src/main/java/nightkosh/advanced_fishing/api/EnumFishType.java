@@ -32,7 +32,20 @@ public enum EnumFishType {
     SNOWY_WALLEYE("snowy_walleye", 2), //22
     SQUID("squid", 1), //23
     WITHERED_CRUCIAN("withered_crucian", 1), //24
-    SANDY_BASS("sandy_bass", 1); //25
+    SANDY_BASS("sandy_bass", 1), //25
+    MANDARINFISH("mandarinfish", 3), //26
+    RED_SHROOMFIN("red_shroomfin", 2), //27
+    BROWN_SHROOMFIN("brown_shroomfin", 2), //28
+    FUNGI_CATFISH("fungi_catfish", 1), //29
+    SWAMP_PLAICE("swamp_plaice", 1), //30
+    CRYSTAL_MULLET("crystal_mullet", 1), //31
+    CHARGED_BULLHEAD("charged_bullhead", 1), //32
+    ABYSSAL_LURKER("abyssal_lurker", 1), //33
+    SUNFISH("sunfish", 2), //34
+    GLACIER_ANCHOVY("glacier_anchovy", 1), //35
+    CATFISH("catfish", 3, 0.2F), //36
+    PIKE("pike", 2, 0.2F), //37
+    MAGIKARP("magikarp", 1, 0.05F); //38
 
     private String name;
     private int healAmount;
