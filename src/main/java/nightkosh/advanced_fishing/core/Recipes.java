@@ -36,15 +36,15 @@ public class Recipes {
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_obsidian"), GROUP, new ItemStack(Blocks.OBSIDIAN),
                 "ff",
                 "ff",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.OBSIDIFISH.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.OBSIDIAN_BREAM.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_netherrack"), GROUP, new ItemStack(Blocks.NETHERRACK),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.NETHER_SALMON.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.NETHER_STURGEON.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_quartz"), GROUP, new ItemStack(net.minecraft.init.Items.QUARTZ, 4),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.QUARTZ_COD.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.QUARTZ_CHUB.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_glowstone_dust"), GROUP, new ItemStack(net.minecraft.init.Items.GLOWSTONE_DUST, 2),
                 "f",
@@ -52,15 +52,15 @@ public class Recipes {
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_blaze_rod"), GROUP, new ItemStack(net.minecraft.init.Items.BLAZE_ROD),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.BLAZE_COD.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.BLAZE_PIKE.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_end_stone"), GROUP, new ItemStack(Blocks.END_STONE),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.ENDERFIN.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.ENDER_SHAD.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_ender_pearl"), GROUP, new ItemStack(net.minecraft.init.Items.ENDER_PEARL),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.PEARL_BASS.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.PEARL_SARDINE.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_chorus_fruit"), GROUP, new ItemStack(net.minecraft.init.Items.CHORUS_FRUIT),
                 "f",
@@ -76,7 +76,7 @@ public class Recipes {
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_snow"), GROUP, new ItemStack(net.minecraft.init.Items.SNOWBALL, 4),
                 "f",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.SNOWY_CRUCIAN.ordinal()));
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.SNOWY_WALLEYE.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_ice"), GROUP, new ItemStack(Blocks.ICE, 1),
                 "ff",
@@ -115,15 +115,15 @@ public class Recipes {
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.FROST_MINNOW.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.PIRANHA.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.GOLDEN_KOI.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SPECULAR_FISH.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.CAVEFISH.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.OBSIDIFISH.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.NETHER_SALMON.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 1), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.QUARTZ_COD.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SPECULAR_SNAPPER.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.CAVE_TROUT.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.OBSIDIAN_BREAM.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.NETHER_STURGEON.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 1), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.QUARTZ_CHUB.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.FLAREFIN_KOI.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.BLAZE_COD.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.ENDERFIN.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.PEARL_BASS.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.BLAZE_PIKE.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.ENDER_SHAD.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.PEARL_SARDINE.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.CHORUS_KOI.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.EXPLOSIVE_CRUCIAN.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.RUFFE.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
@@ -131,7 +131,7 @@ public class Recipes {
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.ANGELFISH.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.ANGLER_FISH.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SPONGE_EATER.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
-        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SNOWY_CRUCIAN.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
+        GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SNOWY_WALLEYE.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SQUID.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.WITHERED_CRUCIAN.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);
         GameRegistry.addSmelting(new ItemStack(Items.FISH, 1, EnumFishType.SANDY_BASS.ordinal()), new ItemStack(net.minecraft.init.Items.COOKED_FISH, 1, 0), 1);

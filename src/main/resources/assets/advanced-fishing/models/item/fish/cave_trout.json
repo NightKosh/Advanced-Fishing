@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "advanced-fishing:items/fish/obsidifish"
+        "layer0": "advanced-fishing:items/fish/cave_trout"
     }
 }

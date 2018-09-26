@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "advanced-fishing:items/fish/pearl_bass"
+        "layer0": "advanced-fishing:items/fish/ender_shad"
     }
 }

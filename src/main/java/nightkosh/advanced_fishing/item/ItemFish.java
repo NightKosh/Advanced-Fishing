@@ -59,18 +59,18 @@ public class ItemFish extends ItemFood {
                 break;
             case MAGMA_JELLYFISH:
             case FLAREFIN_KOI:
-            case BLAZE_COD:
+            case BLAZE_PIKE:
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
                 player.setFire(5);
                 break;
-            case OBSIDIFISH:
+            case OBSIDIAN_BREAM:
             case SANDY_BASS:
             case MUD_TUNA:
             case EXPLOSIVE_CRUCIAN:
-            case NETHER_SALMON:
-            case QUARTZ_COD:
-            case ENDERFIN:
+            case NETHER_STURGEON:
+            case QUARTZ_CHUB:
+            case ENDER_SHAD:
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
                 break;
@@ -79,7 +79,7 @@ public class ItemFish extends ItemFood {
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
                 break;
-            case CAVEFISH:
+            case CAVE_TROUT:
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 200, 1));
                 break;
         }

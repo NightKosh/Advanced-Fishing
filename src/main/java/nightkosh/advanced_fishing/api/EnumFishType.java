@@ -13,15 +13,15 @@ public enum EnumFishType {
     FROST_MINNOW("frost_minnow", 2), //3
     PIRANHA("piranha", 2), //4
     GOLDEN_KOI("golden_koi", 2), //5
-    SPECULAR_FISH("specular_fish", 2), //6
-    CAVEFISH("cavefish", 2), //7
-    OBSIDIFISH("obsidifish", 1), //8
-    NETHER_SALMON("nether_salmon", 1), //9
-    QUARTZ_COD("quartz_cod", 1), //10
+    SPECULAR_SNAPPER("specular_snapper", 2), //6
+    CAVE_TROUT("cave_trout", 2), //7
+    OBSIDIAN_BREAM("obsidian_bream", 1), //8
+    NETHER_STURGEON("nether_sturgeon", 1), //9
+    QUARTZ_CHUB("quartz_chub", 1), //10
     FLAREFIN_KOI("flarefin_koi", 1), //11
-    BLAZE_COD("blaze_cod", 1), //12
-    ENDERFIN("enderfin", 1), //13
-    PEARL_BASS("pearl_bass", 2), //14
+    BLAZE_PIKE("blaze_pike", 1), //12
+    ENDER_SHAD("ender_shad", 1), //13
+    PEARL_SARDINE("pearl_sardine", 2), //14
     CHORUS_KOI("chorus_koi", 2), //15
     EXPLOSIVE_CRUCIAN("explosive_crucian", 1), //16
     RUFFE("ruffe", 2), //17
@@ -29,7 +29,7 @@ public enum EnumFishType {
     ANGELFISH("angelfish", 2), //19
     ANGLER_FISH("angler_fish", 2), //20
     SPONGE_EATER("sponge_eater", 2), //21
-    SNOWY_CRUCIAN("snowy_crucian", 2), //22
+    SNOWY_WALLEYE("snowy_walleye", 2), //22
     SQUID("squid", 1), //23
     WITHERED_CRUCIAN("withered_crucian", 1), //24
     SANDY_BASS("sandy_bass", 1); //25

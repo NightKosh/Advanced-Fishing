@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "advanced-fishing:items/fish/enderfin"
+        "layer0": "advanced-fishing:items/fish/quartz_chub"
     }
 }
