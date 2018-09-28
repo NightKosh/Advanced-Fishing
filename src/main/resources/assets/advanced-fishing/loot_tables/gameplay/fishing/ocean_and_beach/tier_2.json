@@ -6,6 +6,18 @@
              "entries": [
                  {
                      "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 0
+                         }
+                     ],
+                    "weight": 50,
+                    "entryName": "BLUE_JELLYFISH"
+                 },
+                 {
+                     "type": "item",
                      "name": "minecraft:fish",
                      "functions": [
                          {
@@ -13,7 +25,7 @@
                              "data": 3
                          }
                      ],
-                     "weight": 100,
+                     "weight": 50,
                      "entryName": "puffer"
                  }
              ]

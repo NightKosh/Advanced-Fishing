@@ -10,22 +10,10 @@
                     "functions": [
                         {
                             "function": "set_data",
-                            "data": 0
-                        }
-                    ],
-                    "weight": 33,
-                    "entryName": "BLUE_JELLYFISH"
-                },
-                {
-                    "type": "item",
-                    "name": "advanced-fishing:fish",
-                    "functions": [
-                        {
-                            "function": "set_data",
                             "data": 19
                         }
                     ],
-                    "weight": 33,
+                    "weight": 50,
                     "entryName": "ANGELFISH"
                 },
                 {
@@ -37,7 +25,7 @@
                             "data": 23
                         }
                     ],
-                    "weight": 33,
+                    "weight": 50,
                     "entryName": "SQUID"
                 }
             ]

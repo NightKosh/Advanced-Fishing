@@ -13,7 +13,7 @@
                              "data": 21
                          }
                      ],
-                     "weight": 50,
+                     "weight": 30,
                      "entryName": "SPONGE_EATER"
                  },
                  {
@@ -25,7 +25,7 @@
                              "data": 20
                          }
                      ],
-                     "weight": 50,
+                     "weight": 70,
                      "entryName": "ANGLER_FISH"
                  }
              ]

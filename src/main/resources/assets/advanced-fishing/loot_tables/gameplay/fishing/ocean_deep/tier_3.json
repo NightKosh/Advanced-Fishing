@@ -13,7 +13,7 @@
                              "data": 2
                          }
                      ],
-                     "weight": 50,
+                     "weight": 20,
                      "entryName": "clown"
                  },
                  {
@@ -25,7 +25,7 @@
                              "data": 33
                          }
                      ],
-                     "weight": 50,
+                     "weight": 80,
                      "entryName": "ABYSSAL_LURKER"
                  }
              ]
