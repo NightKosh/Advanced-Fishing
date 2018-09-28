@@ -1,7 +1,7 @@
 {
      "pools": [
          {
-             "name": "fishing_tier_3",
+            "name": "fishing_ocean_deep_tier_4",
              "rolls": 1,
              "entries": [
                  {
@@ -10,11 +10,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 36
+                             "data": 21
                          }
                      ],
                      "weight": 50,
-                     "entryName": "CATFISH"
+                     "entryName": "SPONGE_EATER"
                  },
                  {
                      "type": "item",
@@ -22,11 +22,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 37
+                             "data": 20
                          }
                      ],
                      "weight": 50,
-                     "entryName": "PIKE"
+                     "entryName": "ANGLER_FISH"
                  }
              ]
          }

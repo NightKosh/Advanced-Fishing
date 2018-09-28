@@ -1,7 +1,7 @@
 {
      "pools": [
          {
-             "name": "fishing_tier_3",
+             "name": "fishing_mushroom_tier_3",
              "rolls": 1,
              "entries": [
                  {
@@ -10,11 +10,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 36
+                             "data": 27
                          }
                      ],
                      "weight": 50,
-                     "entryName": "CATFISH"
+                     "entryName": "RED_SHROOMFIN"
                  },
                  {
                      "type": "item",
@@ -22,11 +22,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 37
+                             "data": 28
                          }
                      ],
                      "weight": 50,
-                     "entryName": "PIKE"
+                     "entryName": "BROWN_SHROOMFIN"
                  }
              ]
          }

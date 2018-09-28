@@ -15,22 +15,30 @@ import nightkosh.advanced_fishing.api.ModInfo;
 public class LootTables {
 
     public static final ResourceLocation FISHING = new ResourceLocation(ModInfo.ID, "gameplay/fishing");
+    public static final ResourceLocation FISHING_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/tier_1");
+    public static final ResourceLocation FISHING_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/tier_2");
+    public static final ResourceLocation FISHING_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/tier_3");
+    public static final ResourceLocation FISHING_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/tier_4");
 
     public static final ResourceLocation FISHING_SANDY = new ResourceLocation(ModInfo.ID, "gameplay/fishing_sandy");
     public static final ResourceLocation FISHING_SANDY_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/sandy/tier_2");
     public static final ResourceLocation FISHING_SANDY_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/sandy/tier_3");
+    public static final ResourceLocation FISHING_SANDY_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/sandy/tier_4");
 
     public static final ResourceLocation FISHING_SNOWY = new ResourceLocation(ModInfo.ID, "gameplay/fishing_snowy");
     public static final ResourceLocation FISHING_SNOWY_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/snowy/tier_2");
     public static final ResourceLocation FISHING_SNOWY_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/snowy/tier_3");
+    public static final ResourceLocation FISHING_SNOWY_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/snowy/tier_4");
 
     public static final ResourceLocation FISHING_SWAMP = new ResourceLocation(ModInfo.ID, "gameplay/fishing_swamp");
     public static final ResourceLocation FISHING_SWAMP_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/swamp/tier_2");
     public static final ResourceLocation FISHING_SWAMP_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/swamp/tier_3");
+    public static final ResourceLocation FISHING_SWAMP_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/swamp/tier_4");
 
     public static final ResourceLocation FISHING_JUNGLE = new ResourceLocation(ModInfo.ID, "gameplay/fishing_jungle");
     public static final ResourceLocation FISHING_JUNGLE_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/jungle/tier_2");
     public static final ResourceLocation FISHING_JUNGLE_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/jungle/tier_3");
+    public static final ResourceLocation FISHING_JUNGLE_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/jungle/tier_4");
 
     public static final ResourceLocation FISHING_OCEAN_AND_BEACH = new ResourceLocation(ModInfo.ID, "gameplay/fishing_ocean_and_beach");
     public static final ResourceLocation FISHING_OCEAN_AND_BEACH_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/ocean_and_beach/tier_1");
@@ -42,6 +50,9 @@ public class LootTables {
     public static final ResourceLocation FISHING_END_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/end/tier_1");
     public static final ResourceLocation FISHING_END_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/end/tier_2");
     public static final ResourceLocation FISHING_END_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/end/tier_3");
+
+    public static final ResourceLocation FISHING_MUSHROOM = new ResourceLocation(ModInfo.ID, "gameplay/fishing_mushroom");
+    public static final ResourceLocation FISHING_MUSHROOM_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/mushroom/tier_3");
 
     public static final ResourceLocation FISHING_CAVE_50 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/cave/50");
     public static final ResourceLocation FISHING_CAVE_40 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/cave/40");
@@ -60,22 +71,30 @@ public class LootTables {
 
     public static void registration() {
         LootTableList.register(FISHING);
+        LootTableList.register(FISHING_TIER1);
+        LootTableList.register(FISHING_TIER2);
+        LootTableList.register(FISHING_TIER3);
+        LootTableList.register(FISHING_TIER4);
 
         LootTableList.register(FISHING_SANDY);
         LootTableList.register(FISHING_SANDY_TIER2);
         LootTableList.register(FISHING_SANDY_TIER3);
+        LootTableList.register(FISHING_SANDY_TIER4);
 
         LootTableList.register(FISHING_SNOWY);
         LootTableList.register(FISHING_SNOWY_TIER2);
         LootTableList.register(FISHING_SNOWY_TIER3);
+        LootTableList.register(FISHING_SNOWY_TIER4);
 
         LootTableList.register(FISHING_SWAMP);
         LootTableList.register(FISHING_SWAMP_TIER2);
         LootTableList.register(FISHING_SWAMP_TIER3);
+        LootTableList.register(FISHING_SWAMP_TIER4);
 
         LootTableList.register(FISHING_JUNGLE);
         LootTableList.register(FISHING_JUNGLE_TIER2);
         LootTableList.register(FISHING_JUNGLE_TIER3);
+        LootTableList.register(FISHING_JUNGLE_TIER4);
 
         LootTableList.register(FISHING_OCEAN_AND_BEACH);
         LootTableList.register(FISHING_OCEAN_AND_BEACH_TIER1);
@@ -87,6 +106,9 @@ public class LootTables {
         LootTableList.register(FISHING_END_TIER1);
         LootTableList.register(FISHING_END_TIER2);
         LootTableList.register(FISHING_END_TIER3);
+
+        LootTableList.register(FISHING_MUSHROOM);
+        LootTableList.register(FISHING_MUSHROOM_TIER3);
 
         LootTableList.register(FISHING_CAVE_50);
         LootTableList.register(FISHING_CAVE_40);

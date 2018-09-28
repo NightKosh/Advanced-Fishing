@@ -70,7 +70,6 @@ public class CatchManager implements ICatchManager {
             }
 
             if (list.isEmpty()) {
-                //TODO MUSHROOM
                 if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
                         biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
@@ -98,6 +97,10 @@ public class CatchManager implements ICatchManager {
                 if (biomeTypesList.contains(BiomeDictionary.Type.JUNGLE)) {
                     list.addAll(getCatch(world, LootTables.FISHING_JUNGLE, luck));
 //                    System.out.println("JUNGLE");
+                }
+                if (biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM)) {
+                    list.addAll(getCatch(world, LootTables.FISHING_MUSHROOM, luck));
+//                    System.out.println("MUSHROOM");
                 }
                 if (list.isEmpty()) {
                     list.addAll(getCatch(world, LootTables.FISHING, luck));
