@@ -48,7 +48,7 @@ public class CatchManager implements ICatchManager {
     @Override
     public ICatch getCatch(Block block) {
         if (Config.debugMode) {
-            LOGGER.log(Level.INFO, block.toString());
+            LOGGER.log(Level.INFO, "Fishing in : " + block.toString());
         }
         return CATCH.getOrDefault(block, CatchManager::getWaterCatch);
     }
@@ -57,6 +57,9 @@ public class CatchManager implements ICatchManager {
         int chance = world.rand.nextInt(100) + Math.round(luck);
 
         if (chance < 10) {
+            if (Config.debugMode) {
+                LOGGER.log(Level.INFO, "junk");
+            }
             return getCatch(world, LootTableList.GAMEPLAY_FISHING_JUNK, luck);
         } else if (chance < 90) {
             List<ItemStack> list = new ArrayList<>();
@@ -129,6 +132,9 @@ public class CatchManager implements ICatchManager {
 
             return list;
         } else {
+            if (Config.debugMode) {
+                LOGGER.log(Level.INFO, "treasure");
+            }
             return getCatch(world, LootTableList.GAMEPLAY_FISHING_TREASURE, luck);
         }
     }
