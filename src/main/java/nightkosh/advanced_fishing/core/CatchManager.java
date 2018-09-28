@@ -1,6 +1,7 @@
 package nightkosh.advanced_fishing.core;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -101,7 +102,7 @@ public class CatchManager implements ICatchManager {
                 if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
                         biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
-                    if (biome.getRegistryName().getResourcePath().equals("deep_ocean")) {
+                    if (biome == Biomes.DEEP_OCEAN) {
                         list.addAll(getCatch(world, LootTables.FISHING_OCEAN_DEEP, luck));
                     } else {
                         list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
