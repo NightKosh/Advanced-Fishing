@@ -77,6 +77,11 @@ public class CatchManager implements ICatchManager {
                 if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
                         biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
+                    if (biome.getRegistryName().getResourcePath().equals("deep_ocean")) {
+                        list.addAll(getCatch(world, LootTables.FISHING_OCEAN_DEEP, luck));
+                    } else {
+                        list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
+                    }
 //                    System.out.println("OCEAN");
                 }
                 if (biomeTypesList.contains(BiomeDictionary.Type.END)) {

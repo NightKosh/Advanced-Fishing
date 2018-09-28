@@ -46,6 +46,10 @@ public class LootTables {
     public static final ResourceLocation FISHING_OCEAN_AND_BEACH_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/ocean_and_beach/tier_3");
     public static final ResourceLocation FISHING_OCEAN_AND_BEACH_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/ocean_and_beach/tier_4");
 
+    public static final ResourceLocation FISHING_OCEAN_DEEP = new ResourceLocation(ModInfo.ID, "gameplay/fishing_ocean_deep");
+    public static final ResourceLocation FISHING_OCEAN_DEEP_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/ocean_deep/tier_3");
+    public static final ResourceLocation FISHING_OCEAN_DEEP_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/ocean_deep/tier_4");
+
     public static final ResourceLocation FISHING_END = new ResourceLocation(ModInfo.ID, "gameplay/fishing_end");
     public static final ResourceLocation FISHING_END_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/end/tier_1");
     public static final ResourceLocation FISHING_END_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/end/tier_2");
@@ -102,6 +106,10 @@ public class LootTables {
         LootTableList.register(FISHING_OCEAN_AND_BEACH_TIER2);
         LootTableList.register(FISHING_OCEAN_AND_BEACH_TIER3);
         LootTableList.register(FISHING_OCEAN_AND_BEACH_TIER4);
+
+        LootTableList.register(FISHING_OCEAN_DEEP);
+        LootTableList.register(FISHING_OCEAN_DEEP_TIER3);
+        LootTableList.register(FISHING_OCEAN_DEEP_TIER4);
 
         LootTableList.register(FISHING_END);
         LootTableList.register(FISHING_END_TIER1);
