@@ -15,6 +15,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatch;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatchManager;
+import nightkosh.advanced_fishing.api.fishing_catch.IWaterCatch;
+import nightkosh.advanced_fishing.api.fishing_catch.IWaterCondition;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,12 +35,23 @@ public class CatchManager implements ICatchManager {
     private static final Logger LOGGER = LogManager.getLogger(ModInfo.ID);
 
     private static final Map<Block, ICatch> CATCH = new HashMap<>();
+    private static final Map<IWaterCondition, IWaterCatch> CATCH_WATER = new HashMap<>();
 
     static {
         CATCH.put(Blocks.WATER, CatchManager::getWaterCatch);
         CATCH.put(Blocks.FLOWING_WATER, CatchManager::getWaterCatch);
         CATCH.put(Blocks.LAVA, CatchManager::getLavaCatch);
         CATCH.put(Blocks.FLOWING_LAVA, CatchManager::getLavaCatch);
+
+        CATCH_WATER.put(CatchManager::getOceanCondition, CatchManager::getOceanCatch);
+        CATCH_WATER.put(CatchManager::getBeachCondition, CatchManager::getBeachCatch);
+        CATCH_WATER.put(CatchManager::getEndCondition, CatchManager::getEndCatch);
+        CATCH_WATER.put(CatchManager::getSandyCondition, CatchManager::getSandyCatch);
+        CATCH_WATER.put(CatchManager::getSnowyCondition, CatchManager::getSnowyCatch);
+        CATCH_WATER.put(CatchManager::getSwampCondition, CatchManager::getSwampCatch);
+        CATCH_WATER.put(CatchManager::getJungleCondition, CatchManager::getJungleCatch);
+        CATCH_WATER.put(CatchManager::getMushroomCondition, CatchManager::getMushroomCatch);
+        CATCH_WATER.put(CatchManager::getDeadCondition, CatchManager::getDeadCatch);
     }
 
     @Override
@@ -99,34 +112,16 @@ public class CatchManager implements ICatchManager {
                     LOGGER.log(Level.INFO, biome.getBiomeName());
                     LOGGER.log(Level.INFO, biomeTypesList.toString());
                 }
-                if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
-                        biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
-                    if (biome == Biomes.DEEP_OCEAN) {
-                        list.addAll(getCatch(world, LootTables.FISHING_OCEAN_DEEP, luck));
-                    } else {
-                        list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
+
+                for (IWaterCondition condition : CATCH_WATER.keySet()) {
+                    if (condition.shouldGetCatch(world, pos, biome, biomeTypesList, luck)) {
+                        list = CATCH_WATER.get(condition).getCatch(world, pos, biome, biomeTypesList, luck);
+                        break;
                     }
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.END)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_END, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.SANDY) ||
-                        biomeTypesList.contains(BiomeDictionary.Type.MESA) ||
-                        biomeTypesList.contains(BiomeDictionary.Type.SAVANNA)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_SANDY, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.SNOWY) ||
-                        biomeTypesList.contains(BiomeDictionary.Type.CONIFEROUS)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_SNOWY, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.SWAMP)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_SWAMP, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.JUNGLE)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_JUNGLE, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_MUSHROOM, luck));
-                } else if (biomeTypesList.contains(BiomeDictionary.Type.DEAD)) {
-                    list.addAll(getCatch(world, LootTables.FISHING_DEAD, luck));
                 }
+
                 if (list.isEmpty()) {
-                    list.addAll(getCatch(world, LootTables.FISHING, luck));
+                    list = getCatch(world, LootTables.FISHING, luck);
                     if (Config.debugMode) {
                         LOGGER.log(Level.INFO, "No catch! Trying to get default catch.");
                     }
@@ -142,6 +137,83 @@ public class CatchManager implements ICatchManager {
         }
     }
 
+
+    public static boolean getOceanCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.OCEAN);
+    }
+
+    public static boolean getBeachCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.BEACH);
+    }
+
+    public static boolean getEndCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.END);
+    }
+
+    public static boolean getSandyCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.SANDY) || biomeTypesList.contains(BiomeDictionary.Type.MESA) || biomeTypesList.contains(BiomeDictionary.Type.SAVANNA);
+    }
+
+    public static boolean getSnowyCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.SNOWY) || biomeTypesList.contains(BiomeDictionary.Type.CONIFEROUS);
+    }
+
+    public static boolean getSwampCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.SWAMP);
+    }
+
+    public static boolean getJungleCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.JUNGLE);
+    }
+
+    public static boolean getMushroomCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM);
+    }
+
+    public static boolean getDeadCondition(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return biomeTypesList.contains(BiomeDictionary.Type.DEAD);
+    }
+
+    public static List<ItemStack> getOceanCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        if (biome == Biomes.DEEP_OCEAN) {
+            return getCatch(world, LootTables.FISHING_OCEAN_DEEP, luck);
+        } else {
+            return getCatch(world, LootTables.FISHING_OCEAN, luck);
+        }
+    }
+
+    public static List<ItemStack> getBeachCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_OCEAN, luck);
+    }
+
+    public static List<ItemStack> getEndCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_END, luck);
+    }
+
+    public static List<ItemStack> getSandyCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_SANDY, luck);
+    }
+
+    public static List<ItemStack> getSnowyCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_SNOWY, luck);
+    }
+
+    public static List<ItemStack> getSwampCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_SWAMP, luck);
+    }
+
+    public static List<ItemStack> getJungleCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_JUNGLE, luck);
+    }
+
+    public static List<ItemStack> getMushroomCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_MUSHROOM, luck);
+    }
+
+    public static List<ItemStack> getDeadCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+        return getCatch(world, LootTables.FISHING_DEAD, luck);
+    }
+
     public static List<ItemStack> getLavaCatch(World world, BlockPos pos, float luck) {
         Biome biome = world.getBiome(pos);
         Set<BiomeDictionary.Type> biomeTypesList = BiomeDictionary.getTypes(biome);
@@ -153,7 +225,7 @@ public class CatchManager implements ICatchManager {
 
         if (biomeTypesList.contains(BiomeDictionary.Type.NETHER)) {
             int chance = world.rand.nextInt(100) + Math.round(luck);
-            if (chance < 95 ) {
+            if (chance < 95) {
                 return getCatch(world, LootTables.FISHING_LAVA_NETHER, luck);
             } else {
                 return getCatch(world, LootTables.FISHING_LAVA_NETHER_TREASURE, luck);

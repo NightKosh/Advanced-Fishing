@@ -1,7 +1,7 @@
 {
     "pools": [
         {
-            "name": "fishing_ocean_deep",
+            "name": "fishing_beach",
             "rolls": 1,
             "entries": [
                 {
@@ -18,13 +18,13 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "advanced-fishing:gameplay/fishing/ocean_deep/tier_3",
+                    "name": "advanced-fishing:gameplay/fishing/ocean/tier_3",
                     "weight": 15,
                     "quality": 8
                 },
                 {
                     "type": "loot_table",
-                    "name": "advanced-fishing:gameplay/fishing/ocean_deep/tier_4",
+                    "name": "advanced-fishing:gameplay/fishing/ocean/tier_4",
                     "weight": 5,
                     "quality": 6
                 }

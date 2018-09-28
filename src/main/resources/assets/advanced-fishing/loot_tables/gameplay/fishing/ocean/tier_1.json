@@ -1,7 +1,7 @@
 {
     "pools": [
         {
-            "name": "fishing_ocean_and_beach_tier_1",
+            "name": "fishing_ocean_tier_1",
             "rolls": 1,
             "entries": [
                 {

@@ -1,20 +1,20 @@
 {
      "pools": [
          {
-            "name": "fishing_ocean_and_beach_tier_4",
+             "name": "fishing_ocean_tier_3",
              "rolls": 1,
              "entries": [
                  {
                      "type": "item",
-                     "name": "advanced-fishing:fish",
+                     "name": "minecraft:fish",
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 21
+                             "data": 2
                          }
                      ],
                      "weight": 100,
-                     "entryName": "SPONGE_EATER"
+                     "entryName": "clown"
                  }
              ]
          }
