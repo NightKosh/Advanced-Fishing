@@ -115,7 +115,12 @@ public class CatchManager implements ICatchManager {
 
     public static List<ItemStack> getLavaCatch(World world, BlockPos pos, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
         if (biomeTypesList.contains(BiomeDictionary.Type.NETHER)) {
-            return getCatch(world, LootTables.FISHING_LAVA_NETHER, luck);
+            int chance = world.rand.nextInt(100) + Math.round(luck);
+            if (chance < 95 ) {
+                return getCatch(world, LootTables.FISHING_LAVA_NETHER, luck);
+            } else {
+                return getCatch(world, LootTables.FISHING_LAVA_NETHER_TREASURE, luck);
+            }
         } else {
             return getCatch(world, LootTables.FISHING_LAVA, luck);
         }

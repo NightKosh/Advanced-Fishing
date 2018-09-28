@@ -13,20 +13,8 @@
                              "data": 1
                          }
                      ],
-                     "weight": 33,
+                     "weight": 50,
                      "entryName": "MAGMA_JELLYFISH"
-                 },
-                 {
-                     "type": "item",
-                     "name": "advanced-fishing:fish",
-                     "functions": [
-                         {
-                             "function": "set_data",
-                             "data": 10
-                         }
-                     ],
-                     "weight": 33,
-                     "entryName": "QUARTZ_CHUB"
                  },
                  {
                      "type": "item",
@@ -37,7 +25,7 @@
                              "data": 24
                          }
                      ],
-                     "weight": 33,
+                     "weight": 50,
                      "entryName": "WITHERED_CRUCIAN"
                  }
              ]

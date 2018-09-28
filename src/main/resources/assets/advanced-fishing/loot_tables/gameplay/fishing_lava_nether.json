@@ -24,7 +24,7 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "advanced-fishing:gameplay/fishing_lava_nether/treasure",
+                    "name": "advanced-fishing:gameplay/fishing_lava_nether/tier_4",
                     "weight": 5,
                     "quality": 6
                 }

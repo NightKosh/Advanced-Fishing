@@ -67,6 +67,7 @@ public class LootTables {
     public static final ResourceLocation FISHING_LAVA_NETHER_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/tier_1");
     public static final ResourceLocation FISHING_LAVA_NETHER_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/tier_2");
     public static final ResourceLocation FISHING_LAVA_NETHER_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/tier_3");
+    public static final ResourceLocation FISHING_LAVA_NETHER_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/tier_4");
     public static final ResourceLocation FISHING_LAVA_NETHER_TREASURE = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/treasure");
 
     public static void registration() {
@@ -123,6 +124,7 @@ public class LootTables {
         LootTableList.register(FISHING_LAVA_NETHER_TIER1);
         LootTableList.register(FISHING_LAVA_NETHER_TIER2);
         LootTableList.register(FISHING_LAVA_NETHER_TIER3);
+        LootTableList.register(FISHING_LAVA_NETHER_TIER4);
         LootTableList.register(FISHING_LAVA_NETHER_TREASURE);
     }
 

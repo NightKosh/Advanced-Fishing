@@ -1,7 +1,7 @@
 {
      "pools": [
          {
-             "name": "fishing_lava_nether_tier_3",
+             "name": "fishing_lava_nether_tier_4",
              "rolls": 1,
              "entries": [
                  {
@@ -10,11 +10,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 10
+                             "data": 11
                          }
                      ],
                      "weight": 50,
-                     "entryName": "QUARTZ_CHUB"
+                     "entryName": "FLAREFIN_KOI"
                  },
                  {
                      "type": "item",
@@ -22,11 +22,11 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 29
+                             "data": 12
                          }
                      ],
                      "weight": 50,
-                     "entryName": "FUNGI_CATFISH"
+                     "entryName": "BLAZE_PIKE"
                  }
              ]
          }
