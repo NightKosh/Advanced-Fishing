@@ -15,6 +15,7 @@ public class Config {
     private final Configuration CONFIG;
 
     public static boolean overrideVanillaFishing;
+    public static boolean debugMode;
 
     public Config(File configFile) {
         this.CONFIG = new Configuration(configFile);
@@ -24,6 +25,8 @@ public class Config {
         CONFIG.load();
 
         overrideVanillaFishing = CONFIG.get(Configuration.CATEGORY_GENERAL, "OverrideVanillaFishing", true).getBoolean();
+
+        debugMode = CONFIG.get(Configuration.CATEGORY_GENERAL, "DebugMode", false).getBoolean();
 
         CONFIG.save();
     }

@@ -11,8 +11,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.BiomeDictionary;
+import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatch;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatchManager;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
@@ -25,6 +29,7 @@ import java.util.*;
 public class CatchManager implements ICatchManager {
 
     public static final CatchManager INSTANCE = new CatchManager();
+    private static final Logger LOGGER = LogManager.getLogger(ModInfo.ID);
 
     private static final Map<Block, ICatch> CATCH = new HashMap<>();
 
@@ -42,6 +47,9 @@ public class CatchManager implements ICatchManager {
 
     @Override
     public ICatch getCatch(Block block) {
+        if (Config.debugMode) {
+            LOGGER.log(Level.INFO, block.toString());
+        }
         return CATCH.getOrDefault(block, CatchManager::getWaterCatch);
     }
 
@@ -55,15 +63,24 @@ public class CatchManager implements ICatchManager {
             if (!world.canBlockSeeSky(pos)) {
                 chance = world.rand.nextInt(100) + Math.round(luck);
                 if (chance >= 95) {
+                    if (Config.debugMode) {
+                        LOGGER.log(Level.INFO, "Fishing in cave.");
+                    }
                     if (pos.getY() < 50) {
                         list.addAll(getCatch(world, LootTables.FISHING_CAVE_50, luck));
-//                        System.out.println("CAVE_50");
+                        if (Config.debugMode) {
+                            LOGGER.log(Level.INFO, "< 50");
+                        }
                         if (pos.getY() < 40) {
                             list.addAll(getCatch(world, LootTables.FISHING_CAVE_40, luck));
-//                            System.out.println("CAVE_40");
+                            if (Config.debugMode) {
+                                LOGGER.log(Level.INFO, "< 40");
+                            }
                             if (pos.getY() < 25) {
                                 list.addAll(getCatch(world, LootTables.FISHING_CAVE_25, luck));
-//                                System.out.println("CAVE_25");
+                                if (Config.debugMode) {
+                                    LOGGER.log(Level.INFO, "< 25");
+                                }
                             }
                         }
                     }
@@ -74,6 +91,10 @@ public class CatchManager implements ICatchManager {
                 Biome biome = world.getBiome(pos);
                 Set<BiomeDictionary.Type> biomeTypesList = BiomeDictionary.getTypes(biome);
 
+                if (Config.debugMode) {
+                    LOGGER.log(Level.INFO, biome.getBiomeName());
+                    LOGGER.log(Level.INFO, biomeTypesList.toString());
+                }
                 if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
                         biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
@@ -82,38 +103,27 @@ public class CatchManager implements ICatchManager {
                     } else {
                         list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
                     }
-//                    System.out.println("OCEAN");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.END)) {
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.END)) {
                     list.addAll(getCatch(world, LootTables.FISHING_END, luck));
-//                    System.out.println("END");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.SANDY) ||
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.SANDY) ||
                         biomeTypesList.contains(BiomeDictionary.Type.MESA) ||
                         biomeTypesList.contains(BiomeDictionary.Type.SAVANNA)) {
                     list.addAll(getCatch(world, LootTables.FISHING_SANDY, luck));
-//                    System.out.println("SANDY");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.SNOWY) ||
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.SNOWY) ||
                         biomeTypesList.contains(BiomeDictionary.Type.CONIFEROUS)) {
                     list.addAll(getCatch(world, LootTables.FISHING_SNOWY, luck));
-//                    System.out.println("SNOWY");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.SWAMP)) {
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.SWAMP)) {
                     list.addAll(getCatch(world, LootTables.FISHING_SWAMP, luck));
-//                    System.out.println("SWAMP");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.JUNGLE)) {
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.JUNGLE)) {
                     list.addAll(getCatch(world, LootTables.FISHING_JUNGLE, luck));
-//                    System.out.println("JUNGLE");
-                }
-                if (biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM)) {
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM)) {
                     list.addAll(getCatch(world, LootTables.FISHING_MUSHROOM, luck));
-//                    System.out.println("MUSHROOM");
                 }
                 if (list.isEmpty()) {
                     list.addAll(getCatch(world, LootTables.FISHING, luck));
-//                    System.out.println("OTHER");
+                    if (Config.debugMode) {
+                        LOGGER.log(Level.INFO, "No catch! Trying to get default catch.");
+                    }
                 }
             }
 
@@ -126,6 +136,11 @@ public class CatchManager implements ICatchManager {
     public static List<ItemStack> getLavaCatch(World world, BlockPos pos, float luck) {
         Biome biome = world.getBiome(pos);
         Set<BiomeDictionary.Type> biomeTypesList = BiomeDictionary.getTypes(biome);
+
+        if (Config.debugMode) {
+            LOGGER.log(Level.INFO, biome.getBiomeName());
+            LOGGER.log(Level.INFO, biomeTypesList.toString());
+        }
 
         if (biomeTypesList.contains(BiomeDictionary.Type.NETHER)) {
             int chance = world.rand.nextInt(100) + Math.round(luck);
