@@ -64,6 +64,10 @@ public class Models {
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.CATFISH.ordinal(), ResourcesModels.CATFISH);
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.PIKE.ordinal(), ResourcesModels.PIKE);
             ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.MAGIKARP.ordinal(), ResourcesModels.MAGIKARP);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.GREEN_JELLYFISH.ordinal(), ResourcesModels.GREEN_JELLYFISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.BONE_FISH.ordinal(), ResourcesModels.BONE_FISH);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.CURSED_KOI.ordinal(), ResourcesModels.CURSED_KOI);
+            ModelLoader.setCustomModelResourceLocation(Items.FISH, EnumFishType.SPOOKYFIN.ordinal(), ResourcesModels.SPOOKYFIN);
 
             ModelBakery.registerItemVariants(Items.FISH, ResourcesModels.BLUE_JELLYFISH, ResourcesModels.MAGMA_JELLYFISH, ResourcesModels.MUD_TUNA,
                     ResourcesModels.PIRANHA, ResourcesModels.GOLDEN_KOI, ResourcesModels.SPECULAR_SNAPPER, ResourcesModels.CAVE_TROUT, ResourcesModels.OBSIDIAN_BREAM,
@@ -72,7 +76,8 @@ public class Models {
                     ResourcesModels.ANGELFISH, ResourcesModels.ANGLER_FISH, ResourcesModels.SPONGE_EATER, ResourcesModels.SNOWY_WALLEYE, ResourcesModels.SQUID,
                     ResourcesModels.WITHERED_CRUCIAN, ResourcesModels.SANDY_BASS, ResourcesModels.MANDARINFISH, ResourcesModels.RED_SHROOMFIN, ResourcesModels.BROWN_SHROOMFIN,
                     ResourcesModels.FUNGI_CATFISH, ResourcesModels.SWAMP_PLAICE, ResourcesModels.CRYSTAL_MULLET, ResourcesModels.CHARGED_BULLHEAD, ResourcesModels.ABYSSAL_LURKER,
-                    ResourcesModels.SUNFISH, ResourcesModels.GLACIER_ANCHOVY, ResourcesModels.CATFISH, ResourcesModels.PIKE, ResourcesModels.MAGIKARP);
+                    ResourcesModels.SUNFISH, ResourcesModels.GLACIER_ANCHOVY, ResourcesModels.CATFISH, ResourcesModels.PIKE, ResourcesModels.MAGIKARP, ResourcesModels.GREEN_JELLYFISH,
+                    ResourcesModels.BONE_FISH, ResourcesModels.CURSED_KOI, ResourcesModels.SPOOKYFIN);
         }
     }
 }

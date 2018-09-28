@@ -53,6 +53,8 @@ public class ItemFish extends ItemFood {
 
         switch (fishType) {
             case BLUE_JELLYFISH:
+            case GREEN_JELLYFISH:
+            case CURSED_KOI:
                 player.addPotionEffect(new PotionEffect(MobEffects.POISON, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
@@ -79,6 +81,12 @@ public class ItemFish extends ItemFood {
             case CHARGED_BULLHEAD:
             case ABYSSAL_LURKER:
             case MAGIKARP:
+            case BONE_FISH:
+                player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
+                player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
+                break;
+            case SPOOKYFIN:
+                player.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 300, 2));
                 player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 300, 2));
                 break;

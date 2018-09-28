@@ -1,0 +1,40 @@
+{
+    "pools": [
+        {
+            "name": "fishing_dead_tier_1",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:bone",
+                    "weight": 20,
+                    "entryName": "BONE"
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:rotten_flesh",
+                    "weight": 20,
+                    "entryName": "ROTTEN_FLESH"
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:spider_eye",
+                    "weight": 20,
+                    "entryName": "SPIDER_EYE"
+                },
+                {
+                    "type": "item",
+                    "name": "advanced-fishing:fish",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 39
+                        }
+                    ],
+                    "weight": 40,
+                    "entryName": "GREEN_JELLYFISH"
+                }
+            ]
+        }
+    ]
+}

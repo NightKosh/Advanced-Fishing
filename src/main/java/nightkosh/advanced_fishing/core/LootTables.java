@@ -74,6 +74,15 @@ public class LootTables {
     public static final ResourceLocation FISHING_LAVA_NETHER_TIER4 = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/tier_4");
     public static final ResourceLocation FISHING_LAVA_NETHER_TREASURE = new ResourceLocation(ModInfo.ID, "gameplay/fishing_lava_nether/treasure");
 
+    public static final ResourceLocation FISHING_DEAD = new ResourceLocation(ModInfo.ID, "gameplay/fishing_dead");
+    public static final ResourceLocation FISHING_DEAD_TIER1 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/dead/tier_1");
+    public static final ResourceLocation FISHING_DEAD_TIER2 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/dead/tier_2");
+    public static final ResourceLocation FISHING_DEAD_TIER3 = new ResourceLocation(ModInfo.ID, "gameplay/fishing/dead/tier_3");
+    public static final ResourceLocation FISHING_DEAD_TREASURE = new ResourceLocation(ModInfo.ID, "gameplay/fishing/dead/treasure");
+
+
+    public static final ResourceLocation INJECT_NETHER_BRIDGE = new ResourceLocation(ModInfo.ID, "inject/nether_bridge");
+
     public static void registration() {
         LootTableList.register(FISHING);
         LootTableList.register(FISHING_TIER1);
@@ -134,11 +143,17 @@ public class LootTables {
         LootTableList.register(FISHING_LAVA_NETHER_TIER3);
         LootTableList.register(FISHING_LAVA_NETHER_TIER4);
         LootTableList.register(FISHING_LAVA_NETHER_TREASURE);
+
+        LootTableList.register(FISHING_DEAD);
+        LootTableList.register(FISHING_DEAD_TIER1);
+        LootTableList.register(FISHING_DEAD_TIER2);
+        LootTableList.register(FISHING_DEAD_TIER3);
+        LootTableList.register(FISHING_DEAD_TREASURE);
     }
 
     public static void inject(LootTableLoadEvent event) {
         if (event.getName().toString().equals("minecraft:chests/nether_bridge")) {
-            LootEntry entry = new LootEntryTable(new ResourceLocation(ModInfo.ID, "inject/nether_bridge"), 1, 1, new LootCondition[0], "nether_bridge_blazing_fishing_pole");
+            LootEntry entry = new LootEntryTable(INJECT_NETHER_BRIDGE, 1, 1, new LootCondition[0], "nether_bridge_blazing_fishing_pole");
             LootPool pool = new LootPool(new LootEntry[]{entry}, new LootCondition[]{}, new RandomValueRange(1, 1), new RandomValueRange(0, 0), "nether_bridge_blazing_fishing_pole");
             event.getTable().addPool(pool);
         }

@@ -121,6 +121,8 @@ public class CatchManager implements ICatchManager {
                     list.addAll(getCatch(world, LootTables.FISHING_JUNGLE, luck));
                 } else if (biomeTypesList.contains(BiomeDictionary.Type.MUSHROOM)) {
                     list.addAll(getCatch(world, LootTables.FISHING_MUSHROOM, luck));
+                } else if (biomeTypesList.contains(BiomeDictionary.Type.DEAD)) {
+                    list.addAll(getCatch(world, LootTables.FISHING_DEAD, luck));
                 }
                 if (list.isEmpty()) {
                     list.addAll(getCatch(world, LootTables.FISHING, luck));

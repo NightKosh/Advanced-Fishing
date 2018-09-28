@@ -45,7 +45,11 @@ public enum EnumFishType {
     GLACIER_ANCHOVY("glacier_anchovy", 1), //35
     CATFISH("catfish", 3, 0.2F), //36
     PIKE("pike", 2, 0.2F), //37
-    MAGIKARP("magikarp", 1, 0.05F); //38
+    MAGIKARP("magikarp", 1, 0.05F), //38
+    GREEN_JELLYFISH("green_jellyfish", 1), //39
+    BONE_FISH("bone_fish", 1, 0.05F), //40
+    CURSED_KOI("cursed_koi", 1), //41
+    SPOOKYFIN("spookyfin", 1); //42
 
     private String name;
     private int healAmount;
