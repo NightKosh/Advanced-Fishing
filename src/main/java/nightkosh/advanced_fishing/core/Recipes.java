@@ -78,34 +78,66 @@ public class Recipes {
                 "f",
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.SNOWY_WALLEYE.ordinal()));
 
-        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_ice"), GROUP, new ItemStack(Blocks.ICE, 1),
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_ice"), GROUP, new ItemStack(Blocks.ICE),
                 "ff",
-                "ff",
-                'f', new ItemStack(Items.FISH, 1, EnumFishType.FROST_MINNOW.ordinal()));
-
-        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_packed_ice"), GROUP, new ItemStack(Blocks.PACKED_ICE, 2),
-                "fi",
-                "if",
-                'i', Blocks.ICE,
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.FROST_MINNOW.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_gunpowder"), GROUP, new ItemStack(net.minecraft.init.Items.GUNPOWDER, 3),
                 "f",
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.EXPLOSIVE_CRUCIAN.ordinal()));
 
-        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_sponge"), GROUP, new ItemStack(Blocks.SPONGE, 1),
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_sponge"), GROUP, new ItemStack(Blocks.SPONGE),
                 "ff",
                 "ff",
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.SPONGE_EATER.ordinal()));
 
-        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_soul_sand"), GROUP, new ItemStack(Blocks.SOUL_SAND, 1),
-                "ff",
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_soul_sand"), GROUP, new ItemStack(Blocks.SOUL_SAND),
                 "ff",
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.WITHERED_CRUCIAN.ordinal()));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_black_dye"), GROUP, new ItemStack(net.minecraft.init.Items.DYE, 5, EnumDyeColor.BLACK.getDyeDamage()),
                 "f",
                 'f', new ItemStack(Items.FISH, 1, EnumFishType.SQUID.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_red_mushroom"), GROUP, new ItemStack(Blocks.RED_MUSHROOM, 3),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.RED_SHROOMFIN.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_brown_mushroom"), GROUP, new ItemStack(Blocks.BROWN_MUSHROOM, 3),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.BROWN_SHROOMFIN.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_nether_wart"), GROUP, new ItemStack(net.minecraft.init.Items.NETHER_WART),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.FUNGI_CATFISH.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_waterlily"), GROUP, new ItemStack(Blocks.WATERLILY),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.SWAMP_PLAICE.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_lazurit"), GROUP, new ItemStack(net.minecraft.init.Items.DYE, 5, EnumDyeColor.BLUE.getDyeDamage()),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.CRYSTAL_MULLET.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_redstone"), GROUP, new ItemStack(net.minecraft.init.Items.REDSTONE, 5),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.CHARGED_BULLHEAD.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_prizmarine_shard"), GROUP, new ItemStack(net.minecraft.init.Items.PRISMARINE_SHARD, 4),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.ABYSSAL_LURKER.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_golden_nugget"), GROUP, new ItemStack(net.minecraft.init.Items.GOLD_NUGGET),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.SUNFISH.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_packet_ice"), GROUP, new ItemStack(Blocks.PACKED_ICE),
+                "ff",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.GLACIER_ANCHOVY.ordinal()));
+
+        GameRegistry.addShapedRecipe(new ResourceLocation(ModInfo.ID, "fish_to_prizmarine_crystal"), GROUP, new ItemStack(net.minecraft.init.Items.PRISMARINE_CRYSTALS, 2),
+                "f",
+                'f', new ItemStack(Items.FISH, 1, EnumFishType.ANGLER_FISH.ordinal()));
     }
 
     public static void smeltingRecipesRegistration() {
