@@ -7,6 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.BiomeDictionary;
@@ -44,7 +45,7 @@ public class CatchManager implements ICatchManager {
         return CATCH.getOrDefault(block, CatchManager::getWaterCatch);
     }
 
-    public static List<ItemStack> getWaterCatch(World world, BlockPos pos, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+    public static List<ItemStack> getWaterCatch(World world, BlockPos pos, float luck) {
         int chance = world.rand.nextInt(100) + Math.round(luck);
 
         List<ItemStack> list = new ArrayList<>();
@@ -70,6 +71,9 @@ public class CatchManager implements ICatchManager {
             }
 
             if (list.isEmpty()) {
+                Biome biome = world.getBiome(pos);
+                Set<BiomeDictionary.Type> biomeTypesList = BiomeDictionary.getTypes(biome);
+
                 if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
                         biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
@@ -113,7 +117,10 @@ public class CatchManager implements ICatchManager {
         return list;
     }
 
-    public static List<ItemStack> getLavaCatch(World world, BlockPos pos, Set<BiomeDictionary.Type> biomeTypesList, float luck) {
+    public static List<ItemStack> getLavaCatch(World world, BlockPos pos, float luck) {
+        Biome biome = world.getBiome(pos);
+        Set<BiomeDictionary.Type> biomeTypesList = BiomeDictionary.getTypes(biome);
+
         if (biomeTypesList.contains(BiomeDictionary.Type.NETHER)) {
             int chance = world.rand.nextInt(100) + Math.round(luck);
             if (chance < 95 ) {

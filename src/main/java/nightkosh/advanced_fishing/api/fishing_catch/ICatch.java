@@ -3,10 +3,8 @@ package nightkosh.advanced_fishing.api.fishing_catch;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.BiomeDictionary;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Advanced Fishing
@@ -16,5 +14,5 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface ICatch {
-    public List<ItemStack> getCatch(World world, BlockPos pos, Set<BiomeDictionary.Type> biomeTypesList, float luck);
+    public List<ItemStack> getCatch(World world, BlockPos pos, float luck);
 }

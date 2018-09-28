@@ -17,7 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -371,7 +370,7 @@ public class EntityCustomFishHook extends AbstractFishHook {
         Block liquidBlock = this.world.getBlockState(new BlockPos(this.posX, MathHelper.floor(this.getEntityBoundingBox().minY), this.posZ)).getBlock();
 
         List<ItemStack> tempList = CatchManager.INSTANCE.getCatch(liquidBlock)
-                .getCatch(world, this.getPosition(), BiomeDictionary.getTypes(world.getBiome(this.getPosition())), (this.luck + this.getAngler().getLuck()) * 1.5F);
+                .getCatch(world, this.getPosition(), (this.luck + this.getAngler().getLuck()) * 1.5F);
         result.add(tempList.get(this.rand.nextInt(tempList.size())));
 
         return result;
