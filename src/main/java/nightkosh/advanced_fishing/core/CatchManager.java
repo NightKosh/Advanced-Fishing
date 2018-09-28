@@ -48,10 +48,10 @@ public class CatchManager implements ICatchManager {
     public static List<ItemStack> getWaterCatch(World world, BlockPos pos, float luck) {
         int chance = world.rand.nextInt(100) + Math.round(luck);
 
-        List<ItemStack> list = new ArrayList<>();
         if (chance < 10) {
-            list = getCatch(world, LootTableList.GAMEPLAY_FISHING_JUNK, luck);
+            return getCatch(world, LootTableList.GAMEPLAY_FISHING_JUNK, luck);
         } else if (chance < 90) {
+            List<ItemStack> list = new ArrayList<>();
             if (!world.canBlockSeeSky(pos)) {
                 chance = world.rand.nextInt(100) + Math.round(luck);
                 if (chance >= 95) {
@@ -111,10 +111,11 @@ public class CatchManager implements ICatchManager {
 //                    System.out.println("OTHER");
                 }
             }
+
+            return list;
         } else {
-            list = getCatch(world, LootTableList.GAMEPLAY_FISHING_TREASURE, luck);
+            return getCatch(world, LootTableList.GAMEPLAY_FISHING_TREASURE, luck);
         }
-        return list;
     }
 
     public static List<ItemStack> getLavaCatch(World world, BlockPos pos, float luck) {
