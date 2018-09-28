@@ -70,7 +70,9 @@ public class CatchManager implements ICatchManager {
             }
 
             if (list.isEmpty()) {
-                if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) || biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
+                //TODO MUSHROOM
+                if (biomeTypesList.contains(BiomeDictionary.Type.OCEAN) ||
+                        biomeTypesList.contains(BiomeDictionary.Type.BEACH)) {
                     list.addAll(getCatch(world, LootTables.FISHING_OCEAN_AND_BEACH, luck));
 //                    System.out.println("OCEAN");
                 }
@@ -78,11 +80,14 @@ public class CatchManager implements ICatchManager {
                     list.addAll(getCatch(world, LootTables.FISHING_END, luck));
 //                    System.out.println("END");
                 }
-                if (biomeTypesList.contains(BiomeDictionary.Type.SANDY)) {
+                if (biomeTypesList.contains(BiomeDictionary.Type.SANDY) ||
+                        biomeTypesList.contains(BiomeDictionary.Type.MESA) ||
+                        biomeTypesList.contains(BiomeDictionary.Type.SAVANNA)) {
                     list.addAll(getCatch(world, LootTables.FISHING_SANDY, luck));
 //                    System.out.println("SANDY");
                 }
-                if (biomeTypesList.contains(BiomeDictionary.Type.SNOWY)) {
+                if (biomeTypesList.contains(BiomeDictionary.Type.SNOWY) ||
+                        biomeTypesList.contains(BiomeDictionary.Type.CONIFEROUS)) {
                     list.addAll(getCatch(world, LootTables.FISHING_SNOWY, luck));
 //                    System.out.println("SNOWY");
                 }

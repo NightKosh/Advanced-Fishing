@@ -10,11 +10,23 @@
                      "functions": [
                          {
                              "function": "set_data",
-                             "data": 20
+                             "data": 31
                          }
                      ],
-                     "weight": 100,
-                     "entryName": "ANGLER_FISH"
+                     "weight": 50,
+                     "entryName": "CRYSTAL_MULLET"
+                 },
+                 {
+                     "type": "item",
+                     "name": "advanced-fishing:fish",
+                     "functions": [
+                         {
+                             "function": "set_data",
+                             "data": 32
+                         }
+                     ],
+                     "weight": 50,
+                     "entryName": "CHARGED_BULLHEAD"
                  }
              ]
          }
