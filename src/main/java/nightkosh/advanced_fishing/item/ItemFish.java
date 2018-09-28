@@ -90,6 +90,9 @@ public class ItemFish extends ItemFood {
             case CAVE_TROUT:
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 200, 1));
                 break;
+            case MANDARINFISH:
+                player.addExperience(20);
+                break;
         }
 
         super.onFoodEaten(stack, worldIn, player);
