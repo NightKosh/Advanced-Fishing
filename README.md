@@ -2,7 +2,7 @@
 
 This mod adds new 26 fishes, blaze fishing rod, luck potion recipe and overrides fishing mechanics. All of the new and vanilla fishes can be catched only in own types of biomes, dimensions and liquids.
 
-![](https://user-images.githubusercontent.com/4181327/45933694-60850800-bf9a-11e8-833c-fbc8a2c2fca6.PNG)
+![advanced_fishing](https://user-images.githubusercontent.com/4181327/46245962-92192b80-c3ff-11e8-9f61-02d8ef7eb9e7.png)
 
 # Luck potion recipe
 
@@ -11,5 +11,5 @@ This mod adds new 26 fishes, blaze fishing rod, luck potion recipe and overrides
 
 # Crafting recipes
 
-![recipes](https://user-images.githubusercontent.com/4181327/45934150-c07fac80-bfa2-11e8-8a7a-e730ca2b8637.png)
+![fish_recipes](https://user-images.githubusercontent.com/4181327/46245968-9fceb100-c3ff-11e8-956b-ad451c2c9eb8.png)
 
