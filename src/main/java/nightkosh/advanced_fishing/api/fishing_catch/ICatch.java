@@ -14,5 +14,13 @@ import java.util.List;
  */
 @FunctionalInterface
 public interface ICatch {
+    /**
+     * Used to get a list of items which will be catched
+     *
+     * @param world World
+     * @param pos position of fishing hook
+     * @param luck player luck (fishing rod enchantment + luck potions effects)
+     * @return list of items (only one random item will be catched)
+     */
     public List<ItemStack> getCatch(World world, BlockPos pos, float luck);
 }

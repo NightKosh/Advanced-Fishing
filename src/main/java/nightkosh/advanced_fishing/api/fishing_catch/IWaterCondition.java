@@ -15,5 +15,15 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface IWaterCondition {
+    /**
+     * Used to know should "this" instance of IWaterCatch be used to get catch
+     *
+     * @param world World
+     * @param pos position of fishing hook
+     * @param biome biome at the position of fishing hook
+     * @param biomeTypesList Set with biome types of the biome at the position of fishing hook
+     * @param luck player luck (fishing rod enchantment + luck potions effects)
+     * @return boolean value
+     */
     public boolean shouldGetCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck);
 }

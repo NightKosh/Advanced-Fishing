@@ -17,5 +17,15 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface IWaterCatch {
+    /**
+     * Used to get list of items wich will be catched in water
+     *
+     * @param world World
+     * @param pos position of fishing hook
+     * @param biome biome at the position of fishing hook
+     * @param biomeTypes Set with biome types of the biome at the position of fishing hook
+     * @param luck player luck (fishing rod enchantment + luck potions effects)
+     * @return list of items (only one random item will be catched)
+     */
     public List<ItemStack> getCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypes, float luck);
 }
