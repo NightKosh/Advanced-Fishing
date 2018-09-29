@@ -59,6 +59,7 @@ dependencies {
 
 jar {
     exclude('**/*.db')
+    exclude('**/*.psd')
 
     manifest {
         attributes 'FMLAT': 'Advanced_Fishing_at.cfg'
