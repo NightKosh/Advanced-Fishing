@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ff",
+		"ff"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 21,
+            "fish_name": "SPONGE_EATER"
+		}
+	},
+	"result": {
+		"item": "minecraft:sponge",
+        "data": 0
+	}
+}

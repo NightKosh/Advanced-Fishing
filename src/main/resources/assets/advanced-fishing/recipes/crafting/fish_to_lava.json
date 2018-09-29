@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"fb"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 1,
+            "fish_name": "MAGMA_JELLYFISH"
+		},
+		"b": {
+			"item": "minecraft:bucket"
+		}
+	},
+	"result": {
+		"item": "minecraft:lava_bucket"
+	}
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ff"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 3,
+            "fish_name": "FROST_MINNOW"
+		}
+	},
+	"result": {
+		"item": "minecraft:ice"
+	}
+}

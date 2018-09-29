@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 14,
+            "fish_name": "PEARL_SARDINE"
+		}
+	},
+	"result": {
+		"item": "minecraft:ender_pearl"
+	}
+}

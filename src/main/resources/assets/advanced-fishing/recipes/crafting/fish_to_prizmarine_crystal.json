@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 20,
+            "fish_name": "ANGLER_FISH"
+		}
+	},
+	"result": {
+		"item": "minecraft:prismarine_crystals",
+		"count": 2
+	}
+}

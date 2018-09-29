@@ -47,7 +47,6 @@ public class ModAdvancedFishing {
     public void load(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventsHandler());
 
-        Recipes.registration();
         Recipes.smeltingRecipesRegistration();
         Recipes.addLuckPotionRecipe();
 

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 34,
+            "fish_name": "SUNFISH"
+		}
+	},
+	"result": {
+		"item": "minecraft:gold_nugget",
+		"count": 2
+	}
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 16,
+            "fish_name": "EXPLOSIVE_CRUCIAN"
+		}
+	},
+	"result": {
+		"item": "minecraft:gunpowder",
+		"count": 3
+	}
+}

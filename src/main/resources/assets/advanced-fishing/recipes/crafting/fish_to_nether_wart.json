@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 29,
+            "fish_name": "FUNGI_CATFISH"
+		}
+	},
+	"result": {
+		"item": "minecraft:nether_wart",
+		"count": 2
+	}
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ff"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 35,
+            "fish_name": "GLACIER_ANCHOVY"
+		}
+	},
+	"result": {
+		"item": "minecraft:packed_ice"
+	}
+}

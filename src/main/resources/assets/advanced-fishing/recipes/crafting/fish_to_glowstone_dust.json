@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"f"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 11,
+            "fish_name": "FLAREFIN_KOI"
+		}
+	},
+	"result": {
+		"item": "minecraft:glowstone_dust",
+		"count": 2
+	}
+}

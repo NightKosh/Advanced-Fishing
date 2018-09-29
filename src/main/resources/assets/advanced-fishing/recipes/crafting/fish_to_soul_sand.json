@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ff"
+	],
+	"key": {
+		"f": {
+			"item": "advanced-fishing:fish",
+            "data": 24,
+            "fish_name": "WITHERED_CRUCIAN"
+		}
+	},
+	"result": {
+		"item": "minecraft:soul_sand"
+	}
+}
