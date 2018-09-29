@@ -12,5 +12,7 @@ public interface ICatchManager {
 
     public void addCatch(Block block, ICatch fishingCatch);
 
+    public void addWaterCatch(IWaterCondition condition, IWaterCatch waterCatch);
+
     public ICatch getCatch(Block block);
 }

@@ -60,6 +60,11 @@ public class CatchManager implements ICatchManager {
     }
 
     @Override
+    public void addWaterCatch(IWaterCondition condition, IWaterCatch waterCatch) {
+        CATCH_WATER.put(condition, waterCatch);
+    }
+
+    @Override
     public ICatch getCatch(Block block) {
         if (Config.debugMode) {
             LOGGER.log(Level.INFO, "Fishing in : " + block.toString());
