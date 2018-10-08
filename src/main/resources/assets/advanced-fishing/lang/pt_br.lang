@@ -3,52 +3,51 @@ itemGroup.tabFish=Advanced Fishing
 
 # Items
 ## Fishing poles
-##TODO
-item.advanced-fishing.blazing_fishing_pole.name=Blazing Fishing Pole
+item.advanced-fishing.blazing_fishing_pole.name=Vara de Pescar Brilhante
 
 ## Fish
 item.advanced-fishing.blue_jellyfish.name=Água-Viva
 item.advanced-fishing.magma_jellyfish.name=Água-Viva de Magma
-##TODO
-item.advanced-fishing.mud_tuna.name=Mud Tuna
-item.advanced-fishing.frost_minnow.name=Frost Minnow
+item.advanced-fishing.mud_tuna.name=Atum de Lama
+item.advanced-fishing.frost_minnow.name=Peixinho Congelado
 item.advanced-fishing.piranha.name=Piranha
-item.advanced-fishing.golden_koi.name=Golden Koi
-item.advanced-fishing.specular_snapper.name=Specular Snapper
-item.advanced-fishing.cave_trout.name=Cave Trout
-item.advanced-fishing.obsidian_bream.name=Obsidian Bream
-item.advanced-fishing.nether_sturgeon.name=Nether Sturgeon
-item.advanced-fishing.quartz_chub.name=Quartz Chub
-item.advanced-fishing.flarefin_koi.name=Flarefin Koi
-item.advanced-fishing.blaze_pike.name=Blaze Pike
-item.advanced-fishing.ender_shad.name=Ender Shad
-item.advanced-fishing.pearl_sardine.name=Pearl Sardine
-item.advanced-fishing.chorus_koi.name=Chorus Koi
-item.advanced-fishing.explosive_crucian.name=Explosive Crucian
-item.advanced-fishing.ruffe.name=Ruffe
-item.advanced-fishing.sparkling_eel.name=Sparkling Eel
-item.advanced-fishing.angelfish.name=Angelfish
-item.advanced-fishing.angler_fish.name=Angler Fish
-item.advanced-fishing.sponge_eater.name=Sponge Eater
-item.advanced-fishing.snowy_walleye.name=Snowy Walleye
+item.advanced-fishing.golden_koi.name=Carpa Dourada
+item.advanced-fishing.specular_snapper.name=Pargo Especular
+item.advanced-fishing.cave_trout.name=Truta da Caverna
+item.advanced-fishing.obsidian_bream.name=Sargo de Obsidiana
+item.advanced-fishing.nether_sturgeon.name=Esturjão Inferior
+item.advanced-fishing.quartz_chub.name=Caboz de Quartzo
+item.advanced-fishing.flarefin_koi.name=Carpa da Barbatana de Fogo
+item.advanced-fishing.blaze_pike.name=Lúcio Brilhante
+item.advanced-fishing.ender_shad.name=Sável Terminador
+item.advanced-fishing.pearl_sardine.name=Sardinha de Pérola
+item.advanced-fishing.chorus_koi.name=Carpa de Coro
+item.advanced-fishing.explosive_crucian.name=Carpa Cruciana Explosiva
+item.advanced-fishing.ruffe.name=Acerina Eurasiana
+item.advanced-fishing.sparkling_eel.name=Enguia Cintilante
+item.advanced-fishing.angelfish.name=Peixe-Anjo
+item.advanced-fishing.angler_fish.name=Xarrocos
+item.advanced-fishing.sponge_eater.name=Comedor de Esponja
+item.advanced-fishing.snowy_walleye.name=Picão-Verde Nevado
 item.advanced-fishing.squid.name=Lula
-item.advanced-fishing.withered_crucian.name=Withered Crucian
-item.advanced-fishing.sandy_bass.name=Sandy Bass
-item.advanced-fishing.mandarinfish.name=Mandarinfish
+item.advanced-fishing.withered_crucian.name=Carpa Cruciana Murcha
+item.advanced-fishing.sandy_bass.name=Robalo Arenoso
+item.advanced-fishing.mandarinfish.name=Peixe-Mandarim
+##TODO
 item.advanced-fishing.red_shroomfin.name=Red Shroomfin
 item.advanced-fishing.brown_shroomfin.name=Brown Shroomfin
-item.advanced-fishing.fungi_catfish.name=Fungi Catfish
-item.advanced-fishing.swamp_plaice.name=Swamp Plaice
-item.advanced-fishing.crystal_mullet.name=Crystal Mullet
-item.advanced-fishing.charged_bullhead.name=Charged Bullhead
+item.advanced-fishing.fungi_catfish.name=Peixe-Gato de Fungos
+item.advanced-fishing.swamp_plaice.name=Solha de Pântano
+item.advanced-fishing.crystal_mullet.name=Tainha de Cristal
+item.advanced-fishing.charged_bullhead.name=Peixe-Gato-Cabeçudo Carregado
+##TODO
 item.advanced-fishing.abyssal_lurker.name=Abyssal Lurker
-item.advanced-fishing.sunfish.name=Sunfish
-item.advanced-fishing.glacier_anchovy.name=Glacier Anchovy
-item.advanced-fishing.catfish.name=Catfish
-item.advanced-fishing.pike.name=Pike
+item.advanced-fishing.sunfish.name=Peixe-Lua
+item.advanced-fishing.glacier_anchovy.name=Anchova Glacial
+item.advanced-fishing.catfish.name=Peixe-Gato
+item.advanced-fishing.pike.name=Lúcio
 item.advanced-fishing.magikarp.name=Magikarp
 item.advanced-fishing.green_jellyfish.name=Água-Viva Verde
-## TODO !!!!!!!!!!
-item.advanced-fishing.bone_fish.name=Bonefish
-item.advanced-fishing.cursed_koi.name=Cursed Koi
-item.advanced-fishing.spookyfin.name=Spookyfin
+item.advanced-fishing.bone_fish.name=Peixe-Osso
+item.advanced-fishing.cursed_koi.name=Carpa Amaldiçoada
+item.advanced-fishing.spookyfin.name=Barbatana Assustadora
