@@ -1,0 +1,51 @@
+# Tabs
+itemGroup.tabFish=Pesca Avanzada
+
+# Items
+## Fishing poles
+item.advanced-fishing.blazing_fishing_pole.name=Caña de pescar llameante
+
+## Fish
+item.advanced-fishing.blue_jellyfish.name=Medusa
+item.advanced-fishing.magma_jellyfish.name=Medusa de magma
+item.advanced-fishing.mud_tuna.name=Atún de barro
+item.advanced-fishing.frost_minnow.name=Pececillo de escarcha
+item.advanced-fishing.piranha.name=Piraña
+item.advanced-fishing.golden_koi.name=Koi dorado
+item.advanced-fishing.specular_snapper.name=Pargo especular
+item.advanced-fishing.cave_trout.name=Trucha de cueva
+item.advanced-fishing.obsidian_bream.name=Brema de obsidiana
+item.advanced-fishing.nether_sturgeon.name=Esturión inferior
+item.advanced-fishing.quartz_chub.name=Cacho de cuarzo
+item.advanced-fishing.flarefin_koi.name=Koi de aleta llameante
+item.advanced-fishing.blaze_pike.name=Lucio resplandeciente
+item.advanced-fishing.ender_shad.name=Sábalo del fin
+item.advanced-fishing.pearl_sardine.name=Sardina perlada
+item.advanced-fishing.chorus_koi.name=Koi de coro
+item.advanced-fishing.explosive_crucian.name=Carpa cruciana explosiva
+item.advanced-fishing.ruffe.name=Acerina
+item.advanced-fishing.sparkling_eel.name=Anguila destellante
+item.advanced-fishing.angelfish.name=Pez ángel
+item.advanced-fishing.angler_fish.name=Rape
+item.advanced-fishing.sponge_eater.name=Comeesponjas
+item.advanced-fishing.snowy_walleye.name=Lucioperca nevada
+item.advanced-fishing.squid.name=Calamar
+item.advanced-fishing.withered_crucian.name=Carpa cruciana marchita
+item.advanced-fishing.sandy_bass.name=Lubina arenosa
+item.advanced-fishing.mandarinfish.name=Pez mandarín
+item.advanced-fishing.red_shroomfin.name=Aletaseta rojo
+item.advanced-fishing.brown_shroomfin.name=Aletaseta marrón
+item.advanced-fishing.fungi_catfish.name=Bagre hongo
+item.advanced-fishing.swamp_plaice.name=Platija de ciénaga
+item.advanced-fishing.crystal_mullet.name=Mójol de cristal
+item.advanced-fishing.charged_bullhead.name=Siluro cargado
+item.advanced-fishing.abyssal_lurker.name=Acechador abisal
+item.advanced-fishing.sunfish.name=Pez sol
+item.advanced-fishing.glacier_anchovy.name=Anchoa de glaciar
+item.advanced-fishing.catfish.name=Bagre
+item.advanced-fishing.pike.name=Lucio
+item.advanced-fishing.magikarp.name=Magikarp
+item.advanced-fishing.green_jellyfish.name=Medusa verde
+item.advanced-fishing.bone_fish.name=Pez hueso
+item.advanced-fishing.cursed_koi.name=Koi Maldito
+item.advanced-fishing.spookyfin.name=Aleta escalofriante
