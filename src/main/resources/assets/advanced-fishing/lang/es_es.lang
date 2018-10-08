@@ -1,5 +1,5 @@
 # Tabs
-itemGroup.tabFish=Advanced Fishing
+itemGroup.tabFish=Pesca Avanzada
 
 # Items
 ## Fishing poles
@@ -24,12 +24,12 @@ item.advanced-fishing.pearl_sardine.name=Pearl Sardine
 item.advanced-fishing.chorus_koi.name=Chorus Koi
 item.advanced-fishing.explosive_crucian.name=Explosive Crucian
 item.advanced-fishing.ruffe.name=Ruffe
-item.advanced-fishing.sparkling_eel.name=Sparkling Eel
-item.advanced-fishing.angelfish.name=Angelfish
+item.advanced-fishing.sparkling_eel.name=Anguila destellante
+item.advanced-fishing.angelfish.name=Pez ángel
 item.advanced-fishing.angler_fish.name=Angler Fish
 item.advanced-fishing.sponge_eater.name=Sponge Eater
 item.advanced-fishing.snowy_walleye.name=Snowy Walleye
-item.advanced-fishing.squid.name=Squid
+item.advanced-fishing.squid.name=Calamar
 item.advanced-fishing.withered_crucian.name=Withered Crucian
 item.advanced-fishing.sandy_bass.name=Sandy Bass
 item.advanced-fishing.mandarinfish.name=Mandarinfish
@@ -40,12 +40,12 @@ item.advanced-fishing.swamp_plaice.name=Swamp Plaice
 item.advanced-fishing.crystal_mullet.name=Crystal Mullet
 item.advanced-fishing.charged_bullhead.name=Charged Bullhead
 item.advanced-fishing.abyssal_lurker.name=Abyssal Lurker
-item.advanced-fishing.sunfish.name=Sunfish
+item.advanced-fishing.sunfish.name=Pez sol
 item.advanced-fishing.glacier_anchovy.name=Glacier Anchovy
 item.advanced-fishing.catfish.name=Catfish
 item.advanced-fishing.pike.name=Pike
 item.advanced-fishing.magikarp.name=Magikarp
-item.advanced-fishing.green_jellyfish.name=Green Jellyfish
+item.advanced-fishing.green_jellyfish.name=Medusa verde
 item.advanced-fishing.bone_fish.name=Bonefish
-item.advanced-fishing.cursed_koi.name=Cursed Koi
+item.advanced-fishing.cursed_koi.name=Koi Maldito
 item.advanced-fishing.spookyfin.name=Spookyfin
