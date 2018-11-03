@@ -3,8 +3,7 @@ itemGroup.tabFish=Advanced Fishing
 
 # Items
 ## Fishing poles
-##TODO
-item.advanced-fishing.blazing_fishing_pole.name=Blazing Fishing Pole
+item.advanced-fishing.blazing_fishing_pole.name=Палаюча вудочка
 
 ## Fish
 item.advanced-fishing.blue_jellyfish.name=Медуза
@@ -13,19 +12,15 @@ item.advanced-fishing.mud_tuna.name=Грязьовий тунець
 item.advanced-fishing.frost_minnow.name=Крижаний гольян
 item.advanced-fishing.piranha.name=Піранья
 item.advanced-fishing.golden_koi.name=Золота коі
-##TODO
-item.advanced-fishing.specular_snapper.name=Specular Snapper
-##TODO
-item.advanced-fishing.cave_trout.name=Cave Trout
-##TODO
-item.advanced-fishing.obsidian_bream.name=Obsidian Bream
-item.advanced-fishing.nether_sturgeon.name=Nether Sturgeon
-item.advanced-fishing.quartz_chub.name=Quartz Chub
+item.advanced-fishing.specular_snapper.name=Зеркальный люціан
+item.advanced-fishing.cave_trout.name=Пещерна форель
+item.advanced-fishing.obsidian_bream.name=Обсидіановый лящ
+item.advanced-fishing.nether_sturgeon.name=Адський осетер
+item.advanced-fishing.quartz_chub.name=Кварцовый головень
 item.advanced-fishing.flarefin_koi.name=Випромінююча світло коі
-##TODO
-item.advanced-fishing.blaze_pike.name=Blaze Pike
-item.advanced-fishing.ender_shad.name=Ender Shad
-item.advanced-fishing.pearl_sardine.name=Pearl Sardine
+item.advanced-fishing.blaze_pike.name=Палаюча щука
+item.advanced-fishing.ender_shad.name=Оселедець краю
+item.advanced-fishing.pearl_sardine.name=Перлинова сардина
 item.advanced-fishing.chorus_koi.name=Коі коруса
 item.advanced-fishing.explosive_crucian.name=Вибуховий карась
 item.advanced-fishing.ruffe.name=Йорж
@@ -33,25 +28,23 @@ item.advanced-fishing.sparkling_eel.name=Іскристий вугор
 item.advanced-fishing.angelfish.name=Скалярія
 item.advanced-fishing.angler_fish.name=Вудильник
 item.advanced-fishing.sponge_eater.name=Губкоїд
-##TODO
-item.advanced-fishing.snowy_walleye.name=Snowy Walleye
+item.advanced-fishing.snowy_walleye.name=Сніговий судак
 item.advanced-fishing.squid.name=Кальмар
 item.advanced-fishing.withered_crucian.name=Висушений карась
 item.advanced-fishing.sandy_bass.name=Піщаний окунь
-##TODO
-item.advanced-fishing.mandarinfish.name=Mandarinfish
-item.advanced-fishing.red_shroomfin.name=Red Shroomfin
-item.advanced-fishing.brown_shroomfin.name=Brown Shroomfin
-item.advanced-fishing.fungi_catfish.name=Fungi Catfish
-item.advanced-fishing.swamp_plaice.name=Swamp Plaice
-item.advanced-fishing.crystal_mullet.name=Crystal Mullet
-item.advanced-fishing.charged_bullhead.name=Charged Bullhead
-item.advanced-fishing.abyssal_lurker.name=Abyssal Lurker
-item.advanced-fishing.sunfish.name=Sunfish
-item.advanced-fishing.glacier_anchovy.name=Glacier Anchovy
-item.advanced-fishing.catfish.name=Catfish
-item.advanced-fishing.pike.name=Pike
-item.advanced-fishing.magikarp.name=Magikarp
+item.advanced-fishing.mandarinfish.name=Мандаринка
+item.advanced-fishing.red_shroomfin.name=Мухоморка
+item.advanced-fishing.brown_shroomfin.name=Поганочник
+item.advanced-fishing.fungi_catfish.name=Лишайчатий сом
+item.advanced-fishing.swamp_plaice.name=Болотна камбала
+item.advanced-fishing.crystal_mullet.name=Кришталева кефаль
+item.advanced-fishing.charged_bullhead.name=Заряжений бычок
+item.advanced-fishing.abyssal_lurker.name=Глибоководний скритень
+item.advanced-fishing.sunfish.name=Сонячник
+item.advanced-fishing.glacier_anchovy.name=Льодяниковий анчоус
+item.advanced-fishing.catfish.name=Сом
+item.advanced-fishing.pike.name=Щука
+item.advanced-fishing.magikarp.name=Меджікороп
 item.advanced-fishing.green_jellyfish.name=Зелена медуза
 item.advanced-fishing.bone_fish.name=Кістяна риба
 item.advanced-fishing.cursed_koi.name=Проклята коі
