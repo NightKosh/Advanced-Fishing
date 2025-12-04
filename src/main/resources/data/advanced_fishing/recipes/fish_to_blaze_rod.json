@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:blaze_pike"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blaze_rod"
+  }
+}

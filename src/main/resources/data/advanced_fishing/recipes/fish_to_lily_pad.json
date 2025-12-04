@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:swamp_plaice"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lily_pad"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:sandy_bass"
+    }
+  ],
+  "result": {
+    "item": "minecraft:sand",
+    "data": 0
+  }
+}

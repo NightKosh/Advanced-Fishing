@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:chorus_koi"
+    }
+  ],
+  "result": {
+    "item": "minecraft:chorus_fruit"
+  }
+}

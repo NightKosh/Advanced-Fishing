@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:obsidian_bream"
+    }
+  ],
+  "result": {
+    "item": "minecraft:obsidian"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:ender_shad"
+    }
+  ],
+  "result": {
+    "item": "minecraft:end_stone"
+  }
+}

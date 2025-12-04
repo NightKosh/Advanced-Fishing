@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:withered_crucian"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_sand"
+  }
+}

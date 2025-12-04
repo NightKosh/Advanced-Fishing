@@ -6,9 +6,7 @@
 	],
 	"key": {
 		"f": {
-			"item": "advanced-fishing:fish",
-            "data": 21,
-            "fish_name": "SPONGE_EATER"
+			"item": "advanced_fishing:sponge_eater"
 		}
 	},
 	"result": {

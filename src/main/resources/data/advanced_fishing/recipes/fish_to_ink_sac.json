@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:squid"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ink_sac",
+    "count": 3
+  }
+}
