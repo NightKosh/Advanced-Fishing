@@ -1,8 +1,6 @@
 package nightkosh.advanced_fishing.core;
 
-import net.minecraftforge.common.config.Configuration;
-
-import java.io.File;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 /**
  * Advanced Fishing
@@ -12,22 +10,23 @@ import java.io.File;
  */
 public class Config {
 
-    private final Configuration CONFIG;
+    public static final ForgeConfigSpec SPEC;
+    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static boolean overrideVanillaFishing;
-    public static boolean debugMode;
+    public static ForgeConfigSpec.ConfigValue<Boolean> OVERRIDE_VANILLA_FISHING;
+    public static ForgeConfigSpec.ConfigValue<Boolean> DEBUG_MODE;
 
-    public Config(File configFile) {
-        this.CONFIG = new Configuration(configFile);
+    static {
+        BUILDER.push("Configs for Advanced Fishing Mod");
+
+        OVERRIDE_VANILLA_FISHING = BUILDER.comment("Override vanilla fishing by mod")
+                .define("Override Vanilla Fishing", true);
+
+        DEBUG_MODE = BUILDER.comment("Enable debug mode for additional dev logs")
+                .define("Debug Mode", false);
+
+        BUILDER.pop();
+        SPEC = BUILDER.build();
     }
 
-    public final void getConfigs() {
-        CONFIG.load();
-
-        overrideVanillaFishing = CONFIG.get(Configuration.CATEGORY_GENERAL, "OverrideVanillaFishing", true).getBoolean();
-
-        debugMode = CONFIG.get(Configuration.CATEGORY_GENERAL, "DebugMode", false).getBoolean();
-
-        CONFIG.save();
-    }
 }
