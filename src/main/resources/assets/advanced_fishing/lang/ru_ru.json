@@ -43,5 +43,11 @@
   "item.advanced_fishing.green_jellyfish": "Зелёная медуза",
   "item.advanced_fishing.bone_fish": "Костяная рыба",
   "item.advanced_fishing.cursed_koi": "Проклятая кои",
-  "item.advanced_fishing.spookyfin": "Ужасный плавник"
+  "item.advanced_fishing.spookyfin": "Ужасный плавник",
+  "fish_effects.advanced_fishing.poison": "Говорят, эта рыба очень ядовита",
+  "fish_effects.advanced_fishing.fire": "Эта рыба пышет жаром, обжигая ваши руки",
+  "fish_effects.advanced_fishing.blindness": "От прикосновения к этой рыбе у вас темнеет в глазах",
+  "fish_effects.advanced_fishing.wither": "Эта рыба вытягивает из вас жизнь",
+  "fish_effects.advanced_fishing.damage_resistance": "По слухам, съевший эту рыбу становится устойчив к урону",
+  "fish_effects.advanced_fishing.experience": "По слухам, съевший эту рыбу становится умнее"
 }
