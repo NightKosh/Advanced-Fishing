@@ -17,7 +17,7 @@ import nightkosh.advanced_fishing.api.ModInfo;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 @Mod.EventBusSubscriber(modid = ModInfo.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Tabs {
+public class AFTabs {
 
     public static CreativeModeTab ADVANCED_FISHING_TAB;
 
@@ -26,7 +26,7 @@ public class Tabs {
         ADVANCED_FISHING_TAB = event.registerCreativeModeTab(
                 ResourceLocation.fromNamespaceAndPath(ModInfo.ID, "advanced_fishing"),
                 builder -> builder
-                        .icon(() -> new ItemStack(Items.getFish(EnumFishType.GOLDEN_KOI)))
+                        .icon(() -> new ItemStack(AFItems.getFish(EnumFishType.GOLDEN_KOI)))
                         .title(Component.translatable("itemGroup." + ModInfo.ID))
                         .build()
         );
@@ -35,10 +35,10 @@ public class Tabs {
     @SubscribeEvent
     public static void buildContents(CreativeModeTabEvent.BuildContents event) {
         if (event.getTab() == ADVANCED_FISHING_TAB) {
-            event.accept(Items.getBlazingFishingPole());
+            event.accept(AFItems.getBlazingFishingPole());
 
             for (var fishType : EnumFishType.values()) {
-                event.accept(new ItemStack(Items.getFish(fishType)));
+                event.accept(new ItemStack(AFItems.getFish(fishType)));
             }
         }
     }

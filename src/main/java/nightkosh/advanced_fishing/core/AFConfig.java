@@ -8,7 +8,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class Config {
+public class AFConfig {
 
     public static final ForgeConfigSpec SPEC;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();

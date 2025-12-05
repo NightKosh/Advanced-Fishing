@@ -19,7 +19,7 @@ import java.util.Map;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class Items {
+public class AFItems {
 
     public static final DeferredRegister<Item> ITEMS_REGISTER =
             DeferredRegister.create(ForgeRegistries.ITEMS, ModInfo.ID);
