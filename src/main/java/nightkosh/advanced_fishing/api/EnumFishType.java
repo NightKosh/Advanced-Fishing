@@ -51,9 +51,9 @@ public enum EnumFishType {
     CURSED_KOI("cursed_koi", 1), //41
     SPOOKYFIN("spookyfin", 1); //42
 
-    private String name;
-    private int healAmount;
-    private float saturationModifier;
+    private final String name;
+    private final int healAmount;
+    private final float saturationModifier;
 
     EnumFishType(String name, int healAmount) {
         this(name, healAmount, 0.1F);
@@ -76,4 +76,5 @@ public enum EnumFishType {
     public float getSaturationModifier() {
         return saturationModifier;
     }
+
 }
