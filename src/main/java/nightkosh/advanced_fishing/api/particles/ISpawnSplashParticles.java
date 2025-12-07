@@ -1,8 +1,6 @@
 package nightkosh.advanced_fishing.api.particles;
 
-import net.minecraft.world.WorldServer;
-
-import java.util.Random;
+import net.minecraft.server.level.ServerLevel;
 
 /**
  * Advanced Fishing
@@ -12,5 +10,11 @@ import java.util.Random;
  */
 @FunctionalInterface
 public interface ISpawnSplashParticles {
-    public void spawn(WorldServer world, Random rand, double x, double y, double z);
+
+    void spawn(ServerLevel level,
+               double x, double y, double z,
+               int num,
+               double xOffset, double yOffset, double zOffset,
+               double speed);
+
 }

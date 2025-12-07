@@ -1,13 +1,12 @@
 package nightkosh.advanced_fishing.api.fishing_catch;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
+import net.minecraft.core.Holder;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.storage.loot.LootContext;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Advanced Fishing
@@ -17,15 +16,16 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface IWaterCatch {
+
     /**
-     * Used to get list of items wich will be catched in water
+     * Used to get list of items which will be caught in water
      *
-     * @param world World
-     * @param pos position of fishing hook
-     * @param biome biome at the position of fishing hook
-     * @param biomeTypes Set with biome types of the biome at the position of fishing hook
-     * @param luck player luck (fishing rod enchantment + luck potions effects)
-     * @return list of items (only one random item will be catched)
+     * @param lootBuilder loot builder
+     * @param level       Level
+     * @param biomeHolder biome holder at the position of fishing hook
+     * @param luck        player luck (fishing rod enchantment + luck potions effects)
+     * @return list of items (only one random item will be caught)
      */
-    public List<ItemStack> getCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypes, float luck);
+    List<ItemStack> getCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck);
+
 }

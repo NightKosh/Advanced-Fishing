@@ -1,11 +1,7 @@
 package nightkosh.advanced_fishing.api.fishing_catch;
 
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
-
-import java.util.Set;
+import net.minecraft.core.Holder;
+import net.minecraft.world.level.biome.Biome;
 
 /**
  * Advanced Fishing
@@ -15,15 +11,13 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface IWaterCondition {
+
     /**
      * Used to know should "this" instance of IWaterCatch be used to get catch
      *
-     * @param world World
-     * @param pos position of fishing hook
-     * @param biome biome at the position of fishing hook
-     * @param biomeTypesList Set with biome types of the biome at the position of fishing hook
-     * @param luck player luck (fishing rod enchantment + luck potions effects)
+     * @param biomeHolder biome holder at the position of fishing hook
      * @return boolean value
      */
-    public boolean shouldGetCatch(World world, BlockPos pos, Biome biome, Set<BiomeDictionary.Type> biomeTypesList, float luck);
+    boolean shouldGetCatch(Holder<Biome> biomeHolder);
+
 }

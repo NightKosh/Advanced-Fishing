@@ -1,7 +1,7 @@
 package nightkosh.advanced_fishing.api;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatchManager;
 import nightkosh.advanced_fishing.api.material.IMaterialManager;
 import nightkosh.advanced_fishing.api.particles.IParticlesManager;
@@ -29,5 +29,6 @@ public class AdvancedFishingAPI {
     public static Item FISH_ITEM;
 
     @Nullable
-    public static CreativeTabs FISH_TAB;
+    public static CreativeModeTab FISH_TAB;
+
 }

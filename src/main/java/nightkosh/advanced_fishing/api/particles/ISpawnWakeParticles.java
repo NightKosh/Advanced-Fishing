@@ -1,6 +1,6 @@
 package nightkosh.advanced_fishing.api.particles;
 
-import net.minecraft.world.WorldServer;
+import net.minecraft.server.level.ServerLevel;
 
 /**
  * Advanced Fishing
@@ -10,5 +10,11 @@ import net.minecraft.world.WorldServer;
  */
 @FunctionalInterface
 public interface ISpawnWakeParticles {
-    public void spawn(WorldServer world, double x, double y, double z, int num, double xOffset, double yOffset, double zOffset, double speed);
+
+    void spawn(ServerLevel level,
+               double x, double y, double z,
+               int num,
+               double xOffset, double yOffset, double zOffset,
+               double speed);
+
 }

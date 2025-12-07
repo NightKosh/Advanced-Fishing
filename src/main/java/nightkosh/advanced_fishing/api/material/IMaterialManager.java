@@ -1,6 +1,6 @@
 package nightkosh.advanced_fishing.api.material;
 
-import net.minecraft.block.material.Material;
+import net.minecraft.world.level.material.Material;
 
 /**
  * Advanced Fishing
@@ -16,5 +16,6 @@ public interface IMaterialManager {
      *
      * @param material liquid material
      */
-    public void addMaterial(Material material);
+    void addMaterial(Material material);
+
 }
