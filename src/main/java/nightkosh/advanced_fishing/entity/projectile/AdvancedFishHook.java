@@ -20,6 +20,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
+import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEntities;
 import nightkosh.advanced_fishing.core.MaterialManager;
 import nightkosh.advanced_fishing.core.ParticlesManager;
@@ -27,6 +28,8 @@ import nightkosh.advanced_fishing.core.ParticlesManager;
 import javax.annotation.Nonnull;
 import java.util.Collections;
 import java.util.List;
+
+import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 /**
  * Advanced Fishing
@@ -38,14 +41,17 @@ public class AdvancedFishHook extends AbstractFishHook {
 
     public AdvancedFishHook(EntityType<? extends AdvancedFishHook> entityType, Level level) {
         super(entityType, level);
+        spawnLog();
     }
 
     public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed) {
         super(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed);
+        spawnLog();
     }
 
     public AdvancedFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level, int luck, int lureSpeed) {
         super(entityType, player, level, luck, lureSpeed);
+        spawnLog();
     }
 
     @Override
@@ -253,6 +259,12 @@ public class AdvancedFishHook extends AbstractFishHook {
 //        result.add(tempList.get(this.random.nextInt(tempList.size())));
 //
 //        return result;
+    }
+
+    protected void spawnLog() {
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("AdvancedFishHook spawned");
+        }
     }
 
 }

@@ -10,9 +10,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
+import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEntities;
 
 import java.util.List;
+
+import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 /**
  * Advanced Fishing
@@ -41,6 +44,13 @@ public class LavaFishHook extends AdvancedFishHook {
             return true;
         }
         return super.isInvulnerableTo(source);
+    }
+
+    @Override
+    protected void spawnLog() {
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("LavaFishHook spawned");
+        }
     }
 
     @Override
