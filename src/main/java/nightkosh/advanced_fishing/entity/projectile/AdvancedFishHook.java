@@ -14,18 +14,14 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
-import nightkosh.advanced_fishing.core.AFConfig;
-import nightkosh.advanced_fishing.core.AFEntities;
-import nightkosh.advanced_fishing.core.MaterialManager;
-import nightkosh.advanced_fishing.core.ParticlesManager;
+import nightkosh.advanced_fishing.core.*;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -231,31 +227,31 @@ public class AdvancedFishHook extends AbstractFishHook {
     }
 
     protected List<ItemStack> getCatch(@Nonnull ItemStack itemStack) {
-        var builder = new LootContext.Builder((ServerLevel) this.level)
-                .withParameter(LootContextParams.ORIGIN, this.position())
-                .withParameter(LootContextParams.TOOL, itemStack)
+        var result = new ArrayList<ItemStack>(1);
+        var liquidBlock = this.getLevel().getBlockState(
+                        new BlockPos((int) this.getX(), Mth.floor(this.getY()), (int) this.getX()))
+                .getBlock();
+
+        var lootBuilder = new LootContext.Builder((ServerLevel) level)
                 .withParameter(LootContextParams.THIS_ENTITY, this)
                 .withParameter(LootContextParams.KILLER_ENTITY, this.getOwner())
-                .withParameter(LootContextParams.THIS_ENTITY, this)
-                .withLuck((float) this.luck + this.getPlayerOwner().getLuck())
-                .withRandom(this.random);
+                .withParameter(LootContextParams.ORIGIN, this.position())
+                .withParameter(LootContextParams.TOOL, itemStack)
+                .withRandom(this.random)
+                .withLuck(luck);
 
-        var loottable = this.level.getServer()
-                .getLootTables()
-                .get(BuiltInLootTables.FISHING);
-        return loottable.getRandomItems(builder.create(LootContextParamSets.FISHING));
+        var tempList = CatchManager.INSTANCE.getICatch(liquidBlock)
+                .getCatch(lootBuilder, this.getLevel(), this.blockPosition(),
+                        (this.luck + this.getPlayerOwner().getLuck()) * 1.5F);
+        if (tempList.isEmpty()) {
+            if (AFConfig.DEBUG_MODE.get()) {
+                LOGGER.info("No catch!!!!!");
+            }
+        } else {
+            result.add(tempList.get(this.random.nextInt(tempList.size())));
+        }
 
-//TODO
-//        var result = new ArrayList<ItemStack>(1);
-//        var liquidBlock = this.getLevel().getBlockState(
-//                new BlockPos((int) this.getX(), Mth.floor(this.getBoundingBox().minY), (int) this.getX()))
-//                .getBlock();
-//
-//        var tempList = CatchManager.INSTANCE.getCatch(liquidBlock)
-//                .getCatch(this.getLevel(), this.blockPosition(), (this.luck + this.getPlayerOwner().getLuck()) * 1.5F);
-//        result.add(tempList.get(this.random.nextInt(tempList.size())));
-//
-//        return result;
+        return result;
     }
 
     @Override
