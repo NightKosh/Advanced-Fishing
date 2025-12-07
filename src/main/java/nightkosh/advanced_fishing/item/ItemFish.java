@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import nightkosh.advanced_fishing.api.EnumFishType;
-import nightkosh.advanced_fishing.api.ModInfo;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -95,11 +94,6 @@ public class ItemFish extends Item {
         }
 
         return super.finishUsingItem(stack, level, entity);
-    }
-
-    @Override
-    public @Nonnull String getDescriptionId(@Nonnull ItemStack stack) {
-        return "item." + ModInfo.ID + "." + fishType.getName();
     }
 
     @Override
