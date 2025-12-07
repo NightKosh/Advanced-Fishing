@@ -1,18 +1,16 @@
 package nightkosh.advanced_fishing.core;
 
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityFishHook;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
-import net.minecraft.world.World;
-import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import nightkosh.advanced_fishing.entity.projectile.EntityCustomFishHook;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.projectile.FishingHook;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import nightkosh.advanced_fishing.api.ModInfo;
+import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Advanced Fishing
@@ -22,40 +20,43 @@ import nightkosh.advanced_fishing.entity.projectile.EntityCustomFishHook;
  */
 public class EventsHandler {
 
+    private static final Logger LOGGER = LogManager.getLogger(ModInfo.ID);
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void entityJoinWorldEvent(EntityJoinWorldEvent event) {
-        Entity entity = event.getEntity();
+    public void onEntityJoinLevel(EntityJoinLevelEvent event) {
+        var entity = event.getEntity();
 
-        if (Config.overrideVanillaFishing && entity instanceof EntityFishHook && entity.getClass().equals(EntityFishHook.class)) {
-            World world = event.getWorld();
-            if (!world.isRemote) {
-                EntityPlayer player = ((EntityFishHook) entity).getAngler();
-                ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
-                if (stack.getItem() != Items.FISHING_ROD) {
-                    stack = player.getHeldItem(EnumHand.OFF_HAND);
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("EntityJoinLevelEvent triggered");
+        }
+
+        if (AFConfig.OVERRIDE_VANILLA_FISHING.get() &&
+                entity instanceof FishingHook hook &&
+                entity.getClass().equals(FishingHook.class)) {
+            if (AFConfig.DEBUG_MODE.get()) {
+                LOGGER.info("EntityJoinLevelEvent - this is a FishingHook entity");
+            }
+            var level = event.getLevel();
+            if (!level.isClientSide()) {
+                var player = hook.getPlayerOwner();
+                if (player != null) {
+                    if (AFConfig.DEBUG_MODE.get()) {
+                        LOGGER.info("EntityJoinLevelEvent - everything ok, hook will be replaced");
+                    }
+                    var fishingPole = player.getItemInHand(InteractionHand.MAIN_HAND);
+                    if (fishingPole.getItem() != Items.FISHING_ROD) {
+                        fishingPole = player.getItemInHand(InteractionHand.OFF_HAND);
+                    }
+                    entity.discard();
+
+                    level.addFreshEntity(new AdvancedFishHook(player, level,
+                            EnchantmentHelper.getFishingLuckBonus(fishingPole),
+                            EnchantmentHelper.getFishingSpeedBonus(fishingPole)));
+
+                    event.setCanceled(true);
                 }
-                entity.setDead();
-
-                EntityCustomFishHook hook = new EntityCustomFishHook(world, player);
-
-                int speed = EnchantmentHelper.getFishingSpeedBonus(stack);
-                if (speed > 0) {
-                    hook.setLureSpeed(speed);
-                }
-                int luck = EnchantmentHelper.getFishingLuckBonus(stack);
-                if (luck > 0) {
-                    hook.setLuck(luck);
-                }
-
-                world.spawnEntity(hook);
-
-                event.setCanceled(true);
             }
         }
     }
 
-    @SubscribeEvent
-    public void lootLoad(LootTableLoadEvent event) {
-        LootTables.inject(event);
-    }
 }
