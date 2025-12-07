@@ -1,6 +1,6 @@
 # Advanced Fishing [![Curseforge](http://cf.way2muchnoise.eu/full_advanced-fishing_downloads.svg)](https://minecraft.curseforge.com/projects/advanced-fishing) [![Curseforge](http://cf.way2muchnoise.eu/versions/For%20MC_advanced-fishing_all.svg)](https://minecraft.curseforge.com/projects/advanced-fishing)
 
-This mod adds new 43 fishes, blaze fishing rod, luck potion recipe and overrides fishing mechanics. All of the new and vanilla fishes can be catched only in own types of biomes, dimensions and liquids.
+This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience bottle recipe and overrides fishing mechanics. All new and vanilla fishes can be caught only in own types of biomes, dimensions and liquids.
 
 ![advanced_fishing](https://user-images.githubusercontent.com/4181327/46245962-92192b80-c3ff-11e8-9f61-02d8ef7eb9e7.png)
 
@@ -19,12 +19,37 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe and overrides
 
 ## Requirements
 1. [Forge](http://files.minecraftforge.net/) (check "build.gradle" file to know required forge version)
-   * Latest versions of Forge requires [Gradle 2.0](https://gradle.org/) or higher
-2. Version of the mod in "Master branch" requires [jdk 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)(do not forget to enable java 8 support in your IDE)
+2. [jdk 1.17](https://jdk.java.net/archive/) (do not forget to enable its support in your IDE)
+3. [Gradle 9.2.1](https://gradle.org/releases/)
 
 
 ## Get started
-1. Clone mod repository 
-2. [Download forge](http://files.minecraftforge.net/) and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder
-3. Run "./gradlew setupDecompWorkspace idea"
+1. Clone mod repository
+2. [Download forge](http://files.minecraftforge.net/) and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder(and any other files which may requires)
+3. Download MDK from forge
 4. Import mod to your ide as "new Gradle project"
+
+## Gradle commands
+1. Download MDK from forge
+   for eclipse:
+    ```
+        gradlew genEclipseRuns
+    ```
+   for IntelliJ IDEA:
+    ```
+        gradlew genIntellijRuns
+    ```
+2. Running client
+    ```
+        gradlew runClient
+    ```
+3. Running Server
+    ```
+        gradlew runServer
+    ```
+4. Build mod as .jar file
+    ```
+        gradlew build
+    ```
+
+For more information, look at "minecraft forge" README.txt file (it's not included to this repository) or [this link](https://gist.github.com/mcenderdragon/6c7af2daf6f72b0cadf0c63169a87583)
