@@ -28,21 +28,13 @@ public class ItemFish extends Item {
     private final EnumFishType fishType;
 
     public ItemFish(EnumFishType fishType) {
-        super(new Item.Properties().stacksTo(64));
+        super(new Item.Properties()
+                .stacksTo(64)
+                .food(new FoodProperties.Builder()
+                        .nutrition(fishType.getHealAmount())
+                        .saturationMod(fishType.getSaturationModifier())
+                        .build()));
         this.fishType = fishType;
-    }
-
-    @Override
-    public boolean isEdible() {
-        return true;
-    }
-
-    @Override
-    public FoodProperties getFoodProperties(ItemStack stack, LivingEntity entity) {
-        return new FoodProperties.Builder()
-                .nutrition(fishType.getHealAmount())
-                .saturationMod(fishType.getSaturationModifier())
-                .build();
     }
 
     @Nonnull
