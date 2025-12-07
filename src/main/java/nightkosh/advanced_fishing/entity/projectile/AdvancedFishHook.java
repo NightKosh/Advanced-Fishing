@@ -41,17 +41,14 @@ public class AdvancedFishHook extends AbstractFishHook {
 
     public AdvancedFishHook(EntityType<? extends AdvancedFishHook> entityType, Level level) {
         super(entityType, level);
-        spawnLog();
     }
 
     public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed) {
         super(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed);
-        spawnLog();
     }
 
     public AdvancedFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level, int luck, int lureSpeed) {
         super(entityType, player, level, luck, lureSpeed);
-        spawnLog();
     }
 
     @Override
@@ -261,6 +258,7 @@ public class AdvancedFishHook extends AbstractFishHook {
 //        return result;
     }
 
+    @Override
     protected void spawnLog() {
         if (AFConfig.DEBUG_MODE.get()) {
             LOGGER.info("AdvancedFishHook spawned");

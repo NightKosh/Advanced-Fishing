@@ -33,6 +33,7 @@ public abstract class AbstractFishHook extends FishingHook {
 
     public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Level level) {
         super(entityType, level);
+        spawnLog();
     }
 
     public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level, int luck, int lureSpeed) {
@@ -58,6 +59,7 @@ public abstract class AbstractFishHook extends FishingHook {
         this.setXRot((float) (Mth.atan2(vec3.y, vec3.horizontalDistance()) * (180 / Math.PI)));
         this.yRotO = this.getYRot();
         this.xRotO = this.getXRot();
+        spawnLog();
     }
 
     @Override
@@ -200,5 +202,7 @@ public abstract class AbstractFishHook extends FishingHook {
     protected ItemEntity getFireproofCatchEntityItem(ItemStack stack) {
         return new FireproofItemEntity(this.getLevel(), this.getX(), this.getY(), this.getX(), stack);
     }
+
+    protected abstract void spawnLog();
 
 }
