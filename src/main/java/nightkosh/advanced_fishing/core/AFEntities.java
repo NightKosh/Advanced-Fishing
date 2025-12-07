@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
-import nightkosh.advanced_fishing.entity.projectile.CustomFishHook;
+import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 import nightkosh.advanced_fishing.entity.projectile.LavaFishHook;
 
 /**
@@ -30,9 +30,9 @@ public class AFEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES_REGISTER =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ModInfo.ID);
 
-    public static final RegistryObject<EntityType<CustomFishHook>> CUSTOM_FISH_HOOK =
+    public static final RegistryObject<EntityType<AdvancedFishHook>> CUSTOM_FISH_HOOK =
             ENTITY_TYPES_REGISTER.register(CUSTOM_FISH_HOOK_ID,
-                    () -> EntityType.Builder.<CustomFishHook>of(CustomFishHook::new, MobCategory.MISC)
+                    () -> EntityType.Builder.<AdvancedFishHook>of(AdvancedFishHook::new, MobCategory.MISC)
                             .sized(0.25F, 0.25F)
                             .build(CUSTOM_FISH_HOOK_NAME));
 
@@ -54,7 +54,7 @@ public class AFEntities {
         ENTITY_TYPES_REGISTER.register(eventBus);
     }
 
-    public static EntityType<CustomFishHook> getCustomFishHook() {
+    public static EntityType<AdvancedFishHook> getCustomFishHook() {
         return CUSTOM_FISH_HOOK.get();
     }
 
