@@ -29,7 +29,7 @@ public class AFItems {
 
     static {
         for (var fishType : EnumFishType.values()) {
-            FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), ItemFish::new));
+            FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType)));
         }
     }
 

@@ -25,17 +25,11 @@ import java.util.List;
  */
 public class ItemFish extends Item {
 
-    public ItemFish() {
-        super(new Item.Properties().stacksTo(64));
-    }
+    private final EnumFishType fishType;
 
-    private static EnumFishType getFishType(ItemStack stack) {
-        int meta = stack.getDamageValue();
-        var values = EnumFishType.values();
-        if (meta < 0 || meta >= values.length) {
-            return values[0];
-        }
-        return values[meta];
+    public ItemFish(EnumFishType fishType) {
+        super(new Item.Properties().stacksTo(64));
+        this.fishType = fishType;
     }
 
     @Override
@@ -45,7 +39,6 @@ public class ItemFish extends Item {
 
     @Override
     public FoodProperties getFoodProperties(ItemStack stack, LivingEntity entity) {
-        var fishType = getFishType(stack);
         return new FoodProperties.Builder()
                 .nutrition(fishType.getHealAmount())
                 .saturationMod(fishType.getSaturationModifier())
@@ -55,7 +48,7 @@ public class ItemFish extends Item {
     @Nonnull
     @Override
     public ItemStack finishUsingItem(@Nonnull ItemStack stack, @Nonnull Level level, @Nonnull LivingEntity entity) {
-        switch (getFishType(stack)) {
+        switch (fishType) {
             case BLUE_JELLYFISH:
             case GREEN_JELLYFISH:
             case CURSED_KOI:
@@ -114,14 +107,14 @@ public class ItemFish extends Item {
 
     @Override
     public @Nonnull String getDescriptionId(@Nonnull ItemStack stack) {
-        return "item." + ModInfo.ID + "." + getFishType(stack).getName();
+        return "item." + ModInfo.ID + "." + fishType.getName();
     }
 
     @Override
     public void appendHoverText(
             @Nonnull ItemStack stack, @Nullable Level level,
             @Nonnull List<Component> tooltips, @Nonnull TooltipFlag flag) {
-        switch (getFishType(stack)) {
+        switch (fishType) {
             case BLUE_JELLYFISH:
             case GREEN_JELLYFISH:
             case CURSED_KOI:
