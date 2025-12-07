@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_end",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "advanced_fishing:gameplay/fishing/tier_1",
+          "weight": 52,
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "advanced_fishing:gameplay/fishing/tier_2",
+          "weight": 32,
+          "quality": 7
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "advanced_fishing:gameplay/fishing/mushroom/tier_3",
+          "weight": 16,
+          "quality": 6
+        }
+      ]
+    }
+  ]
+}

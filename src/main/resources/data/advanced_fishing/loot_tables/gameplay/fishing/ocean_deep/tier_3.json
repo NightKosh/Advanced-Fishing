@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_ocean_deep_tier_3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:abyssal_lurker",
+          "weight": 80
+        }
+      ]
+    }
+  ]
+}

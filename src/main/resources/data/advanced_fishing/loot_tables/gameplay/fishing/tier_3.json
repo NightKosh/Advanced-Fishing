@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_tier_3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:catfish",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:pike",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

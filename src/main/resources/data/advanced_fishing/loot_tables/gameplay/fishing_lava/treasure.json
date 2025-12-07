@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_lava_treasure",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wither_skeleton_skull",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blazing_fishing_pole",
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.25,
+                "min": 0
+              },
+              "function": "minecraft:set_damage"
+            }
+          ],
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blazing_fishing_pole",
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.25,
+                "min": 0
+              },
+              "function": "minecraft:set_damage"
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ],
+          "weight": 20
+        }
+      ]
+    }
+  ]
+}

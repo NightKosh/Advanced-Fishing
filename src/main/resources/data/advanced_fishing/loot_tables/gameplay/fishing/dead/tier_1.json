@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_dead_tier_1",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spider_eye",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:green_jellyfish",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}
