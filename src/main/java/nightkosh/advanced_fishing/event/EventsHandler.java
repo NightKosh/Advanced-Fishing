@@ -1,4 +1,4 @@
-package nightkosh.advanced_fishing.core;
+package nightkosh.advanced_fishing.event;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.FishingHook;
@@ -7,6 +7,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
@@ -23,15 +24,11 @@ public class EventsHandler {
     public void onEntityJoinLevel(EntityJoinLevelEvent event) {
         var entity = event.getEntity();
 
-        if (AFConfig.DEBUG_MODE.get()) {
-            LOGGER.info("EntityJoinLevelEvent triggered");
-        }
-
         if (AFConfig.OVERRIDE_VANILLA_FISHING.get() &&
                 entity instanceof FishingHook hook &&
                 entity.getClass().equals(FishingHook.class)) {
             if (AFConfig.DEBUG_MODE.get()) {
-                LOGGER.info("EntityJoinLevelEvent - this is a FishingHook entity");
+                LOGGER.info("EntityJoinLevelEvent triggered with FishingHook entity");
             }
             var level = event.getLevel();
             if (!level.isClientSide()) {

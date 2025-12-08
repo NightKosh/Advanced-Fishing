@@ -1,4 +1,4 @@
-package nightkosh.advanced_fishing.client;
+package nightkosh.advanced_fishing.event.client;
 
 import net.minecraft.client.renderer.entity.FishingHookRenderer;
 import net.minecraft.client.renderer.entity.ItemEntityRenderer;
