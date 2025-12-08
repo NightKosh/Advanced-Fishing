@@ -90,4 +90,6 @@ public class LootTables {
     public static final ResourceLocation FISHING_DEAD_T3 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/dead/tier_3");
     public static final ResourceLocation FISHING_DEAD_TREASURE = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/dead/treasure");
 
+    public static final ResourceLocation INJECT_NETHER_BRIDGE = fromNamespaceAndPath(ModInfo.ID, "inject/nether_bridge");
+
 }

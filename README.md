@@ -53,3 +53,10 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience b
     ```
 
 For more information, look at "minecraft forge" README.txt file (it's not included to this repository) or [this link](https://gist.github.com/mcenderdragon/6c7af2daf6f72b0cadf0c63169a87583)
+
+## How to test:
+
+1. Nether bridge loot modification:
+    ```
+        /loot spawn ~ ~ ~ loot minecraft:chests/nether_bridge
+    ```
