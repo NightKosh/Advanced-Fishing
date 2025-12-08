@@ -29,6 +29,7 @@ public class AFLootInjector {
 
             event.getTable().addPool(
                     LootPool.lootPool()
+                            .name("advanced_fishing_nether_bridge_inject")
                             .add(LootTableReference
                                     .lootTableReference(LootTables.INJECT_NETHER_BRIDGE)
                                     .setWeight(1))
