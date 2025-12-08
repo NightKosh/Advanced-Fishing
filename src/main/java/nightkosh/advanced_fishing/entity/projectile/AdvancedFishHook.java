@@ -229,7 +229,7 @@ public class AdvancedFishHook extends AbstractFishHook {
     protected List<ItemStack> getCatch(@Nonnull ItemStack itemStack) {
         var result = new ArrayList<ItemStack>(1);
         var liquidBlock = this.getLevel().getBlockState(
-                        new BlockPos((int) this.getX(), Mth.floor(this.getY()), (int) this.getX()))
+                        new BlockPos((int) this.getX(), Mth.floor(this.getY()), (int) this.getZ()))
                 .getBlock();
 
         var lootBuilder = new LootContext.Builder((ServerLevel) level)
