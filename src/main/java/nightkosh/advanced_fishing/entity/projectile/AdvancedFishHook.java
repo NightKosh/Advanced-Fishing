@@ -114,13 +114,13 @@ public class AdvancedFishHook extends AbstractFishHook {
                 var liquidBlock = blockstate.getBlock();
                 ParticlesManager.INSTANCE.getBubbleParticles(liquidBlock).spawn(
                         serverLevel,
-                        this.getX(), yPos, this.getX(),
+                        this.getX(), yPos, this.getZ(),
                         (int) (1 + this.getBbWidth() * 20),
                         this.getBbWidth(), 0, this.getBbWidth(),
                         0.2);
                 ParticlesManager.INSTANCE.getFishingParticles(liquidBlock).spawn(
                         serverLevel,
-                        this.getX(), yPos, this.getX(),
+                        this.getX(), yPos, this.getZ(),
                         (int) (1 + this.getBbWidth() * 20),
                         this.getBbWidth(), 0, this.getBbWidth(),
                         0.2);
@@ -223,7 +223,7 @@ public class AdvancedFishHook extends AbstractFishHook {
     }
 
     protected ItemEntity getCatchEntityItem(ItemStack stack) {
-        return new ItemEntity(this.getLevel(), this.getX(), this.getY(), this.getX(), stack);
+        return new ItemEntity(this.getLevel(), this.getX(), this.getY(), this.getZ(), stack);
     }
 
     protected List<ItemStack> getCatch(@Nonnull ItemStack itemStack) {

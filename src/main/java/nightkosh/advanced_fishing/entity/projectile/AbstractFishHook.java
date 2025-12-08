@@ -200,7 +200,7 @@ public abstract class AbstractFishHook extends FishingHook {
     }
 
     protected ItemEntity getFireproofCatchEntityItem(ItemStack stack) {
-        return new FireproofItemEntity(this.getLevel(), this.getX(), this.getY(), this.getX(), stack);
+        return new FireproofItemEntity(this.getLevel(), this.getX(), this.getY(), this.getZ(), stack);
     }
 
     protected abstract void spawnLog();
