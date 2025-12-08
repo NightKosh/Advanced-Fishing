@@ -20,7 +20,7 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience b
 ## Requirements
 1. [Forge](http://files.minecraftforge.net/) (check "build.gradle" file to know required forge version)
 2. [jdk 1.17](https://jdk.java.net/archive/) (do not forget to enable its support in your IDE)
-3. [Gradle 9.2.1](https://gradle.org/releases/)
+3. [Gradle 8.14.3](https://gradle.org/releases/)
 
 
 ## Get started
@@ -56,7 +56,11 @@ For more information, look at "minecraft forge" README.txt file (it's not includ
 
 ## How to test:
 
-1. Nether bridge loot modification:
+1. To run GameTests:
+    ```
+        gradlew runGameTestServer
+    ```
+2. Nether bridge loot modification(in game command):
     ```
         /loot spawn ~ ~ ~ loot minecraft:chests/nether_bridge
     ```
