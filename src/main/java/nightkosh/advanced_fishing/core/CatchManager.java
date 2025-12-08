@@ -149,8 +149,7 @@ public class CatchManager implements ICatchManager {
 
                 for (var condition : CATCH_WATER.keySet()) {
                     if (condition.shouldGetCatch(biomeHolder)) {
-                        list = CATCH_WATER.get(condition).getCatch(lootBuilder, level, biomeHolder, luck);
-                        break;
+                        list.addAll(CATCH_WATER.get(condition).getCatch(lootBuilder, level, biomeHolder, luck));
                     }
                 }
 
