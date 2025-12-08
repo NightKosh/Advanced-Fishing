@@ -7,49 +7,49 @@ package nightkosh.advanced_fishing.api;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public enum EnumFishType {
-    BLUE_JELLYFISH("blue_jellyfish", 1), //0
-    MAGMA_JELLYFISH("magma_jellyfish", 1), //1
-    MUD_TUNA("mud_tuna", 2), //2
-    FROST_MINNOW("frost_minnow", 2), //3
-    PIRANHA("piranha", 2), //4
-    GOLDEN_KOI("golden_koi", 2), //5
-    SPECULAR_SNAPPER("specular_snapper", 2), //6
-    CAVE_TROUT("cave_trout", 2), //7
-    OBSIDIAN_BREAM("obsidian_bream", 1), //8
-    NETHER_STURGEON("nether_sturgeon", 1), //9
-    QUARTZ_CHUB("quartz_chub", 1), //10
-    FLAREFIN_KOI("flarefin_koi", 1), //11
-    BLAZE_PIKE("blaze_pike", 1), //12
-    ENDER_SHAD("ender_shad", 1), //13
-    PEARL_SARDINE("pearl_sardine", 2), //14
-    CHORUS_KOI("chorus_koi", 2), //15
-    EXPLOSIVE_CRUCIAN("explosive_crucian", 1), //16
-    RUFFE("ruffe", 2), //17
-    SPARKLING_EEL("sparkling_eel", 2), //18
-    ANGELFISH("angelfish", 2), //19
-    ANGLER_FISH("angler_fish", 2), //20
-    SPONGE_EATER("sponge_eater", 2), //21
-    SNOWY_WALLEYE("snowy_walleye", 2), //22
-    SQUID("squid", 1), //23
-    WITHERED_CRUCIAN("withered_crucian", 1), //24
-    SANDY_BASS("sandy_bass", 1), //25
-    MANDARINFISH("mandarinfish", 3), //26
-    RED_SHROOMFIN("red_shroomfin", 2), //27
-    BROWN_SHROOMFIN("brown_shroomfin", 2), //28
-    FUNGI_CATFISH("fungi_catfish", 1), //29
-    SWAMP_PLAICE("swamp_plaice", 1), //30
-    CRYSTAL_MULLET("crystal_mullet", 1), //31
-    CHARGED_BULLHEAD("charged_bullhead", 1), //32
-    ABYSSAL_LURKER("abyssal_lurker", 1), //33
-    SUNFISH("sunfish", 2), //34
-    GLACIER_ANCHOVY("glacier_anchovy", 1), //35
-    CATFISH("catfish", 3, 0.2F), //36
-    PIKE("pike", 2, 0.2F), //37
-    MAGIKARP("magikarp", 1, 0.05F), //38
-    GREEN_JELLYFISH("green_jellyfish", 1), //39
-    BONE_FISH("bone_fish", 1, 0.05F), //40
-    CURSED_KOI("cursed_koi", 1), //41
-    SPOOKYFIN("spookyfin", 1); //42
+    BLUE_JELLYFISH("blue_jellyfish", 1),
+    MUD_TUNA("mud_tuna", 2),
+    FROST_MINNOW("frost_minnow", 2),
+    PIRANHA("piranha", 2),
+    GOLDEN_KOI("golden_koi", 2),
+    SPECULAR_SNAPPER("specular_snapper", 2),
+    CAVE_TROUT("cave_trout", 2),
+    MAGMA_JELLYFISH("magma_jellyfish", 1),
+    OBSIDIAN_BREAM("obsidian_bream", 1),
+    NETHER_STURGEON("nether_sturgeon", 1),
+    QUARTZ_CHUB("quartz_chub", 1),
+    FLAREFIN_KOI("flarefin_koi", 1),
+    BLAZE_PIKE("blaze_pike", 1),
+    ENDER_SHAD("ender_shad", 1),
+    PEARL_SARDINE("pearl_sardine", 2),
+    CHORUS_KOI("chorus_koi", 2),
+    EXPLOSIVE_CRUCIAN("explosive_crucian", 1),
+    RUFFE("ruffe", 2),
+    SPARKLING_EEL("sparkling_eel", 2),
+    ANGELFISH("angelfish", 2),
+    ANGLER_FISH("angler_fish", 2),
+    SPONGE_EATER("sponge_eater", 2),
+    SNOWY_WALLEYE("snowy_walleye", 2),
+    SQUID("squid", 1),
+    WITHERED_CRUCIAN("withered_crucian", 1),
+    SANDY_BASS("sandy_bass", 1),
+    MANDARINFISH("mandarinfish", 3),
+    RED_SHROOMFIN("red_shroomfin", 2),
+    BROWN_SHROOMFIN("brown_shroomfin", 2),
+    FUNGI_CATFISH("fungi_catfish", 1),
+    SWAMP_PLAICE("swamp_plaice", 1),
+    CRYSTAL_MULLET("crystal_mullet", 1),
+    CHARGED_BULLHEAD("charged_bullhead", 1),
+    ABYSSAL_LURKER("abyssal_lurker", 1),
+    SUNFISH("sunfish", 2),
+    GLACIER_ANCHOVY("glacier_anchovy", 1),
+    CATFISH("catfish", 3, 0.2F),
+    PIKE("pike", 2, 0.2F),
+    MAGIKARP("magikarp", 1, 0.05F),
+    GREEN_JELLYFISH("green_jellyfish", 1),
+    BONE_FISH("bone_fish", 1, 0.05F),
+    CURSED_KOI("cursed_koi", 1),
+    SPOOKYFIN("spookyfin", 1);
 
     private final String name;
     private final int healAmount;
