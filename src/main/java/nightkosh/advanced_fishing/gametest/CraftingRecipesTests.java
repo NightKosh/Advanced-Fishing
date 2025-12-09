@@ -9,6 +9,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
@@ -19,6 +20,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
 
+import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 @GameTestHolder(ModInfo.ID)
@@ -247,6 +249,19 @@ public class CraftingRecipesTests {
     protected static void defaultTest(GameTestHelper helper, String recipeName, List<Pair<Integer, Item>> inputs, ItemStack expected) {
         var level = helper.getLevel();
 
+        var res = fromNamespaceAndPath(ModInfo.ID, recipeName);
+        var recipeByKey = level.getRecipeManager().byKey(res);
+
+        if (recipeByKey.isEmpty()) {
+            helper.fail("Can't find " + res + " recipe in RecipeManager.");
+            return;
+        }
+
+        if (!(recipeByKey.get() instanceof CraftingRecipe)) {
+            helper.fail("Recipe " + recipeName + " isn't an instance of CraftingRecipe: " + recipeByKey.get());
+            return;
+        }
+
         var dummyMenu = new AbstractContainerMenu(MenuType.CRAFTING, 0) {
 
             @Override
@@ -267,7 +282,7 @@ public class CraftingRecipesTests {
 
         var recipeOpt = level.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, crafting, level);
         if (recipeOpt.isEmpty()) {
-            helper.fail("Can't find crafting recipe.");
+            helper.fail("Can't find " + recipeName + " crafting recipe.");
             return;
         }
 
