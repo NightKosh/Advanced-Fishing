@@ -1,4 +1,4 @@
-# Advanced Fishing [![Curseforge](http://cf.way2muchnoise.eu/full_advanced-fishing_downloads.svg)](https://minecraft.curseforge.com/projects/advanced-fishing) [![Curseforge](http://cf.way2muchnoise.eu/versions/For%20MC_advanced-fishing_all.svg)](https://minecraft.curseforge.com/projects/advanced-fishing)
+# Advanced Fishing [![CurseForge](https://cf.way2muchnoise.eu/full_303541_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/advanced-fishing) [![CurseForge](https://cf.way2muchnoise.eu/versions/For%20MC_303541_all.svg)](https://www.curseforge.com/minecraft/mc-mods/advanced-fishing)
 
 This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience bottle recipe and overrides fishing mechanics. All new and vanilla fishes can be caught only in own types of biomes, dimensions and liquids.
 
@@ -25,7 +25,7 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience b
 
 ## Get started
 1. Clone mod repository
-2. [Download forge](http://files.minecraftforge.net/) and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder(and any other files which may requires)
+2. Download forge and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder(and any other files which may requires)
 3. Download MDK from forge
 4. Import mod to your ide as "new Gradle project"
 
