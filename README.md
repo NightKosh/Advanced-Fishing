@@ -60,7 +60,11 @@ For more information, look at "minecraft forge" README.txt file (it's not includ
     ```
         gradlew runGameTestServer
     ```
-2. Nether bridge loot modification(in game command):
+2. To run GameTests(in game command):
+    ```
+        /test runall
+    ```
+3. Nether bridge loot modification(in game command):
     ```
         /loot spawn ~ ~ ~ loot minecraft:chests/nether_bridge
     ```
