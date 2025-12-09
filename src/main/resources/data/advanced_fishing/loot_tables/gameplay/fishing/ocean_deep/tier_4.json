@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_ocean_deep_tier_4",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:sponge_eater",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:angler_fish",
+          "weight": 70
+        }
+      ]
+    }
+  ]
+}

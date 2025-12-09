@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:angler_fish"
+    }
+  ],
+  "result": {
+    "item": "minecraft:prismarine_crystals",
+    "count": 2
+  }
+}

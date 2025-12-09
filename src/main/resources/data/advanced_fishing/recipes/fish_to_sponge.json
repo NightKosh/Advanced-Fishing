@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "ff",
+    "ff"
+  ],
+  "key": {
+    "f": {
+      "item": "advanced_fishing:sponge_eater"
+    }
+  },
+  "result": {
+    "item": "minecraft:sponge",
+    "data": 0
+  }
+}

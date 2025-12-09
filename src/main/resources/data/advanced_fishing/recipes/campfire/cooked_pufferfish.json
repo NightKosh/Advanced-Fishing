@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": {
+    "item": "minecraft:pufferfish"
+  },
+  "result": "minecraft:cooked_cod",
+  "experience": 0.35,
+  "cookingtime": 600
+}

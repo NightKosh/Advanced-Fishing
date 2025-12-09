@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": {
+    "item": "advanced_fishing:catfish"
+  },
+  "result": {
+    "item": "minecraft:cooked_cod",
+    "count": 3
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:nether_sturgeon"
+    }
+  ],
+  "result": {
+    "item": "minecraft:netherrack"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_mushroom_tier_3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:red_shroomfin",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:brown_shroomfin",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

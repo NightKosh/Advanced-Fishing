@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:explosive_crucian"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gunpowder",
+    "count": 3
+  }
+}

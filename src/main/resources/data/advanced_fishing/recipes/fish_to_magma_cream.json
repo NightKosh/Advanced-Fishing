@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:magma_jellyfish"
+    }
+  ],
+  "result": {
+    "item": "minecraft:magma_cream"
+  }
+}

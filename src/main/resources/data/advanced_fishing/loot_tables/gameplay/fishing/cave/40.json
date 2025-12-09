@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_cave_40",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:cave_trout",
+          "weight": 100
+        }
+      ]
+    }
+  ]
+}

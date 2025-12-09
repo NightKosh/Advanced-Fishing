@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_swamp_tier_4",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:swamp_plaice",
+          "weight": 100
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 package nightkosh.advanced_fishing.core;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.world.WorldServer;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import nightkosh.advanced_fishing.api.particles.IParticlesManager;
 import nightkosh.advanced_fishing.api.particles.ISpawnBubbleParticles;
 import nightkosh.advanced_fishing.api.particles.ISpawnSplashParticles;
@@ -11,7 +11,6 @@ import nightkosh.advanced_fishing.api.particles.ISpawnWakeParticles;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 /**
  * Advanced Fishing
@@ -25,23 +24,17 @@ public class ParticlesManager implements IParticlesManager {
 
     private static final Map<Block, ISpawnSplashParticles> SPLASH_PARTICLES = new HashMap<>();
     private static final Map<Block, ISpawnBubbleParticles> BUBBLE_PARTICLES = new HashMap<>();
-    private static final Map<Block, ISpawnWakeParticles> WAKE_PARTICLES = new HashMap<>();
+    private static final Map<Block, ISpawnWakeParticles> FISHING_PARTICLES = new HashMap<>();
 
     static {
         SPLASH_PARTICLES.put(Blocks.WATER, ParticlesManager::spawnWaterSplashParticles);
-        SPLASH_PARTICLES.put(Blocks.FLOWING_WATER, ParticlesManager::spawnWaterSplashParticles);
         SPLASH_PARTICLES.put(Blocks.LAVA, ParticlesManager::spawnLavaSplashParticles);
-        SPLASH_PARTICLES.put(Blocks.FLOWING_LAVA, ParticlesManager::spawnLavaSplashParticles);
 
         BUBBLE_PARTICLES.put(Blocks.WATER, ParticlesManager::spawnWaterBubbleParticles);
-        BUBBLE_PARTICLES.put(Blocks.FLOWING_WATER, ParticlesManager::spawnWaterBubbleParticles);
         BUBBLE_PARTICLES.put(Blocks.LAVA, ParticlesManager::spawnLavaBubbleParticles);
-        BUBBLE_PARTICLES.put(Blocks.FLOWING_LAVA, ParticlesManager::spawnLavaBubbleParticles);
 
-        WAKE_PARTICLES.put(Blocks.WATER, ParticlesManager::spawnWaterWakeParticles);
-        WAKE_PARTICLES.put(Blocks.FLOWING_WATER, ParticlesManager::spawnWaterWakeParticles);
-        WAKE_PARTICLES.put(Blocks.LAVA, ParticlesManager::spawnLavaWakeParticles);
-        WAKE_PARTICLES.put(Blocks.FLOWING_LAVA, ParticlesManager::spawnLavaWakeParticles);
+        FISHING_PARTICLES.put(Blocks.WATER, ParticlesManager::spawnWaterFishingParticles);
+        FISHING_PARTICLES.put(Blocks.LAVA, ParticlesManager::spawnLavaFishingParticles);
     }
 
     @Override
@@ -66,39 +59,100 @@ public class ParticlesManager implements IParticlesManager {
 
     @Override
     public void addWakeParticles(Block block, ISpawnWakeParticles particles) {
-        WAKE_PARTICLES.put(block, particles);
+        FISHING_PARTICLES.put(block, particles);
     }
 
     @Override
-    public ISpawnWakeParticles getWakeParticles(Block block) {
-        return WAKE_PARTICLES.getOrDefault(block, ParticlesManager::spawnWaterWakeParticles);
+    public ISpawnWakeParticles getFishingParticles(Block block) {
+        return FISHING_PARTICLES.getOrDefault(block, ParticlesManager::spawnWaterFishingParticles);
     }
 
-
-    private static void spawnWaterSplashParticles(WorldServer world, Random rand, double x, double y, double z) {
-        world.spawnParticle(EnumParticleTypes.WATER_SPLASH, x, y, z, 2 + rand.nextInt(2), 0.1, 0, 0.1, 0);
+    private static void spawnWaterSplashParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.SPLASH,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
 
-    private static void spawnLavaSplashParticles(WorldServer world, Random rand, double x, double y, double z) {
-        int num = 2 + rand.nextInt(2);
-        world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x, y, z, num, 0.1, 0, 0.1, 0);
-        world.spawnParticle(EnumParticleTypes.LAVA, x, y, z, num, 0.1, 0, 0.1, 0);
+    private static void spawnLavaSplashParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.SMOKE,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
+        level.sendParticles(ParticleTypes.LAVA,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
 
-    private static void spawnWaterBubbleParticles(WorldServer world, double x, double y, double z, int num, double xOffset, double yOffset, double zOffset, double speed) {
-        world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, x, y, z, num, xOffset, yOffset, zOffset, speed);
+    private static void spawnWaterBubbleParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.BUBBLE,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
 
-    private static void spawnLavaBubbleParticles(WorldServer world, double x, double y, double z, int num, double xOffset, double yOffset, double zOffset, double speed) {
-        world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x, y, z, num, xOffset, yOffset, zOffset, speed);
+    private static void spawnLavaBubbleParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.SMOKE,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
 
-    private static void spawnWaterWakeParticles(WorldServer world, double x, double y, double z, int num, double xOffset, double yOffset, double zOffset, double speed) {
-        world.spawnParticle(EnumParticleTypes.WATER_WAKE, x, y, z, num, xOffset, yOffset, zOffset, speed);
+    private static void spawnWaterFishingParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.FISHING,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
 
-    private static void spawnLavaWakeParticles(WorldServer world, double x, double y, double z, int num, double xOffset, double yOffset, double zOffset, double speed) {
-        world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, x, y, z, num, xOffset, yOffset, zOffset, speed);
-        world.spawnParticle(EnumParticleTypes.LAVA, x, y, z, num, xOffset, yOffset, zOffset, speed);
+    private static void spawnLavaFishingParticles(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.LARGE_SMOKE,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
+        level.sendParticles(ParticleTypes.LAVA,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
     }
+
 }

@@ -11,10 +11,13 @@ eclipse
 idea
 gradle
 build
-run
+run/*
 #api
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+!run/gameteststructures/
+!run/gameteststructures/*

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "name": "nether_bridge_blazing_fishing_pole",
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blazing_fishing_pole",
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 0.5
+              }
+            }
+          ],
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

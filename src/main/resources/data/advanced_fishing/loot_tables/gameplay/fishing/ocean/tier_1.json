@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_ocean_tier_1",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:angelfish",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:squid",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

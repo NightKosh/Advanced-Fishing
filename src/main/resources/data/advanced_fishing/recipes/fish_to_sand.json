@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:sandy_bass"
+    }
+  ],
+  "result": {
+    "item": "minecraft:sand",
+    "data": 0
+  }
+}

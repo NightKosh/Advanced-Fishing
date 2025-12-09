@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "advanced_fishing:pearl_sardine"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ender_pearl"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "advanced_fishing:item/blazing_fishing_pole",
+    "textures": {
+        "layer0": "advanced_fishing:item/fishing_pole/blazing/cast"
+    }
+}

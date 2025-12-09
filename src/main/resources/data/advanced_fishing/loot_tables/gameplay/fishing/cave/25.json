@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_cave_25",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:crystal_mullet",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:charged_bullhead",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}
