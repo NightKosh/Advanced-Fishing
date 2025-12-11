@@ -11,8 +11,8 @@ eclipse
 idea
 gradle
 build
-run/*
-runs/*
+run
+runs/**
 #api
 
 # Package Files #
@@ -20,5 +20,7 @@ runs/*
 *.war
 *.ear
 
-!run/gameteststructures/
-!run/gameteststructures/*
+!runs/
+!runs/gameTestServer/
+!runs/gameTestServer/gameteststructures/
+!runs/gameTestServer/gameteststructures/empty.snbt
