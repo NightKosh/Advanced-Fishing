@@ -7,7 +7,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:brown_mushroom",
+    "id": "minecraft:brown_mushroom",
     "count": 5
   }
 }

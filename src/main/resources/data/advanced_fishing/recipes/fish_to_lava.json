@@ -10,6 +10,6 @@
     }
   ],
   "result": {
-    "item": "minecraft:lava_bucket"
+    "id": "minecraft:lava_bucket"
   }
 }
