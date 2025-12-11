@@ -7,25 +7,25 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing/tier_1",
+          "value": "advanced_fishing:gameplay/fishing/tier_1",
           "weight": 50,
           "quality": 4
         },
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing/snowy/tier_2",
+          "value": "advanced_fishing:gameplay/fishing/snowy/tier_2",
           "weight": 30,
           "quality": 7
         },
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing/snowy/tier_3",
+          "value": "advanced_fishing:gameplay/fishing/snowy/tier_3",
           "weight": 15,
           "quality": 8
         },
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing/snowy/tier_4",
+          "value": "advanced_fishing:gameplay/fishing/snowy/tier_4",
           "weight": 5,
           "quality": 6
         }
