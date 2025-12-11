@@ -12,6 +12,7 @@ idea
 gradle
 build
 run/*
+runs/*
 #api
 
 # Package Files #

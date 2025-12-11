@@ -19,8 +19,8 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience b
 
 ## Requirements
 1. [Forge](http://files.minecraftforge.net/) (check "build.gradle" file to know required forge version)
-2. [jdk 1.17](https://jdk.java.net/archive/) (do not forget to enable its support in your IDE)
-3. [Gradle 8.14.3](https://gradle.org/releases/)
+2. [jdk 21.0.2](https://jdk.java.net/archive/) (do not forget to enable its support in your IDE)
+3. [Gradle 9.2.1](https://gradle.org/releases/)
 
 
 ## Get started
