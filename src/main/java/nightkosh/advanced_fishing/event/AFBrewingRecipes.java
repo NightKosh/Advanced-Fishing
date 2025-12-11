@@ -2,13 +2,12 @@ package nightkosh.advanced_fishing.event;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFConfig;
@@ -22,28 +21,25 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-@Mod.EventBusSubscriber(modid = ModInfo.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = ModInfo.ID, bus = EventBusSubscriber.Bus.GAME)
 public class AFBrewingRecipes {
 
     @SubscribeEvent
-    public static void onCommonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            if (AFConfig.DEBUG_MODE.get()) {
-                LOGGER.info("BrewingRecipes event registration triggered");
-            }
+    public static void onCommonSetup(RegisterBrewingRecipesEvent event) {
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("BrewingRecipes event registration triggered");
+        }
 
-            BrewingRecipeRegistry.addRecipe(
-                    Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.AWKWARD)),
-                    Ingredient.of(Items.TROPICAL_FISH),
-                    PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.LUCK)
-            );
+        event.getBuilder().addRecipe(
+                Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.AWKWARD)),
+                Ingredient.of(Items.TROPICAL_FISH),
+                PotionContents.createItemStack(Items.POTION, Potions.LUCK));
 
-            BrewingRecipeRegistry.addRecipe(
-                    Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.AWKWARD)),
-                    Ingredient.of(AFItems.getFish(EnumFishType.MANDARINFISH)),
-                    new ItemStack(Items.EXPERIENCE_BOTTLE)
-            );
-        });
+        event.getBuilder().addRecipe(
+                Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.AWKWARD)),
+                Ingredient.of(AFItems.getFish(EnumFishType.MANDARINFISH)),
+                new ItemStack(Items.EXPERIENCE_BOTTLE)
+        );
     }
 
 }
