@@ -1,10 +1,10 @@
 package nightkosh.advanced_fishing.core;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.item.ItemBlazingFishingRod;
@@ -22,10 +22,11 @@ import java.util.Map;
 public class AFItems {
 
     public static final DeferredRegister<Item> ITEMS_REGISTER =
-            DeferredRegister.create(ForgeRegistries.ITEMS, ModInfo.ID);
+            DeferredRegister.create(Registries.ITEM, ModInfo.ID);
 
-    private static final RegistryObject<Item> BLAZING_FISHING_POLE = ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
-    private static final Map<EnumFishType, RegistryObject<Item>> FISHES = new HashMap<>();
+    private static final DeferredHolder<Item, ItemBlazingFishingRod> BLAZING_FISHING_POLE =
+            ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
+    private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();
 
     static {
         for (var fishType : EnumFishType.values()) {

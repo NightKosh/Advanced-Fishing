@@ -1,12 +1,12 @@
 package nightkosh.advanced_fishing.core;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
 
@@ -16,31 +16,27 @@ import nightkosh.advanced_fishing.api.ModInfo;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-@Mod.EventBusSubscriber(modid = ModInfo.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AFTabs {
 
-    public static CreativeModeTab ADVANCED_FISHING_TAB;
+    public static final DeferredRegister<CreativeModeTab> TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ModInfo.ID);
 
-    @SubscribeEvent
-    public static void registerTabs(CreativeModeTabEvent.Register event) {
-        ADVANCED_FISHING_TAB = event.registerCreativeModeTab(
-                ResourceLocation.fromNamespaceAndPath(ModInfo.ID, "advanced_fishing"),
-                builder -> builder
-                        .icon(() -> new ItemStack(AFItems.getFish(EnumFishType.GOLDEN_KOI)))
-                        .title(Component.translatable("itemGroup." + ModInfo.ID))
-                        .build()
-        );
-    }
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ADVANCED_FISHING_TAB =
+            TABS.register("advanced_fishing", () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(AFItems.getFish(EnumFishType.GOLDEN_KOI)))
+                    .title(Component.translatable("itemGroup." + ModInfo.ID))
+                    .displayItems((parameters, output) -> {
+                        output.accept(AFItems.getBlazingFishingPole());
 
-    @SubscribeEvent
-    public static void buildContents(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == ADVANCED_FISHING_TAB) {
-            event.accept(AFItems.getBlazingFishingPole());
+                        for (var fishType : EnumFishType.values()) {
+                            output.accept(new ItemStack(AFItems.getFish(fishType)));
+                        }
+                    })
+                    .build()
+            );
 
-            for (var fishType : EnumFishType.values()) {
-                event.accept(new ItemStack(AFItems.getFish(fishType)));
-            }
-        }
+    public static void register(IEventBus modEventBus) {
+        TABS.register(modEventBus);
     }
 
 }

@@ -1,10 +1,10 @@
 package nightkosh.advanced_fishing;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.NeoForge;
 import nightkosh.advanced_fishing.api.AdvancedFishingAPI;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.*;
@@ -25,23 +25,22 @@ public class ModAdvancedFishing {
 
     public static ModAdvancedFishing INSTANCE;
 
-    public ModAdvancedFishing() {
+    public ModAdvancedFishing(IEventBus eventBus) {
         INSTANCE = this;
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
+
+        AFTabs.register(eventBus);
+        AFItems.register(eventBus);
+        AFEntities.register(eventBus);
+
+        NeoForge.EVENT_BUS.register(new EventsHandler());
 
         AdvancedFishingAPI.PARTICLES_MANAGER = ParticlesManager.INSTANCE;
         AdvancedFishingAPI.CATCH_MANAGER = CatchManager.INSTANCE;
         AdvancedFishingAPI.MATERIAL_MANAGER = MaterialManager.INSTANCE;
-        AdvancedFishingAPI.FISH_TAB = AFTabs.ADVANCED_FISHING_TAB;
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
-
-        var eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        AFItems.register(eventBus);
-        AFEntities.register(eventBus);
-
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(new EventsHandler());
+        //TODO
+//        AdvancedFishingAPI.FISH_TAB = AFTabs.ADVANCED_FISHING_TAB.get();
     }
 
 }
