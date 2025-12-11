@@ -1,10 +1,12 @@
 package nightkosh.advanced_fishing.event;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.LootTableReference;
-import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.LootTableLoadEvent;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.LootTables;
@@ -17,7 +19,7 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-@Mod.EventBusSubscriber(modid = ModInfo.ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = ModInfo.ID, bus = EventBusSubscriber.Bus.GAME)
 public class AFLootInjector {
 
     @SubscribeEvent
@@ -30,8 +32,8 @@ public class AFLootInjector {
             event.getTable().addPool(
                     LootPool.lootPool()
                             .name("advanced_fishing_nether_bridge_inject")
-                            .add(LootTableReference
-                                    .lootTableReference(LootTables.INJECT_NETHER_BRIDGE)
+                            .add(NestedLootTable.lootTableReference(
+                                            ResourceKey.create(Registries.LOOT_TABLE, LootTables.INJECT_NETHER_BRIDGE))
                                     .setWeight(1))
                             .build());
         }
