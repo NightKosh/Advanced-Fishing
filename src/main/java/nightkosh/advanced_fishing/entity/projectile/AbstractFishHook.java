@@ -65,7 +65,7 @@ public abstract class AbstractFishHook extends FishingHook {
     @Override
     public void tick() {
         // code form FishingHook.tick()
-        this.syncronizedRandom.setSeed(this.getUUID().getLeastSignificantBits() ^ this.getLevel().getGameTime());
+        this.syncronizedRandom.setSeed(this.getUUID().getLeastSignificantBits() ^ this.level().getGameTime());
 
         // code form Projectile.tick()
         if (!this.hasBeenShot) {
@@ -83,8 +83,8 @@ public abstract class AbstractFishHook extends FishingHook {
         var player = this.getPlayerOwner();
         if (player == null) {
             this.discard();
-        } else if (this.getLevel().isClientSide() || !this.shouldStopFishing(player)) {
-            if (this.onGround) {
+        } else if (this.level().isClientSide() || !this.shouldStopFishing(player)) {
+            if (this.onGround()) {
                 this.life++;
                 if (this.life >= 1200) {
                     this.discard();
@@ -96,9 +96,9 @@ public abstract class AbstractFishHook extends FishingHook {
 
             float f = 0;
             var blockpos = this.blockPosition();
-            var fluidstate = this.getLevel().getFluidState(blockpos);
+            var fluidstate = this.level().getFluidState(blockpos);
             if (isInSupportedLiquid(fluidstate)) {
-                f = fluidstate.getHeight(this.getLevel(), blockpos);
+                f = fluidstate.getHeight(this.level(), blockpos);
             }
 
             boolean flag = f > 0;
@@ -119,7 +119,7 @@ public abstract class AbstractFishHook extends FishingHook {
             } else {
                 if (this.currentState == FishingHook.FishHookState.HOOKED_IN_ENTITY) {
                     if (this.hookedIn != null) {
-                        if (!this.hookedIn.isRemoved() && this.hookedIn.getLevel().dimension() == this.getLevel().dimension()) {
+                        if (!this.hookedIn.isRemoved() && this.hookedIn.level().dimension() == this.level().dimension()) {
                             this.setPos(this.hookedIn.getX(), this.hookedIn.getY(0.8), this.hookedIn.getZ());
                         } else {
                             this.setHookedEntity(null);
@@ -152,7 +152,7 @@ public abstract class AbstractFishHook extends FishingHook {
                                     0));
                         }
 
-                        if (!this.getLevel().isClientSide()) {
+                        if (!this.level().isClientSide()) {
                             this.catchingFish(blockpos);
                         }
                     } else {
@@ -167,7 +167,7 @@ public abstract class AbstractFishHook extends FishingHook {
 
             this.move(MoverType.SELF, this.getDeltaMovement());
             this.updateRotation();
-            if (this.currentState == FishingHook.FishHookState.FLYING && (this.onGround || this.horizontalCollision)) {
+            if (this.currentState == FishingHook.FishHookState.FLYING && (this.onGround() || this.horizontalCollision)) {
                 this.setDeltaMovement(Vec3.ZERO);
             }
 
@@ -179,10 +179,10 @@ public abstract class AbstractFishHook extends FishingHook {
     @Nonnull
     @Override
     protected FishingHook.OpenWaterType getOpenWaterTypeForBlock(@Nonnull BlockPos blockPos) {
-        var blockstate = this.getLevel().getBlockState(blockPos);
+        var blockstate = this.level().getBlockState(blockPos);
         if (!blockstate.isAir() && !blockstate.is(Blocks.LILY_PAD)) {
             var fluidstate = blockstate.getFluidState();
-            return isInSupportedLiquid(fluidstate) && fluidstate.isSource() && blockstate.getCollisionShape(this.getLevel(), blockPos).isEmpty() ?
+            return isInSupportedLiquid(fluidstate) && fluidstate.isSource() && blockstate.getCollisionShape(this.level(), blockPos).isEmpty() ?
                     FishingHook.OpenWaterType.INSIDE_WATER :
                     FishingHook.OpenWaterType.INVALID;
         } else {
@@ -200,7 +200,7 @@ public abstract class AbstractFishHook extends FishingHook {
     }
 
     protected ItemEntity getFireproofCatchEntityItem(ItemStack stack) {
-        return new FireproofItemEntity(this.getLevel(), this.getX(), this.getY(), this.getZ(), stack);
+        return new FireproofItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
     }
 
     protected abstract void spawnLog();
