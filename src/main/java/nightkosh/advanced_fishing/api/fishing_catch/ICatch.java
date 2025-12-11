@@ -3,7 +3,7 @@ package nightkosh.advanced_fishing.api.fishing_catch;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 
 import java.util.List;
 
@@ -25,6 +25,6 @@ public interface ICatch {
      * @param luck        player luck (fishing rod enchantment + luck potions effects)
      * @return list of items (only one random item will be caught)
      */
-    List<ItemStack> getCatch(LootContext.Builder lootBuilder, Level level, BlockPos pos, float luck);
+    List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck);
 
 }

@@ -4,7 +4,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 
 import java.util.List;
 
@@ -26,6 +26,6 @@ public interface IWaterCatch {
      * @param luck        player luck (fishing rod enchantment + luck potions effects)
      * @return list of items (only one random item will be caught)
      */
-    List<ItemStack> getCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck);
+    List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck);
 
 }
