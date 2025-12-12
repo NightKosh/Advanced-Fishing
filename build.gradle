@@ -21,7 +21,7 @@ repositories {
 }
 
 base {
-    archivesName = "Advanced-Fishing-1.19.4"
+    archivesName = "Advanced-Fishing-1.20.6"
 }
 
 // Mojang ships Java 21 to end users in 1.20.6, so mods should target Java 21.
