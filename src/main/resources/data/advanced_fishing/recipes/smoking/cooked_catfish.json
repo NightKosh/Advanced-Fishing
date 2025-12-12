@@ -5,7 +5,7 @@
     "item": "advanced_fishing:catfish"
   },
   "result": {
-    "item": "minecraft:cooked_cod",
+    "id": "minecraft:cooked_cod",
     "count": 3
   },
   "experience": 0.35,

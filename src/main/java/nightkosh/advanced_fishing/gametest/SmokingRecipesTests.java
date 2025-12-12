@@ -2,19 +2,19 @@ package nightkosh.advanced_fishing.gametest;
 
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmokingRecipe;
-import net.minecraftforge.gametest.GameTestHolder;
-import net.minecraftforge.gametest.PrefixGameTestTemplate;
+import net.neoforged.neoforge.gametest.GameTestHolder;
+import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFItems;
 
-import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 @GameTestHolder(ModInfo.ID)
@@ -306,7 +306,7 @@ public class SmokingRecipesTests {
     protected static void defaultTest(GameTestHelper helper, String recipeName, Item input, ItemStack expected) {
         var level = helper.getLevel();
 
-        var res = fromNamespaceAndPath(ModInfo.ID, "smoking/" + recipeName);
+        var res = new ResourceLocation(ModInfo.ID, "smoking/" + recipeName);
         var recipeByKey = level.getRecipeManager().byKey(res);
 
         if (recipeByKey.isEmpty()) {
@@ -314,8 +314,8 @@ public class SmokingRecipesTests {
             return;
         }
 
-        if (!(recipeByKey.get() instanceof SmokingRecipe)) {
-            helper.fail("Recipe " + recipeName + " isn't an instance of SmokingRecipe: " + recipeByKey.get());
+        if (!(recipeByKey.get().value() instanceof SmokingRecipe)) {
+            helper.fail("Recipe " + recipeName + " isn't an instance of SmokingRecipe: " + recipeByKey.get().value());
             return;
         }
 
@@ -328,7 +328,7 @@ public class SmokingRecipesTests {
             return;
         }
 
-        var recipe = recipeOpt.get();
+        var recipe = recipeOpt.get().value();
         var result = recipe.assemble(container, level.registryAccess());
         if (!result.is(expected.getItem())) {
             helper.fail("Expected " + expected.getHoverName().getString() + " item but get " + result.getHoverName().getString());

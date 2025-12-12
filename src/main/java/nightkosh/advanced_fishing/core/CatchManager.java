@@ -2,6 +2,7 @@ package nightkosh.advanced_fishing.core;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
@@ -11,7 +12,8 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatch;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatchManager;
@@ -99,7 +101,7 @@ public class CatchManager implements ICatchManager {
         return CATCH.getOrDefault(block, CatchManager::getWaterCatch);
     }
 
-    public static List<ItemStack> getWaterCatch(LootContext.Builder lootBuilder, Level level, BlockPos pos, float luck) {
+    public static List<ItemStack> getWaterCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck) {
         int chance = level.random.nextInt(100) + Math.round(luck);
 
         if (AFConfig.DEBUG_MODE.get()) {
@@ -178,7 +180,7 @@ public class CatchManager implements ICatchManager {
     }
 
 
-    public static List<ItemStack> getOceanCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getOceanCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         if (biomeHolder.is(BiomeTags.IS_DEEP_OCEAN)) {
             return getCatch(lootBuilder, level, LootTables.FISHING_OCEAN_DEEP);
         } else {
@@ -186,39 +188,39 @@ public class CatchManager implements ICatchManager {
         }
     }
 
-    public static List<ItemStack> getBeachCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getBeachCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_OCEAN);
     }
 
-    public static List<ItemStack> getEndCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getEndCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_END);
     }
 
-    public static List<ItemStack> getSandyCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getSandyCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_SANDY);
     }
 
-    public static List<ItemStack> getSnowyCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getSnowyCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_SNOWY);
     }
 
-    public static List<ItemStack> getSwampCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getSwampCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_SWAMP);
     }
 
-    public static List<ItemStack> getJungleCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getJungleCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_JUNGLE);
     }
 
-    public static List<ItemStack> getMushroomCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getMushroomCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_MUSHROOM);
     }
 
-    public static List<ItemStack> getDeadCatch(LootContext.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+    public static List<ItemStack> getDeadCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         return getCatch(lootBuilder, level, LootTables.FISHING_DEAD);
     }
 
-    public static List<ItemStack> getLavaCatch(LootContext.Builder lootBuilder, Level level, BlockPos pos, float luck) {
+    public static List<ItemStack> getLavaCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck) {
         var biomeHolder = level.getBiome(pos);
 
         if (AFConfig.DEBUG_MODE.get()) {
@@ -237,11 +239,13 @@ public class CatchManager implements ICatchManager {
         }
     }
 
-    public static List<ItemStack> getCatch(LootContext.Builder lootBuilder, Level level, ResourceLocation lootTableRes) {
+    public static List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, ResourceLocation lootTableRes) {
         var fishingCatch = level.getServer()
-                .getLootTables()
-                .get(lootTableRes)
+                .reloadableRegistries()
+                .getLootTable(ResourceKey.create(Registries.LOOT_TABLE, lootTableRes))
                 .getRandomItems(lootBuilder.create(LootContextParamSets.FISHING));
+        level.getServer()
+                .reloadableRegistries().getLootTable(BuiltInLootTables.FISHING);
 
         if (AFConfig.DEBUG_MODE.get() && !fishingCatch.isEmpty()) {
             LOGGER.info("You catch next items : ");

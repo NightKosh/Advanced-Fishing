@@ -13,13 +13,13 @@ import net.minecraft.world.level.Level;
 import nightkosh.advanced_fishing.api.EnumFishType;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**
  * Advanced Fishing
  *
  * @author NightKosh
+ *
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class ItemFish extends Item {
@@ -31,7 +31,7 @@ public class ItemFish extends Item {
                 .stacksTo(64)
                 .food(new FoodProperties.Builder()
                         .nutrition(fishType.getHealAmount())
-                        .saturationMod(fishType.getSaturationModifier())
+                        .saturationModifier(fishType.getSaturationModifier())
                         .build()));
         this.fishType = fishType;
     }
@@ -52,7 +52,7 @@ public class ItemFish extends Item {
             case BLAZE_PIKE:
                 entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1));
                 entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 300, 2));
-                entity.setSecondsOnFire(5);
+                entity.igniteForSeconds(5);
                 break;
             case OBSIDIAN_BREAM:
             case SANDY_BASS:
@@ -98,7 +98,7 @@ public class ItemFish extends Item {
 
     @Override
     public void appendHoverText(
-            @Nonnull ItemStack stack, @Nullable Level level,
+            @Nonnull ItemStack stack, @Nonnull Item.TooltipContext context,
             @Nonnull List<Component> tooltips, @Nonnull TooltipFlag flag) {
         switch (fishType) {
             case BLUE_JELLYFISH:
@@ -125,7 +125,7 @@ public class ItemFish extends Item {
                 break;
         }
 
-        super.appendHoverText(stack, level, tooltips, flag);
+        super.appendHoverText(stack, context, tooltips, flag);
     }
 
 }

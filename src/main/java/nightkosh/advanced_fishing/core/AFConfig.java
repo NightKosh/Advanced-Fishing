@@ -1,6 +1,6 @@
 package nightkosh.advanced_fishing.core;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 /**
  * Advanced Fishing
@@ -10,11 +10,11 @@ import net.minecraftforge.common.ForgeConfigSpec;
  */
 public class AFConfig {
 
-    public static final ForgeConfigSpec SPEC;
-    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    public static final ModConfigSpec SPEC;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    public static ForgeConfigSpec.ConfigValue<Boolean> OVERRIDE_VANILLA_FISHING;
-    public static ForgeConfigSpec.ConfigValue<Boolean> DEBUG_MODE;
+    public static ModConfigSpec.ConfigValue<Boolean> OVERRIDE_VANILLA_FISHING;
+    public static ModConfigSpec.ConfigValue<Boolean> DEBUG_MODE;
 
     static {
         BUILDER.push("Configs for Advanced Fishing Mod");

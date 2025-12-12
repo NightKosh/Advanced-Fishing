@@ -7,19 +7,19 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing_lava/tier_1",
+          "value": "advanced_fishing:gameplay/fishing_lava/tier_1",
           "weight": 80,
           "quality": 4
         },
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing_lava/tier_2",
+          "value": "advanced_fishing:gameplay/fishing_lava/tier_2",
           "weight": 17,
           "quality": 7
         },
         {
           "type": "minecraft:loot_table",
-          "name": "advanced_fishing:gameplay/fishing_lava/treasure",
+          "value": "advanced_fishing:gameplay/fishing_lava/treasure",
           "weight": 3,
           "quality": 5
         }

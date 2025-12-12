@@ -15,9 +15,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.ItemFishedEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import nightkosh.advanced_fishing.core.*;
 
 import javax.annotation.Nonnull;
@@ -49,15 +50,15 @@ public class AdvancedFishHook extends AbstractFishHook {
 
     @Override
     protected void catchingFish(BlockPos pos) {
-        var serverLevel = (ServerLevel) this.getLevel();
+        var serverLevel = (ServerLevel) this.level();
         int i = 1;
         var blockpos = pos.above();
 
-        if (this.random.nextFloat() < 0.25 && this.getLevel().isRainingAt(blockpos)) {
+        if (this.random.nextFloat() < 0.25 && this.level().isRainingAt(blockpos)) {
             i++;
         }
 
-        if (this.random.nextFloat() < 0.5 && !this.getLevel().canSeeSky(blockpos)) {
+        if (this.random.nextFloat() < 0.5 && !this.level().canSeeSky(blockpos)) {
             i--;
         }
 
@@ -82,7 +83,7 @@ public class AdvancedFishHook extends AbstractFishHook {
                 var blockstate = serverLevel.getBlockState(BlockPos.containing(xPos, yPos - 1, zPos));
                 var liquidBlock = blockstate.getBlock();
 
-                if (MaterialManager.MATERIAL_SET.contains(blockstate.getMaterial())) {
+                if (MaterialManager.MATERIAL_SET.contains(liquidBlock)) {
                     if (this.random.nextFloat() < 0.15) {
                         ParticlesManager.INSTANCE.getBubbleParticles(liquidBlock).spawn(
                                 serverLevel,
@@ -147,7 +148,7 @@ public class AdvancedFishHook extends AbstractFishHook {
                 double zPos = this.getZ() + Mth.cos(f6) * f7 * 0.1;
 
                 var blockState = serverLevel.getBlockState(BlockPos.containing(xPos, yPos - 1, zPos));
-                if (MaterialManager.MATERIAL_SET.contains(blockState.getMaterial())) {
+                if (MaterialManager.MATERIAL_SET.contains(blockState.getBlock())) {
                     ParticlesManager.INSTANCE.getSplashParticles(blockState.getBlock())
                             .spawn(serverLevel, xPos, yPos, zPos,
                                     2 + this.random.nextInt(2),
@@ -169,19 +170,19 @@ public class AdvancedFishHook extends AbstractFishHook {
     @Override
     public int retrieve(@Nonnull ItemStack itemStack) {
         var player = this.getPlayerOwner();
-        if (!this.level.isClientSide && player != null && !this.shouldStopFishing(player)) {
+        if (!this.level().isClientSide && player != null && !this.shouldStopFishing(player)) {
             int i = 0;
 
             ItemFishedEvent event = null;
             if (this.hookedIn != null) {
                 this.pullEntity(this.getHookedIn());
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer) player, itemStack, this, Collections.emptyList());
-                this.getLevel().broadcastEntityEvent(this, (byte) 31);
+                this.level().broadcastEntityEvent(this, (byte) 31);
                 i = this.hookedIn instanceof ItemEntity ? 3 : 5;
             } else if (this.nibble > 0) {
                 var catchList = this.getCatch(itemStack);
-                event = new ItemFishedEvent(catchList, this.isOnGround() ? 2 : 1, this);
-                MinecraftForge.EVENT_BUS.post(event);
+                event = new ItemFishedEvent(catchList, this.onGround() ? 2 : 1, this);
+                NeoForge.EVENT_BUS.post(event);
                 if (event.isCanceled()) {
                     this.discard();
                     return event.getRodDamage();
@@ -196,9 +197,9 @@ public class AdvancedFishHook extends AbstractFishHook {
 
                     entityItem.setDeltaMovement(d0 * 0.1, d1 * 0.1 + Math.sqrt(Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2)) * 0.08, d2 * 0.1);
 
-                    this.getLevel().addFreshEntity(entityItem);
-                    player.getLevel().addFreshEntity(
-                            new ExperienceOrb(player.getLevel(),
+                    this.level().addFreshEntity(entityItem);
+                    player.level().addFreshEntity(
+                            new ExperienceOrb(player.level(),
                                     player.getX(), player.getY() + 0.5, player.getZ() + 0.5,
                                     this.random.nextInt(6) + 1));
 
@@ -211,7 +212,7 @@ public class AdvancedFishHook extends AbstractFishHook {
                 i = 1;
             }
 
-            if (this.isOnGround()) {
+            if (this.onGround()) {
                 i = 2;
             }
 
@@ -223,25 +224,24 @@ public class AdvancedFishHook extends AbstractFishHook {
     }
 
     protected ItemEntity getCatchEntityItem(ItemStack stack) {
-        return new ItemEntity(this.getLevel(), this.getX(), this.getY(), this.getZ(), stack);
+        return new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
     }
 
     protected List<ItemStack> getCatch(@Nonnull ItemStack itemStack) {
         var result = new ArrayList<ItemStack>(1);
-        var liquidBlock = this.getLevel().getBlockState(
+        var liquidBlock = this.level().getBlockState(
                         new BlockPos((int) this.getX(), Mth.floor(this.getY()), (int) this.getZ()))
                 .getBlock();
 
-        var lootBuilder = new LootContext.Builder((ServerLevel) level)
+        var lootBuilder = new LootParams.Builder((ServerLevel) this.level())
                 .withParameter(LootContextParams.THIS_ENTITY, this)
                 .withParameter(LootContextParams.KILLER_ENTITY, this.getOwner())
                 .withParameter(LootContextParams.ORIGIN, this.position())
                 .withParameter(LootContextParams.TOOL, itemStack)
-                .withRandom(this.random)
-                .withLuck(luck);
+                .withLuck(this.luck + this.getPlayerOwner().getLuck());
 
         var tempList = CatchManager.INSTANCE.getICatch(liquidBlock)
-                .getCatch(lootBuilder, this.getLevel(), this.blockPosition(),
+                .getCatch(lootBuilder, this.level(), this.blockPosition(),
                         (this.luck + this.getPlayerOwner().getLuck()) * 1.5F);
         if (tempList.isEmpty()) {
             if (AFConfig.DEBUG_MODE.get()) {
