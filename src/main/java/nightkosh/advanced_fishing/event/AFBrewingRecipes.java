@@ -7,6 +7,7 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
@@ -21,7 +22,7 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-@EventBusSubscriber(modid = ModInfo.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = ModInfo.ID)
 public class AFBrewingRecipes {
 
     @SubscribeEvent
@@ -31,12 +32,14 @@ public class AFBrewingRecipes {
         }
 
         event.getBuilder().addRecipe(
-                Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.AWKWARD)),
+                DataComponentIngredient.of(false, PotionContents.createItemStack(Items.POTION, Potions.AWKWARD))
+                        .getCustomIngredient().toVanilla(),
                 Ingredient.of(Items.TROPICAL_FISH),
                 PotionContents.createItemStack(Items.POTION, Potions.LUCK));
 
         event.getBuilder().addRecipe(
-                Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.AWKWARD)),
+                DataComponentIngredient.of(false, PotionContents.createItemStack(Items.POTION, Potions.AWKWARD))
+                        .getCustomIngredient().toVanilla(),
                 Ingredient.of(AFItems.getFish(EnumFishType.MANDARINFISH)),
                 new ItemStack(Items.EXPERIENCE_BOTTLE)
         );
