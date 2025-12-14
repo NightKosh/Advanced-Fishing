@@ -8,7 +8,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import nightkosh.advanced_fishing.api.AdvancedFishingAPI;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.*;
-import nightkosh.advanced_fishing.event.EventsHandler;
+import nightkosh.advanced_fishing.event.AFEventsHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,7 +34,7 @@ public class ModAdvancedFishing {
         AFItems.register(eventBus);
         AFEntities.register(eventBus);
 
-        NeoForge.EVENT_BUS.register(new EventsHandler());
+        NeoForge.EVENT_BUS.register(new AFEventsHandler());
 
         AdvancedFishingAPI.PARTICLES_MANAGER = ParticlesManager.INSTANCE;
         AdvancedFishingAPI.CATCH_MANAGER = CatchManager.INSTANCE;

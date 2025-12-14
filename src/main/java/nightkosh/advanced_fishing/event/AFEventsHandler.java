@@ -1,5 +1,6 @@
 package nightkosh.advanced_fishing.event;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.Items;
@@ -18,7 +19,7 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class EventsHandler {
+public class AFEventsHandler {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onEntityJoinLevel(EntityJoinLevelEvent event) {
@@ -31,7 +32,7 @@ public class EventsHandler {
                 LOGGER.info("EntityJoinLevelEvent triggered with FishingHook entity");
             }
             var level = event.getLevel();
-            if (!level.isClientSide()) {
+            if (!level.isClientSide() && level instanceof ServerLevel serverlevel) {
                 var player = hook.getPlayerOwner();
                 if (player != null) {
                     if (AFConfig.DEBUG_MODE.get()) {
@@ -44,8 +45,8 @@ public class EventsHandler {
                     entity.discard();
 
                     level.addFreshEntity(new AdvancedFishHook(player, level,
-                            EnchantmentHelper.getFishingLuckBonus(fishingPole),
-                            EnchantmentHelper.getFishingSpeedBonus(fishingPole)));
+                            EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
+                            (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20));
 
                     event.setCanceled(true);
                 }
