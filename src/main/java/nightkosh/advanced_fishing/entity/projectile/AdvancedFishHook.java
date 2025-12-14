@@ -14,7 +14,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.NeoForge;
@@ -163,14 +162,14 @@ public class AdvancedFishHook extends AbstractFishHook {
             }
         } else {
             this.timeUntilLured = Mth.nextInt(this.random, 100, 600);
-            this.timeUntilLured -= this.lureSpeed * 20 * 5;
+            this.timeUntilLured -= this.lureSpeed;
         }
     }
 
     @Override
     public int retrieve(@Nonnull ItemStack itemStack) {
         var player = this.getPlayerOwner();
-        if (!this.level().isClientSide && player != null && !this.shouldStopFishing(player)) {
+        if (!this.level().isClientSide() && player != null && !this.shouldStopFishing(player)) {
             int i = 0;
 
             ItemFishedEvent event = null;
@@ -235,7 +234,7 @@ public class AdvancedFishHook extends AbstractFishHook {
 
         var lootBuilder = new LootParams.Builder((ServerLevel) this.level())
                 .withParameter(LootContextParams.THIS_ENTITY, this)
-                .withParameter(LootContextParams.KILLER_ENTITY, this.getOwner())
+                .withParameter(LootContextParams.ATTACKING_ENTITY, this.getOwner())
                 .withParameter(LootContextParams.ORIGIN, this.position())
                 .withParameter(LootContextParams.TOOL, itemStack)
                 .withLuck(this.luck + this.getPlayerOwner().getLuck());

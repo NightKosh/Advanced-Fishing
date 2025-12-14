@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:crystal_mullet"
+  ],
+  "result": {
+    "id": "minecraft:lapis_lazuli",
+    "count": 5
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:flarefin_koi"
+  ],
+  "result": {
+    "id": "minecraft:glowstone_dust",
+    "count": 2
+  }
+}

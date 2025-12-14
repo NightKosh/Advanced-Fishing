@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:blue_jellyfish",
+    "minecraft:bucket"
+  ],
+  "result": {
+    "id": "minecraft:water_bucket"
+  }
+}

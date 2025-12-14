@@ -19,7 +19,7 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-@EventBusSubscriber(modid = ModInfo.ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = ModInfo.ID)
 public class AFLootInjector {
 
     @SubscribeEvent

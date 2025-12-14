@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:bone_fish"
+  ],
+  "result": {
+    "id": "minecraft:bone",
+    "count": 3
+  }
+}

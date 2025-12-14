@@ -2,8 +2,6 @@ package nightkosh.advanced_fishing.entity.projectile;
 
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -33,17 +31,6 @@ public class LavaFishHook extends AdvancedFishHook {
 
     public LavaFishHook(Player player, Level level, int luck, int lureSpeed) {
         super(AFEntities.getLavaFishHook(), player, level, luck, lureSpeed);
-    }
-
-    @Override
-    public boolean isInvulnerableTo(DamageSource source) {
-        if (source.is(DamageTypes.LAVA)
-                || source.is(DamageTypes.IN_FIRE)
-                || source.is(DamageTypes.ON_FIRE)
-                || source.is(DamageTypes.HOT_FLOOR)) {
-            return true;
-        }
-        return super.isInvulnerableTo(source);
     }
 
     @Override

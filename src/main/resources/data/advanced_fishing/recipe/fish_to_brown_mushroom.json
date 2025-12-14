@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:brown_shroomfin"
+  ],
+  "result": {
+    "id": "minecraft:brown_mushroom",
+    "count": 5
+  }
+}

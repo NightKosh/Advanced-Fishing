@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "advanced_fishing:item/blazing_fishing_pole"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "advanced_fishing:item/blazing_fishing_pole_cast"
+    },
+    "property": "minecraft:fishing_rod/cast"
+  }
+}

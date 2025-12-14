@@ -1,14 +1,14 @@
 package nightkosh.advanced_fishing;
 
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import nightkosh.advanced_fishing.api.AdvancedFishingAPI;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.*;
-import nightkosh.advanced_fishing.event.EventsHandler;
+import nightkosh.advanced_fishing.event.AFEventsHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,16 +25,16 @@ public class ModAdvancedFishing {
 
     public static ModAdvancedFishing INSTANCE;
 
-    public ModAdvancedFishing(IEventBus eventBus) {
+    public ModAdvancedFishing(IEventBus eventBus, ModContainer container) {
         INSTANCE = this;
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
+        container.registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
 
         AFTabs.register(eventBus);
         AFItems.register(eventBus);
         AFEntities.register(eventBus);
 
-        NeoForge.EVENT_BUS.register(new EventsHandler());
+        NeoForge.EVENT_BUS.register(new AFEventsHandler());
 
         AdvancedFishingAPI.PARTICLES_MANAGER = ParticlesManager.INSTANCE;
         AdvancedFishingAPI.CATCH_MANAGER = CatchManager.INSTANCE;

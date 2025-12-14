@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:abyssal_lurker"
+  ],
+  "result": {
+    "id": "minecraft:prismarine_shard",
+    "count": 4
+  }
+}

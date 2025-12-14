@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:snowy_walleye"
+  ],
+  "result": {
+    "id": "minecraft:snowball",
+    "count": 4
+  }
+}

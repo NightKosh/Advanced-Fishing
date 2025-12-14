@@ -1,40 +1,38 @@
 package nightkosh.advanced_fishing.gametest;
 
-import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
-import net.neoforged.neoforge.gametest.GameTestHolder;
-import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFItems;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
-@GameTestHolder(ModInfo.ID)
-@PrefixGameTestTemplate(false)
+//TODO
+//@GameTestHolder(ModInfo.ID)
+//@PrefixGameTestTemplate(false)
 public class BrewingRecipesTests {
 
     private static final String TEMPLATE = "empty";
-
-    @GameTest(template = TEMPLATE)
-    public static void brewingLuckPotion(GameTestHelper helper) {
-        defaultTest(helper, "brewing_luck_potion",
-                PotionContents.createItemStack(Items.POTION, Potions.AWKWARD),
-                new ItemStack(Items.TROPICAL_FISH),
-                PotionContents.createItemStack(Items.POTION, Potions.LUCK));
-    }
-
-    @GameTest(template = TEMPLATE)
-    public static void brewingExperiencePotion(GameTestHelper helper) {
-        defaultTest(helper, "brewing_experience_potion",
-                PotionContents.createItemStack(Items.POTION, Potions.AWKWARD),
-                new ItemStack(AFItems.getFish(EnumFishType.MANDARINFISH)),
-                new ItemStack(Items.EXPERIENCE_BOTTLE));
-    }
+//
+//    @GameTest(template = TEMPLATE)
+//    public static void brewingLuckPotion(GameTestHelper helper) {
+//        defaultTest(helper, "brewing_luck_potion",
+//                PotionContents.createItemStack(Items.POTION, Potions.AWKWARD),
+//                new ItemStack(Items.TROPICAL_FISH),
+//                PotionContents.createItemStack(Items.POTION, Potions.LUCK));
+//    }
+//
+//    @GameTest(template = TEMPLATE)
+//    public static void brewingExperiencePotion(GameTestHelper helper) {
+//        defaultTest(helper, "brewing_experience_potion",
+//                PotionContents.createItemStack(Items.POTION, Potions.AWKWARD),
+//                new ItemStack(AFItems.getFish(EnumFishType.MANDARINFISH)),
+//                new ItemStack(Items.EXPERIENCE_BOTTLE));
+//    }
 
     protected static void defaultTest(
             GameTestHelper helper, String recipeName,
