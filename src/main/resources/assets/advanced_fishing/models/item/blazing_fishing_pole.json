@@ -2,13 +2,5 @@
     "parent": "item/handheld_rod",
     "textures": {
         "layer0": "advanced_fishing:item/fishing_pole/blazing/uncast"
-    },
-    "overrides": [
-        {
-            "predicate": {
-                "cast": 1
-            },
-            "model": "advanced_fishing:item/blazing_fishing_pole_cast"
-        }
-    ]
+    }
 }
