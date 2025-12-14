@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": "advanced_fishing:squid",
+  "result": {
+    "id": "minecraft:cooked_cod"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

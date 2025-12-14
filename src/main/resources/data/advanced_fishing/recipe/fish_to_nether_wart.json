@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:fungi_catfish"
+  ],
+  "result": {
+    "id": "minecraft:nether_wart",
+    "count": 2
+  }
+}

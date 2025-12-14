@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": "minecraft:tropical_fish",
+  "result": {
+    "id": "minecraft:cooked_cod"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

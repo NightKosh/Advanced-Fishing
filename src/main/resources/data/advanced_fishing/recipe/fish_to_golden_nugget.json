@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:sunfish"
+  ],
+  "result": {
+    "id": "minecraft:gold_nugget",
+    "count": 2
+  }
+}

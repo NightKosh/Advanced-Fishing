@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:mud_tuna"
+  ],
+  "result": {
+    "id": "minecraft:clay_ball",
+    "count": 4
+  }
+}

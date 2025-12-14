@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "advanced_fishing:obsidian_bream",
+  "result": {
+    "id": "minecraft:cooked_cod",
+    "count": 2
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

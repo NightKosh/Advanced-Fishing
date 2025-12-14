@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:quartz_chub"
+  ],
+  "result": {
+    "id": "minecraft:quartz",
+    "count": 4
+  }
+}
