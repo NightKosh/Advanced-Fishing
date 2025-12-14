@@ -1,7 +1,7 @@
 package nightkosh.advanced_fishing;
 
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
@@ -25,10 +25,10 @@ public class ModAdvancedFishing {
 
     public static ModAdvancedFishing INSTANCE;
 
-    public ModAdvancedFishing(IEventBus eventBus) {
+    public ModAdvancedFishing(IEventBus eventBus, ModContainer container) {
         INSTANCE = this;
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
+        container.registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
 
         AFTabs.register(eventBus);
         AFItems.register(eventBus);

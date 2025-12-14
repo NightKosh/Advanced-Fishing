@@ -3,8 +3,8 @@ package nightkosh.advanced_fishing.core;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -75,11 +75,7 @@ public class CatchManager implements ICatchManager {
         CATCH_WATER.put(h -> {
             return h.is(Biomes.MUSHROOM_FIELDS);//TODO tags?
         }, CatchManager::getMushroomCatch);
-        CATCH_WATER.put(h -> {
-            return h.is(Biomes.BADLANDS)
-                    || h.is(Biomes.ERODED_BADLANDS)
-                    || h.is(Biomes.WOODED_BADLANDS);//TODO tags?
-        }, CatchManager::getDeadCatch);
+        CATCH_WATER.put(h -> h.is(BiomeTags.IS_BADLANDS), CatchManager::getDeadCatch);
     }
 
     @Override
@@ -239,7 +235,7 @@ public class CatchManager implements ICatchManager {
         }
     }
 
-    public static List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, ResourceLocation lootTableRes) {
+    public static List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, Identifier lootTableRes) {
         var fishingCatch = level.getServer()
                 .reloadableRegistries()
                 .getLootTable(ResourceKey.create(Registries.LOOT_TABLE, lootTableRes))
@@ -258,9 +254,9 @@ public class CatchManager implements ICatchManager {
     }
 
     @Nullable
-    private static ResourceLocation getBiomeRes(Holder<Biome> biomeHolder) {
+    private static Identifier getBiomeRes(Holder<Biome> biomeHolder) {
         return biomeHolder.unwrapKey()
-                .map(ResourceKey::location)
+                .map(ResourceKey::identifier)
                 .orElse(null);
     }
 

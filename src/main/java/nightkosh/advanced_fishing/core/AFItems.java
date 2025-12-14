@@ -1,7 +1,10 @@
 package nightkosh.advanced_fishing.core;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -12,6 +15,8 @@ import nightkosh.advanced_fishing.item.ItemFish;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static net.minecraft.resources.Identifier.fromNamespaceAndPath;
 
 /**
  * Advanced Fishing
@@ -25,12 +30,23 @@ public class AFItems {
             DeferredRegister.create(Registries.ITEM, ModInfo.ID);
 
     private static final DeferredHolder<Item, ItemBlazingFishingRod> BLAZING_FISHING_POLE =
-            ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
+            ITEMS_REGISTER.register("blazing_fishing_pole", () -> new ItemBlazingFishingRod(
+                    new Item.Properties()
+                    .durability(250)
+                    .fireResistant()
+                    .repairable(Items.BLAZE_ROD)
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "blazing_fishing_pole")))));
     private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();
 
     static {
         for (var fishType : EnumFishType.values()) {
-            FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType)));
+            FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType, new Item.Properties()
+                    .stacksTo(64)
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, fishType.getName())))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(fishType.getHealAmount())
+                            .saturationModifier(fishType.getSaturationModifier())
+                            .build()))));
         }
     }
 
