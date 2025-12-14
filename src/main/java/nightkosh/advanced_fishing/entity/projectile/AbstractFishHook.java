@@ -31,6 +31,8 @@ public abstract class AbstractFishHook extends FishingHook {
 
     private static final List<TagKey<Fluid>> SUPPORTED_LIQUID_TYPE = List.of(FluidTags.WATER);
 
+    protected static final float PI_DIV_180 = 0.01745329251994329576923690768489F;
+
     public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Level level) {
         super(entityType, level);
         spawnLog();
@@ -41,14 +43,14 @@ public abstract class AbstractFishHook extends FishingHook {
         this.setOwner(player);
         float f = player.getXRot();
         float f1 = player.getYRot();
-        float f2 = Mth.cos((float) (-f1 * (Math.PI / 180) - Math.PI));
-        float f3 = Mth.sin((float) (-f1 * (Math.PI / 180) - Math.PI));
-        float f4 = -Mth.cos(-f * ((float) Math.PI / 180));
-        float f5 = Mth.sin(-f * ((float) Math.PI / 180));
+        float f2 = Mth.cos((float) (-f1 * PI_DIV_180 - Math.PI));
+        float f3 = Mth.sin((float) (-f1 * PI_DIV_180 - Math.PI));
+        float f4 = -Mth.cos(-f * PI_DIV_180);
+        float f5 = Mth.sin(-f * PI_DIV_180);
         double d0 = player.getX() - f3 * 0.3;
         double d1 = player.getEyeY();
         double d2 = player.getZ() - f2 * 0.3;
-        this.moveTo(d0, d1, d2, f1, f);
+        this.snapTo(d0, d1, d2, f1, f);
         var vec3 = new Vec3(-f3, Mth.clamp(-(f5 / f4), -5, 5), -f2);
         double d3 = vec3.length();
         vec3 = vec3.multiply(0.6 / d3 + this.random.triangle(0.5, 0.0103365),
@@ -66,16 +68,14 @@ public abstract class AbstractFishHook extends FishingHook {
     public void tick() {
         // code form FishingHook.tick()
         this.syncronizedRandom.setSeed(this.getUUID().getLeastSignificantBits() ^ this.level().getGameTime());
+        this.getInterpolation().interpolate();
 
         // code form Projectile.tick()
         if (!this.hasBeenShot) {
             this.gameEvent(GameEvent.PROJECTILE_SHOOT, this.getOwner());
             this.hasBeenShot = true;
         }
-
-        if (!this.leftOwner) {
-            this.leftOwner = this.checkLeftOwner();
-        }
+        this.checkLeftOwner();
 
         super.baseTick();
 
@@ -119,7 +119,7 @@ public abstract class AbstractFishHook extends FishingHook {
             } else {
                 if (this.currentState == FishingHook.FishHookState.HOOKED_IN_ENTITY) {
                     if (this.hookedIn != null) {
-                        if (!this.hookedIn.isRemoved() && this.hookedIn.level().dimension() == this.level().dimension()) {
+                        if (!this.hookedIn.isRemoved() && this.hookedIn.canInteractWithLevel() && this.hookedIn.level().dimension() == this.level().dimension()) {
                             this.setPos(this.hookedIn.getX(), this.hookedIn.getY(0.8), this.hookedIn.getZ());
                         } else {
                             this.setHookedEntity(null);
@@ -161,7 +161,7 @@ public abstract class AbstractFishHook extends FishingHook {
                 }
             }
 
-            if (!isInSupportedLiquid(fluidstate)) {
+            if (!isInSupportedLiquid(fluidstate) && !this.onGround() && this.hookedIn == null) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0, -0.03, 0));
             }
 
@@ -174,6 +174,9 @@ public abstract class AbstractFishHook extends FishingHook {
             this.setDeltaMovement(this.getDeltaMovement().scale(0.92));
             this.reapplyPosition();
         }
+
+        // code form Projectile.tick()
+        this.leftOwnerChecked = false;
     }
 
     @Nonnull

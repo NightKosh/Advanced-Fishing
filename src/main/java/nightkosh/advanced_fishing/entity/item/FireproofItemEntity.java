@@ -8,8 +8,6 @@ import net.minecraft.world.level.Level;
 import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEntities;
 
-import javax.annotation.Nonnull;
-
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 /**
@@ -41,7 +39,7 @@ public class FireproofItemEntity extends ItemEntity {
     }
 
     @Override
-    public boolean isInvulnerableTo(@Nonnull DamageSource source) {
+    public boolean isInvulnerable() {
         return true;
     }
 
