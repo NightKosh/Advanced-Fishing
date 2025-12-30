@@ -123,4 +123,18 @@ public class ItemFish extends Item {
         super.appendHoverText(stack, context, tooltipDisplay, consumer, flag);
     }
 
+    /**
+     * Returns {@code true} if this item should have an enchantment glint.
+     */
+    public boolean isFoil(@Nonnull ItemStack stack) {
+        return super.isFoil(stack) ||
+                fishType == EnumFishType.MANDARINFISH ||
+                fishType == EnumFishType.GOLDEN_KOI ||
+                fishType == EnumFishType.SUNFISH ||
+                fishType == EnumFishType.SPARKLING_EEL ||
+                fishType == EnumFishType.CHARGED_BULLHEAD ||
+                fishType == EnumFishType.SPECULAR_SNAPPER ||
+                fishType == EnumFishType.PEARL_SARDINE;
+    }
+
 }
