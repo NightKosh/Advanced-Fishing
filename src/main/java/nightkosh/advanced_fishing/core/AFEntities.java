@@ -38,13 +38,23 @@ public class AFEntities {
             ENTITY_TYPES_REGISTER.register(CUSTOM_FISH_HOOK_ID,
                     () -> EntityType.Builder.<AdvancedFishHook>of(AdvancedFishHook::new, MobCategory.MISC)
                             .sized(0.25F, 0.25F)
+                            .clientTrackingRange(4)
+                            .updateInterval(5)
+                            .noLootTable()
+                            .noSummon()
+                            .noSave()
                             .build(ResourceKey.create(Registries.ENTITY_TYPE, CUSTOM_FISH_HOOK_NAME)));
 
     public static final DeferredHolder<EntityType<?>, EntityType<LavaFishHook>> LAVA_FISH_HOOK =
             ENTITY_TYPES_REGISTER.register(LAVA_FISH_HOOK_ID,
                     () -> EntityType.Builder.<LavaFishHook>of(LavaFishHook::new, MobCategory.MISC)
                             .sized(0.25F, 0.25F)
+                            .clientTrackingRange(4)
+                            .updateInterval(5)
+                            .noLootTable()
                             .fireImmune()
+                            .noSummon()
+                            .noSave()
                             .build(ResourceKey.create(Registries.ENTITY_TYPE, LAVA_FISH_HOOK_NAME)));
 
     public static final DeferredHolder<EntityType<?>, EntityType<FireproofItemEntity>> FIREPROOF_ITEM =
