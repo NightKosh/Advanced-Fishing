@@ -1,5 +1,6 @@
 {
   "type": "minecraft:smoking",
+  "group" : "cooked_cod",
   "category": "food",
   "ingredient": "advanced_fishing:red_shroomfin",
   "result": {

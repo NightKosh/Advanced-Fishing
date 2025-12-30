@@ -1,5 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
+  "group" : "cooked_cod",
   "category": "food",
   "ingredient": "advanced_fishing:specular_snapper",
   "result": {

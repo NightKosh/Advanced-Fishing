@@ -1,5 +1,6 @@
 {
   "type": "minecraft:smelting",
+  "group" : "cooked_cod",
   "category": "food",
   "ingredient": "advanced_fishing:nether_sturgeon",
   "result": {
