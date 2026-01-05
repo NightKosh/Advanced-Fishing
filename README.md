@@ -25,7 +25,7 @@ This mod adds new 43 fishes, blaze fishing rod, luck potion recipe, experience b
 
 ## Get started
 1. Clone mod repository
-2. Download NeoForge and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder(and any other files which may requires)
+2. Download NeoForge ~~and copy "gradlew.bat", "gradlew" files and "gradle" directory to mod folder(and any other files which may requires)~~
 3. Download MDK from NeoForge
 4. Import mod to your ide as "new Gradle project"
 
