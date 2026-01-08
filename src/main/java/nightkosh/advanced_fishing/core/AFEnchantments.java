@@ -15,6 +15,9 @@ import static net.minecraft.resources.Identifier.fromNamespaceAndPath;
  */
 public class AFEnchantments {
 
+    public static final ResourceKey<Enchantment> CURSE_OF_THE_ABYSS =
+            ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_the_abyss"));
+
     public static final ResourceKey<Enchantment> CURSE_OF_FALSE_BITE =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_false_bite"));
 

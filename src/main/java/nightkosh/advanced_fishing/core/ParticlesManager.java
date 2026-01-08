@@ -137,7 +137,7 @@ public class ParticlesManager implements IParticlesManager {
                 speed);
     }
 
-    private static void spawnLavaFishingParticles(
+    public static void spawnLavaFishingParticles(
             ServerLevel level,
             double x, double y, double z,
             int num,
