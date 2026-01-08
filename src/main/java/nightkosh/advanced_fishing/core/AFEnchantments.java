@@ -18,4 +18,7 @@ public class AFEnchantments {
     public static final ResourceKey<Enchantment> CURSE_OF_FALSE_BITE =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_false_bite"));
 
+    public static final ResourceKey<Enchantment> CURSE_OF_SCORCHING_LINE =
+            ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_scorching_line"));
+
 }
