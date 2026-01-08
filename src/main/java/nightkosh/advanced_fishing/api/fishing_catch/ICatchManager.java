@@ -1,5 +1,7 @@
 package nightkosh.advanced_fishing.api.fishing_catch;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 /**
@@ -39,9 +41,11 @@ public interface ICatchManager {
      * Gives you an instance of ICatch functional interface
      * so you will be able to use this mod fishing logic to get fishing catch in any way you want
      *
+     * @param level level
+     * @param pos position of bobber
      * @param block block of liquid
      * @return instance of ICatch functional interface
      */
-    ICatch getICatch(Block block);
+    ICatch getICatch(Level level, BlockPos pos, Block block);
 
 }

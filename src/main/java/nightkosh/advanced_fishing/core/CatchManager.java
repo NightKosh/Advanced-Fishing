@@ -21,10 +21,7 @@ import nightkosh.advanced_fishing.api.fishing_catch.IWaterCatch;
 import nightkosh.advanced_fishing.api.fishing_catch.IWaterCondition;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
@@ -89,12 +86,48 @@ public class CatchManager implements ICatchManager {
     }
 
     @Override
-    public ICatch getICatch(Block block) {
+    public ICatch getICatch(Level level, BlockPos pos, Block block) {
         if (AFConfig.DEBUG_MODE.get()) {
             LOGGER.info("--------------------------------");
             LOGGER.info("Fishing in : " + block.toString());
         }
+        if (!CATCH.containsKey(block)) {
+            block = findLiquid(level, pos).orElse(block);
+            LOGGER.info("New fishing block : " + block.toString());
+        }
         return CATCH.getOrDefault(block, CatchManager::getWaterCatch);
+    }
+
+    private Optional<Block> findLiquid(Level level, BlockPos pos) {
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("Got wrong hook position. Going to find correct one");
+        }
+        if (level.getBlockState(pos.north()).is(Blocks.AIR)) {
+            var block = findLiquid(level, pos.below());
+            if (CATCH.containsKey(block.orElse(Blocks.BEDROCK))) {
+                return block;
+            }
+        }
+        var block = level.getBlockState(pos.north()).getBlock();
+        if (CATCH.containsKey(block)) {
+            return Optional.of(block);
+        } else {
+            block = level.getBlockState(pos.south()).getBlock();
+            if (CATCH.containsKey(block)) {
+                return Optional.of(block);
+            } else {
+                block = level.getBlockState(pos.east()).getBlock();
+                if (CATCH.containsKey(block)) {
+                    return Optional.of(block);
+                } else {
+                    block = level.getBlockState(pos.west()).getBlock();
+                    if (CATCH.containsKey(block)) {
+                        return Optional.of(block);
+                    }
+                }
+            }
+        }
+        return Optional.of(block);
     }
 
     public static List<ItemStack> getWaterCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck) {

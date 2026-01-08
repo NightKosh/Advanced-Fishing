@@ -250,7 +250,7 @@ public class AdvancedFishHook extends AFishHook {
                 .withParameter(LootContextParams.TOOL, itemStack)
                 .withLuck(this.luck + this.getPlayerOwner().getLuck());
 
-        var tempList = CatchManager.INSTANCE.getICatch(liquidBlock)
+        var tempList = CatchManager.INSTANCE.getICatch(this.level(), this.blockPosition(), liquidBlock)
                 .getCatch(lootBuilder, this.level(), this.blockPosition(),
                         (this.luck + this.getPlayerOwner().getLuck()) * 1.5F);
         if (tempList.isEmpty()) {
