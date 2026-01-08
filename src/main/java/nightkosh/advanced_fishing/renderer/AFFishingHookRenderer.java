@@ -4,7 +4,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.FishingHookRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.projectile.FishingHook;
-import nightkosh.advanced_fishing.entity.projectile.AbstractFishHook;
+import nightkosh.advanced_fishing.entity.projectile.AFishHook;
 
 import javax.annotation.Nonnull;
 
@@ -22,7 +22,7 @@ public class AFFishingHookRenderer extends FishingHookRenderer {
 
     @Override
     protected int getBlockLightLevel(FishingHook hook, @Nonnull BlockPos pos) {
-        if (hook instanceof AbstractFishHook afHook && afHook.hasGlowingEnchantment()) {
+        if (hook instanceof AFishHook afHook && afHook.hasGlowingEnchantment()) {
             return 15;
         } else {
             return super.getBlockLightLevel(hook, pos);

@@ -33,7 +33,7 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class AdvancedFishHook extends AbstractFishHook {
+public class AdvancedFishHook extends AFishHook {
 
     public AdvancedFishHook(EntityType<? extends AdvancedFishHook> entityType, Level level) {
         super(entityType, level);
@@ -43,7 +43,7 @@ public class AdvancedFishHook extends AbstractFishHook {
         super(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed, hasGlowingEnchantment);
     }
 
-    public AdvancedFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level,
+    public AdvancedFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
                             int luck, int lureSpeed, boolean hasGlowingEnchantment) {
         super(entityType, player, level, luck, lureSpeed, hasGlowingEnchantment);
     }

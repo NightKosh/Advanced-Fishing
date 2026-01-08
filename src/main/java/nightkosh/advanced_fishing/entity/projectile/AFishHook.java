@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
@@ -20,7 +19,6 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import nightkosh.advanced_fishing.core.ParticlesManager;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
 
 import javax.annotation.Nonnull;
@@ -32,21 +30,21 @@ import java.util.List;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public abstract class AbstractFishHook extends FishingHook {
+public abstract class AFishHook extends FishingHook {
 
     private static final List<TagKey<Fluid>> SUPPORTED_LIQUID_TYPE = List.of(FluidTags.WATER);
 
     protected static final float PI_DIV_180 = 0.01745329251994329576923690768489F;
 
-    protected static final EntityDataAccessor<Boolean> GLOWING_ENCH = SynchedEntityData.defineId(AbstractFishHook.class, EntityDataSerializers.BOOLEAN);
+    protected static final EntityDataAccessor<Boolean> GLOWING_ENCH = SynchedEntityData.defineId(AFishHook.class, EntityDataSerializers.BOOLEAN);
 
-    public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Level level) {
+    public AFishHook(EntityType<? extends AFishHook> entityType, Level level) {
         super(entityType, level);
         spawnLog();
     }
 
-    public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level,
-                            int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+    public AFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
+                     int luck, int lureSpeed, boolean hasGlowingEnchantment) {
         super(entityType, level, luck, lureSpeed);
         this.setOwner(player);
         float f = player.getXRot();

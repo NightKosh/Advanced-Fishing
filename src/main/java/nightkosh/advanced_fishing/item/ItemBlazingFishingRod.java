@@ -3,7 +3,7 @@ package nightkosh.advanced_fishing.item;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import nightkosh.advanced_fishing.entity.projectile.AbstractFishHook;
+import nightkosh.advanced_fishing.entity.projectile.AFishHook;
 import nightkosh.advanced_fishing.entity.projectile.LavaFishHook;
 
 import javax.annotation.Nonnull;
@@ -22,7 +22,7 @@ public class ItemBlazingFishingRod extends AbstractFishingRod {
 
     @Nonnull
     @Override
-    protected AbstractFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+    protected AFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment) {
         return new LavaFishHook(player, level, luck, lureSpeed, hasGlowingEnchantment);
     }
 

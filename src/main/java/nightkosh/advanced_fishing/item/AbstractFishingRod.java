@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
 import nightkosh.advanced_fishing.core.AFEnchantments;
-import nightkosh.advanced_fishing.entity.projectile.AbstractFishHook;
+import nightkosh.advanced_fishing.entity.projectile.AFishHook;
 
 import javax.annotation.Nonnull;
 
@@ -62,7 +62,7 @@ public abstract class AbstractFishingRod extends FishingRodItem {
     }
 
     @Nonnull
-    protected abstract AbstractFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment);
+    protected abstract AFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment);
 
     protected void playBobberRetrieveSound(Level level, Player player) {
         level.playSound(null, player.getX(), player.getY(), player.getZ(),
