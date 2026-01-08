@@ -7,7 +7,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 
@@ -19,10 +21,11 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @author NightKosh
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
+@EventBusSubscriber(modid = ModInfo.ID)
 public class AFEventsHandler {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onEntityJoinLevel(EntityJoinLevelEvent event) {
+    public static void onEntityJoinLevel(EntityJoinLevelEvent event) {
         var entity = event.getEntity();
 
         if (AFConfig.OVERRIDE_VANILLA_FISHING.get() &&
