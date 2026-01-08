@@ -20,26 +20,28 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 public class AFEnchantmentHelper {
 
     public static void applyItemFishedEventEffect(ItemFishedEvent event, Level level, Player player) {
-        var mainItem = player.getMainHandItem();
-        var offhandItem = player.getOffhandItem();
-        if (level.random.nextInt(10) < 3) {
-            var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_FALSE_BITE);
+        if (player != null) {
+            var mainItem = player.getMainHandItem();
+            var offhandItem = player.getOffhandItem();
+            if (level.random.nextInt(10) < 3) {
+                var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_FALSE_BITE);
+                if (EnchantmentHelper.getItemEnchantmentLevel(ench, mainItem) > 0 ||
+                        EnchantmentHelper.getItemEnchantmentLevel(ench, offhandItem) > 0) {
+                    if (AFConfig.DEBUG_MODE.get()) {
+                        LOGGER.info("Event canceled due to CURSE_OF_FALSE_BITE");
+                    }
+                    event.setCanceled(true);
+                    return;
+                }
+            }
+            var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_SCORCHING_LINE);
             if (EnchantmentHelper.getItemEnchantmentLevel(ench, mainItem) > 0 ||
                     EnchantmentHelper.getItemEnchantmentLevel(ench, offhandItem) > 0) {
                 if (AFConfig.DEBUG_MODE.get()) {
-                    LOGGER.info("Event canceled due to CURSE_OF_FALSE_BITE");
+                    LOGGER.info("Ignite player {} due to CURSE_OF_SCORCHING_LINE", player.getScoreboardName());
                 }
-                event.setCanceled(true);
-                return;
+                player.igniteForSeconds(5);
             }
-        }
-        var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_SCORCHING_LINE);
-        if (EnchantmentHelper.getItemEnchantmentLevel(ench, mainItem) > 0 ||
-                EnchantmentHelper.getItemEnchantmentLevel(ench, offhandItem) > 0) {
-            if (AFConfig.DEBUG_MODE.get()) {
-                LOGGER.info("Ignite player {} due to CURSE_OF_SCORCHING_LINE", player.getScoreboardName());
-            }
-            player.igniteForSeconds(5);
         }
     }
 
