@@ -29,8 +29,8 @@ public class LavaFishHook extends AdvancedFishHook {
         super(entityType, level);
     }
 
-    public LavaFishHook(Player player, Level level, int luck, int lureSpeed) {
-        super(AFEntities.getLavaFishHook(), player, level, luck, lureSpeed);
+    public LavaFishHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+        super(AFEntities.getLavaFishHook(), player, level, luck, lureSpeed, hasGlowingEnchantment);
     }
 
     @Override

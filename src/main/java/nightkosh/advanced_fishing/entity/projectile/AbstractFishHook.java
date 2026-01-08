@@ -1,6 +1,10 @@
 package nightkosh.advanced_fishing.entity.projectile;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
@@ -16,6 +20,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
+import nightkosh.advanced_fishing.core.ParticlesManager;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
 
 import javax.annotation.Nonnull;
@@ -33,12 +38,15 @@ public abstract class AbstractFishHook extends FishingHook {
 
     protected static final float PI_DIV_180 = 0.01745329251994329576923690768489F;
 
+    protected static final EntityDataAccessor<Boolean> GLOWING_ENCH = SynchedEntityData.defineId(AbstractFishHook.class, EntityDataSerializers.BOOLEAN);
+
     public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Level level) {
         super(entityType, level);
         spawnLog();
     }
 
-    public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level, int luck, int lureSpeed) {
+    public AbstractFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level,
+                            int luck, int lureSpeed, boolean hasGlowingEnchantment) {
         super(entityType, level, luck, lureSpeed);
         this.setOwner(player);
         float f = player.getXRot();
@@ -61,7 +69,14 @@ public abstract class AbstractFishHook extends FishingHook {
         this.setXRot((float) (Mth.atan2(vec3.y, vec3.horizontalDistance()) * (180 / Math.PI)));
         this.yRotO = this.getYRot();
         this.xRotO = this.getXRot();
+        this.hasGlowingEnchantment(hasGlowingEnchantment);
         spawnLog();
+    }
+
+    @Override
+    protected void defineSynchedData(@Nonnull SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(GLOWING_ENCH, false);
     }
 
     @Override
@@ -191,6 +206,14 @@ public abstract class AbstractFishHook extends FishingHook {
         } else {
             return FishingHook.OpenWaterType.ABOVE_WATER;
         }
+    }
+
+    public boolean hasGlowingEnchantment() {
+        return this.getEntityData().get(GLOWING_ENCH);
+    }
+
+    public void hasGlowingEnchantment(boolean hasGlowingEnchantment) {
+        this.getEntityData().set(GLOWING_ENCH, hasGlowingEnchantment);
     }
 
     protected boolean isInSupportedLiquid(FluidState fluidstate) {

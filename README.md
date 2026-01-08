@@ -59,3 +59,23 @@ For more information, look at "minecraft NeoForge" README.txt file (it's not inc
     ```
         /loot spawn ~ ~ ~ loot minecraft:chests/nether_bridge
     ```
+
+## Useful commands
+
+## Apply an enchantment on item:
+1. Luminous float
+    ```
+        /enchant @s advanced_fishing:luminous_float 1
+    ``` 
+2. Curse of the abyss
+    ```
+        /enchant @s advanced_fishing:curse_of_the_abyss 1
+    ``` 
+3. Curse of false bite
+    ```
+        /enchant @s advanced_fishing:curse_of_false_bite 1
+    ``` 
+4. Curse of scorching line
+    ```
+        /enchant @s advanced_fishing:curse_of_scorching_line 1
+    ``` 

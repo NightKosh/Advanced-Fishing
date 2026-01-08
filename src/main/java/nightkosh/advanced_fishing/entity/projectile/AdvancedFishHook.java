@@ -39,12 +39,13 @@ public class AdvancedFishHook extends AbstractFishHook {
         super(entityType, level);
     }
 
-    public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed) {
-        super(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed);
+    public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+        super(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed, hasGlowingEnchantment);
     }
 
-    public AdvancedFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level, int luck, int lureSpeed) {
-        super(entityType, player, level, luck, lureSpeed);
+    public AdvancedFishHook(EntityType<? extends AbstractFishHook> entityType, Player player, Level level,
+                            int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+        super(entityType, player, level, luck, lureSpeed, hasGlowingEnchantment);
     }
 
     @Override
@@ -59,6 +60,16 @@ public class AdvancedFishHook extends AbstractFishHook {
 
         if (this.random.nextFloat() < 0.5 && !this.level().canSeeSky(blockpos)) {
             i--;
+        }
+
+        // spawn fireflies if enchanted
+        if (this.hasGlowingEnchantment()) {
+            ParticlesManager.spawnFireFlies(
+                    serverLevel,
+                    this.getX(), this.getY(), this.getZ(),
+                    3,
+                    0, 0, 0,
+                    0);
         }
 
         if (this.nibble > 0) {

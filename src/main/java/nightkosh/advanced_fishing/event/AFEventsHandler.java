@@ -13,6 +13,7 @@ import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
+import nightkosh.advanced_fishing.core.AFEnchantments;
 import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
@@ -51,7 +52,8 @@ public class AFEventsHandler {
 
                     level.addFreshEntity(new AdvancedFishHook(player, level,
                             EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
-                            (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20));
+                            (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
+                            AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole)));
 
                     event.setCanceled(true);
                 }

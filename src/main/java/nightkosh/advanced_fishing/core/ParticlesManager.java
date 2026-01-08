@@ -155,4 +155,17 @@ public class ParticlesManager implements IParticlesManager {
                 speed);
     }
 
+    public static void spawnFireFlies(
+            ServerLevel level,
+            double x, double y, double z,
+            int num,
+            double xOffset, double yOffset, double zOffset,
+            double speed) {
+        level.sendParticles(ParticleTypes.FIREFLY,
+                x, y, z,
+                num,
+                xOffset, yOffset, zOffset,
+                speed);
+    }
+
 }
