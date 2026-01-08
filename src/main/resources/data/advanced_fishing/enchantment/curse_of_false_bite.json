@@ -1,4 +1,6 @@
 {
+  "weight": 1,
+  "max_level": 1,
   "anvil_cost": 8,
   "description": {
     "translate": "enchantment.advanced_fishing.curse_of_false_bite"
@@ -15,7 +17,5 @@
     "base": 25,
     "per_level_above_first": 0
   },
-  "weight": 1,
-  "max_level": 1,
   "supported_items": "#minecraft:enchantable/fishing"
 }
