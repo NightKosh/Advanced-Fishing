@@ -9,8 +9,10 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.core.AFConfig;
+import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
 import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
@@ -55,6 +57,14 @@ public class AFEventsHandler {
                 }
             }
         }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onItemFishedEvent(ItemFishedEvent event) {
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("ItemFishedEvent triggered for player {}", event.getEntity().getScoreboardName());
+        }
+        AFEnchantmentHelper.applyItemFishedEventEffect(event, event.getEntity().level(), event.getEntity());
     }
 
 }
