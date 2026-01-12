@@ -18,6 +18,9 @@ public class AFEnchantments {
     public static final ResourceKey<Enchantment> LUMINOUS_FLOAT =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "luminous_float"));
 
+    public static final ResourceKey<Enchantment> INFERNAL_LINE =
+            ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "infernal_line"));
+
     public static final ResourceKey<Enchantment> CURSE_OF_THE_ABYSS =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_the_abyss"));
 

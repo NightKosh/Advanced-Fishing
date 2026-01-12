@@ -15,6 +15,7 @@ import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
 import nightkosh.advanced_fishing.core.AFEnchantments;
 import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
+import nightkosh.advanced_fishing.entity.projectile.LavaFishHook;
 
 import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
@@ -50,10 +51,17 @@ public class AFEventsHandler {
                     }
                     entity.discard();
 
-                    level.addFreshEntity(new AdvancedFishHook(player, level,
-                            EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
-                            (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
-                            AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole)));
+                    var newHook = AFEnchantmentHelper.isEnchanted(level, AFEnchantments.INFERNAL_LINE, fishingPole) ?
+                            new LavaFishHook(player, level,
+                                    EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
+                                    (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
+                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole)) :
+                            new AdvancedFishHook(player, level,
+                                    EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
+                                    (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
+                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole));
+
+                    level.addFreshEntity(newHook);
 
                     event.setCanceled(true);
                 }

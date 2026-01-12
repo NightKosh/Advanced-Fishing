@@ -67,15 +67,21 @@ For more information, look at "minecraft NeoForge" README.txt file (it's not inc
     ```
         /enchant @s advanced_fishing:luminous_float 1
     ``` 
-2. Curse of the abyss
+2. Infernal line
+    ```
+        /enchant @s advanced_fishing:infernal_line 1
+    ``` 
+
+## Apply cursed enchantment on item:
+1. Curse of the abyss
     ```
         /enchant @s advanced_fishing:curse_of_the_abyss 1
     ``` 
-3. Curse of false bite
+2. Curse of false bite
     ```
         /enchant @s advanced_fishing:curse_of_false_bite 1
     ``` 
-4. Curse of scorching line
+3. Curse of scorching line
     ```
         /enchant @s advanced_fishing:curse_of_scorching_line 1
     ``` 
