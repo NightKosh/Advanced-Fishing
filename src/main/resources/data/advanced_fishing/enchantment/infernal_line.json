@@ -1,7 +1,7 @@
 {
   "weight": 2,
   "max_level": 1,
-  "anvil_cost": 4,
+  "anvil_cost": 3,
   "description": {
     "translate": "enchantment.advanced_fishing.infernal_line"
   },
