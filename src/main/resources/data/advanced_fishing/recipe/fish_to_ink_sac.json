@@ -5,7 +5,6 @@
     "advanced_fishing:squid"
   ],
   "result": {
-    "id": "minecraft:ink_sac",
-    "count": 3
+    "id": "minecraft:ink_sac"
   }
 }
