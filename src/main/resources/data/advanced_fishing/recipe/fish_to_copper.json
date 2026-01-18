@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advanced_fishing:copper_minnow"
+  ],
+  "result": {
+    "id": "minecraft:raw_copper"
+  }
+}

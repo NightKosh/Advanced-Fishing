@@ -44,6 +44,13 @@
   "item.advanced_fishing.bone_fish": "Peixe-Osso",
   "item.advanced_fishing.cursed_koi": "Carpa Amaldiçoada",
   "item.advanced_fishing.spookyfin": "Barbatana Assustadora",
+  "item.advanced_fishing.copper_minnow": "Copper Minnow",
+  "item.advanced_fishing.coal_crucian": "Coal Crucian",
+  "item.advanced_fishing.iron_bass": "Iron Bass",
+  "item.advanced_fishing.amethyst_catfish": "Amethyst Catfish",
+  "item.advanced_fishing.emerald_salmon": "Emerald Salmon",
+  "item.advanced_fishing.diamond_koi": "Diamond Koi",
+
   "fish_effects.advanced_fishing.poison": "They say this fish is highly poisonous",
   "fish_effects.advanced_fishing.fire": "This fish radiates heat, scorching your hands",
   "fish_effects.advanced_fishing.blindness": "Touching this fish makes your vision darken",

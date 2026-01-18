@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "group" : "cooked_cod",
+  "category": "food",
+  "ingredient": "advanced_fishing:amethyst_catfish",
+  "result": {
+    "id": "minecraft:cooked_cod",
+    "count": 3
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

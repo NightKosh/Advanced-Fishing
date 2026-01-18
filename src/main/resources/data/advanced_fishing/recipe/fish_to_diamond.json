@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ff",
+    "ff"
+  ],
+  "key": {
+    "f": "advanced_fishing:diamond_koi"
+  },
+  "result": {
+    "id": "minecraft:diamond"
+  }
+}

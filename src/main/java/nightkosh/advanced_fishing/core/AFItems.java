@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,6 +34,7 @@ public class AFItems {
             ITEMS_REGISTER.register("blazing_fishing_pole", () -> new ItemBlazingFishingRod(
                     new Item.Properties()
                             .fireResistant()
+                            .rarity(Rarity.RARE)
                             .durability(250)
                             .repairable(Items.BLAZE_ROD)
                             .enchantable(1)
@@ -43,6 +45,7 @@ public class AFItems {
         for (var fishType : EnumFishType.values()) {
             FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType, new Item.Properties()
                     .stacksTo(64)
+                    .rarity(fishType.getRarity())
                     .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, fishType.getName())))
                     .food(new FoodProperties.Builder()
                             .nutrition(fishType.getHealAmount())

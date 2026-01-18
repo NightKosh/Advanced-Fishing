@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "group" : "cooked_salmon",
+  "category": "food",
+  "ingredient": "advanced_fishing:emerald_salmon",
+  "result": {
+    "id": "minecraft:cooked_salmon"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}
