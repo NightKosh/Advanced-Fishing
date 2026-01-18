@@ -69,11 +69,20 @@ public class AFEnchantmentHelper {
     }
 
     public static boolean isEnchanted(Level level, ResourceKey<Enchantment> key, ItemStack item) {
-        return EnchantmentHelper.getItemEnchantmentLevel(getEnchantmentHolder(level, key), item) > 0;
+        return isEnchanted(getEnchantmentHolder(level, key), item);
     }
 
     public static boolean isEnchanted(Holder<Enchantment> enchantment, ItemStack item) {
-        return EnchantmentHelper.getItemEnchantmentLevel(enchantment, item) > 0;
+        try {
+            if (item == null) {
+                return false;
+            } else {
+                return EnchantmentHelper.getItemEnchantmentLevel(enchantment, item) > 0;
+            }
+        } catch (Exception e) {
+            LOGGER.error("Cant get Enchantment", e);
+            return false;
+        }
     }
 
     public static Holder<Enchantment> getEnchantmentHolder(Level level, ResourceKey<Enchantment> key) {
