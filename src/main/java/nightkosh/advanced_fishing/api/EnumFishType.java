@@ -80,7 +80,7 @@ public enum EnumFishType {
         this.name = name;
         this.healAmount = healAmount;
         this.saturationModifier = saturationModifier;
-        this.rarity = Rarity.COMMON;
+        this.rarity = rarity;
     }
 
     public String getName() {
