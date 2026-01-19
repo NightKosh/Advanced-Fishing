@@ -1,0 +1,21 @@
+{
+  "weight": 1,
+  "max_level": 1,
+  "anvil_cost": 3,
+  "description": {
+    "translate": "enchantment.advanced_fishing.awakened_rod"
+  },
+  "exclusive_set": [],
+  "slots": [
+    "any"
+  ],
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "supported_items": "#minecraft:enchantable/fishing"
+}

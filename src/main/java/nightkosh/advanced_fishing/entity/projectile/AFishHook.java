@@ -1,28 +1,47 @@
 package nightkosh.advanced_fishing.entity.projectile;
 
+import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
+import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.slot.SlotCollection;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.DynamicGameEventListener;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import nightkosh.advanced_fishing.core.AFConfig;
+import nightkosh.advanced_fishing.core.AFItems;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
+import org.jspecify.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
 import java.util.List;
+import java.util.function.BiConsumer;
+
+import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
 
 /**
  * Advanced Fishing
@@ -34,9 +53,10 @@ public abstract class AFishHook extends FishingHook {
 
     private static final List<TagKey<Fluid>> SUPPORTED_LIQUID_TYPE = List.of(FluidTags.WATER);
 
-    protected static final float PI_DIV_180 = 0.01745329251994329576923690768489F;
+    protected static final float PI_DIV_180 = 0.0175F;
 
     protected static final EntityDataAccessor<Boolean> GLOWING_ENCH = SynchedEntityData.defineId(AFishHook.class, EntityDataSerializers.BOOLEAN);
+    protected static final EntityDataAccessor<Boolean> AUTO_FISH = SynchedEntityData.defineId(AFishHook.class, EntityDataSerializers.BOOLEAN);
 
     public AFishHook(EntityType<? extends AFishHook> entityType, Level level) {
         super(entityType, level);
@@ -44,7 +64,7 @@ public abstract class AFishHook extends FishingHook {
     }
 
     public AFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
-                     int luck, int lureSpeed, boolean hasGlowingEnchantment) {
+                     int luck, int lureSpeed, boolean hasGlowingEnchantment, boolean hasAutoFishing) {
         super(entityType, level, luck, lureSpeed);
         this.setOwner(player);
         float f = player.getXRot();
@@ -68,6 +88,7 @@ public abstract class AFishHook extends FishingHook {
         this.yRotO = this.getYRot();
         this.xRotO = this.getXRot();
         this.hasGlowingEnchantment(hasGlowingEnchantment);
+        this.hasAutoFishing(hasAutoFishing);
         spawnLog();
     }
 
@@ -75,6 +96,79 @@ public abstract class AFishHook extends FishingHook {
     protected void defineSynchedData(@Nonnull SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(GLOWING_ENCH, false);
+        builder.define(AUTO_FISH, false);
+    }
+
+    @Override
+    public boolean canCollideWith(@Nonnull Entity entity) {
+        return !(entity instanceof ItemEntity) && super.canCollideWith(entity);
+    }
+
+    @Override
+    protected boolean canHitEntity(@Nonnull Entity entity) {
+        return !(entity instanceof ItemEntity) && super.canHitEntity(entity);
+    }
+
+    @Override
+    public boolean isColliding(BlockPos pos, BlockState state) {
+        return super.isColliding(pos, state);
+    }
+
+    @Override
+    public void setOnGroundWithMovement(boolean onGround, boolean horizontalCollision, Vec3 movement) {
+        super.setOnGroundWithMovement(onGround, horizontalCollision, movement);
+    }
+
+    @Override
+    protected boolean isHorizontalCollisionMinor(Vec3 deltaMovement) {
+        return super.isHorizontalCollisionMinor(deltaMovement);
+    }
+
+    @Override
+    public boolean collidedWithFluid(FluidState fluid, BlockPos pos, Vec3 from, Vec3 to) {
+        return super.collidedWithFluid(fluid, pos, from, to);
+    }
+
+    @Override
+    public boolean collidedWithShapeMovingFrom(Vec3 from, Vec3 to, List<AABB> boxes) {
+        return super.collidedWithShapeMovingFrom(from, to, boxes);
+    }
+
+    @Override
+    public boolean canBeCollidedWith(@Nullable Entity entity) {
+        return super.canBeCollidedWith(entity);
+    }
+
+    @Override
+    public void updateDynamicGameEventListener(BiConsumer<DynamicGameEventListener<?>, ServerLevel> listenerConsumer) {
+        super.updateDynamicGameEventListener(listenerConsumer);
+    }
+
+    @Override
+    public CommandSourceStack createCommandSourceStackForNameResolution(ServerLevel level) {
+        return super.createCommandSourceStackForNameResolution(level);
+    }
+
+    @Override
+    public @Nullable Collection<ItemEntity> captureDrops() {
+        return super.captureDrops();
+    }
+
+    @Override
+    public @Nullable Collection<ItemEntity> captureDrops(@Nullable Collection<ItemEntity> value) {
+        return super.captureDrops(value);
+    }
+
+    @Override
+    public SlotCollection getSlotsFromRange(IntList p_461197_) {
+        return super.getSlotsFromRange(p_461197_);
+    }
+
+    @Override
+    protected void onHitEntity(EntityHitResult result) {
+        if (canCollideWith(result.getEntity())) {
+            super.onHitEntity(result);
+        }
     }
 
     @Override
@@ -190,6 +284,23 @@ public abstract class AFishHook extends FishingHook {
 
         // code form Projectile.tick()
         this.leftOwnerChecked = false;
+
+        if (this.hasAutoFishing() && this.nibble > 0) {
+            if (AFConfig.DEBUG_MODE.get()) {
+                LOGGER.info("Auto catching!!!!!");
+            }
+            var rod = player.getMainHandItem();
+            if (rod.is(Items.FISHING_ROD) || rod.is(AFItems.getBlazingFishingPole()) || rod.getItem() instanceof FishingRodItem) {
+                rod.use(level(), player, InteractionHand.MAIN_HAND);
+                rod.use(level(), player, InteractionHand.MAIN_HAND);
+            } else {
+                rod = player.getOffhandItem();
+                if (rod.is(Items.FISHING_ROD) || rod.is(AFItems.getBlazingFishingPole()) || rod.getItem() instanceof FishingRodItem) {
+                    rod.use(level(), player, InteractionHand.OFF_HAND);
+                    rod.use(level(), player, InteractionHand.OFF_HAND);
+                }
+            }
+        }
     }
 
     @Nonnull
@@ -212,6 +323,14 @@ public abstract class AFishHook extends FishingHook {
 
     public void hasGlowingEnchantment(boolean hasGlowingEnchantment) {
         this.getEntityData().set(GLOWING_ENCH, hasGlowingEnchantment);
+    }
+
+    public boolean hasAutoFishing() {
+        return this.getEntityData().get(AUTO_FISH);
+    }
+
+    public void hasAutoFishing(boolean autoFishing) {
+        this.getEntityData().set(AUTO_FISH, autoFishing);
     }
 
     protected boolean isInSupportedLiquid(FluidState fluidstate) {

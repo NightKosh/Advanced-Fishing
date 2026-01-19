@@ -66,10 +66,14 @@ For more information, look at "minecraft NeoForge" README.txt file (it's not inc
 1. Luminous float
     ```
         /enchant @s advanced_fishing:luminous_float 1
-    ``` 
+    ```
 2. Infernal line
     ```
         /enchant @s advanced_fishing:infernal_line 1
+    ```
+3. Awakened Rod
+    ```
+        /enchant @s advanced_fishing:awakened_rod 1
     ``` 
 
 ## Apply cursed enchantment on item:

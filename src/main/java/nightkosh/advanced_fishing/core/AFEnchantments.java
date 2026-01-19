@@ -15,6 +15,9 @@ import static net.minecraft.resources.Identifier.fromNamespaceAndPath;
  */
 public class AFEnchantments {
 
+    public static final ResourceKey<Enchantment> AWAKENED_ROD =
+            ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "awakened_rod"));
+
     public static final ResourceKey<Enchantment> LUMINOUS_FLOAT =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "luminous_float"));
 

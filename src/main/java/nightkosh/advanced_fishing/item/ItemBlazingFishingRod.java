@@ -39,8 +39,10 @@ public class ItemBlazingFishingRod extends AbstractFishingRod {
 
     @Nonnull
     @Override
-    protected AFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment) {
-        return new LavaFishHook(player, level, luck, lureSpeed, hasGlowingEnchantment);
+    protected AFishHook getHook(
+            Player player, Level level, int luck, int lureSpeed,
+            boolean hasGlowingEnchantment, boolean hasAutoFishing) {
+        return new LavaFishHook(player, level, luck, lureSpeed, hasGlowingEnchantment, hasAutoFishing);
     }
 
 }

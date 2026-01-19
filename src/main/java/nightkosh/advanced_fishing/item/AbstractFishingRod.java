@@ -50,7 +50,8 @@ public abstract class AbstractFishingRod extends FishingRodItem {
                         getHook(player, level,
                                 EnchantmentHelper.getFishingLuckBonus(serverlevel, stack, player),
                                 (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, stack, player) * 20,
-                                AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, stack)),
+                                AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, stack),
+                                AFEnchantmentHelper.isEnchanted(level, AFEnchantments.AWAKENED_ROD, stack)),
                         serverlevel, stack);
             }
 
@@ -62,7 +63,9 @@ public abstract class AbstractFishingRod extends FishingRodItem {
     }
 
     @Nonnull
-    protected abstract AFishHook getHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment);
+    protected abstract AFishHook getHook(
+            Player player, Level level, int luck, int lureSpeed,
+            boolean hasGlowingEnchantment, boolean hasAutoFishing);
 
     protected void playBobberRetrieveSound(Level level, Player player) {
         level.playSound(null, player.getX(), player.getY(), player.getZ(),
