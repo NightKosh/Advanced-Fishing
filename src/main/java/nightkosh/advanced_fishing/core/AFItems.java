@@ -31,16 +31,9 @@ public class AFItems {
             DeferredRegister.create(Registries.ITEM, ModInfo.ID);
 
     private static final DeferredHolder<Item, ItemBlazingFishingRod> BLAZING_FISHING_POLE =
-            ITEMS_REGISTER.register("blazing_fishing_pole", () -> new ItemBlazingFishingRod(
-                    new Item.Properties()
-                            .fireResistant()
-                            .rarity(Rarity.EPIC)
-                            .durability(250)
-                            .repairable(Items.BLAZE_ROD)
-                            .enchantable(1)
-                            .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "blazing_fishing_pole")))));
-    private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();
+            ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
 
+    private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();
     static {
         for (var fishType : EnumFishType.values()) {
             FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType, new Item.Properties()
