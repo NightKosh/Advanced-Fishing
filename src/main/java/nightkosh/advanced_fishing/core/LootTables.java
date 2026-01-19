@@ -4,6 +4,7 @@ import net.minecraft.resources.Identifier;
 import nightkosh.advanced_fishing.api.ModInfo;
 
 import static net.minecraft.resources.Identifier.fromNamespaceAndPath;
+import static net.minecraft.resources.Identifier.withDefaultNamespace;
 
 /**
  * Advanced Fishing
@@ -13,14 +14,11 @@ import static net.minecraft.resources.Identifier.fromNamespaceAndPath;
  */
 public class LootTables {
 
-    public static final Identifier FISHING_VANILLA =
-            fromNamespaceAndPath("minecraft", "gameplay/fishing");
+    public static final Identifier FISHING_VANILLA = withDefaultNamespace("gameplay/fishing");
 
-    public static final Identifier FISHING_JUNK =
-            fromNamespaceAndPath("minecraft", "gameplay/fishing/junk");
+    public static final Identifier FISHING_JUNK = withDefaultNamespace("gameplay/fishing/junk");
 
-    public static final Identifier FISHING_TREASURE =
-            fromNamespaceAndPath("minecraft", "gameplay/fishing/treasure");
+    public static final Identifier FISHING_TREASURE = withDefaultNamespace("gameplay/fishing/treasure");
 
     public static final Identifier FISHING = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/fishing");
 
