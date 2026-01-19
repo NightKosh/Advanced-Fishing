@@ -128,13 +128,34 @@ public class ItemFish extends Item {
      */
     public boolean isFoil(@Nonnull ItemStack stack) {
         return super.isFoil(stack) ||
+                fishType == EnumFishType.EXPLOSIVE_CRUCIAN ||
+
+                fishType == EnumFishType.SPARKLING_EEL ||
                 fishType == EnumFishType.MANDARINFISH ||
+
                 fishType == EnumFishType.GOLDEN_KOI ||
                 fishType == EnumFishType.SUNFISH ||
-                fishType == EnumFishType.SPARKLING_EEL ||
+
+                fishType == EnumFishType.GLACIER_ANCHOVY ||
+
+                fishType == EnumFishType.ANGLER_FISH ||
+
                 fishType == EnumFishType.CHARGED_BULLHEAD ||
+                fishType == EnumFishType.AMETHYST_CATFISH ||
+                fishType == EnumFishType.EMERALD_SALMON ||
+                fishType == EnumFishType.DIAMOND_KOI ||
                 fishType == EnumFishType.SPECULAR_SNAPPER ||
-                fishType == EnumFishType.PEARL_SARDINE;
+                fishType == EnumFishType.CAVE_TROUT ||
+
+                fishType == EnumFishType.FLAREFIN_KOI ||
+                fishType == EnumFishType.BLAZE_PIKE ||
+
+                fishType == EnumFishType.PEARL_SARDINE ||
+                fishType == EnumFishType.CHORUS_KOI ||
+
+                fishType == EnumFishType.CURSED_KOI ||
+
+                fishType == EnumFishType.MAGIKARP;
     }
 
 }
