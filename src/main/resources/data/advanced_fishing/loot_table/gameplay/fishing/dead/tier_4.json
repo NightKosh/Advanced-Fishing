@@ -2,12 +2,12 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_dead_tier_3",
+      "name": "fishing_dead_tier_4",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:spookyfin",
+          "name": "advanced_fishing:cursed_koi",
           "weight": 100
         }
       ]

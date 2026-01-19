@@ -8,13 +8,13 @@
         {
           "type": "minecraft:loot_table",
           "value": "advanced_fishing:gameplay/fishing/dead/tier_1",
-          "weight": 50,
+          "weight": 40,
           "quality": 4
         },
         {
           "type": "minecraft:loot_table",
           "value": "advanced_fishing:gameplay/fishing/dead/tier_2",
-          "weight": 30,
+          "weight": 35,
           "quality": 7
         },
         {
@@ -25,8 +25,8 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "advanced_fishing:gameplay/fishing/dead/treasure",
-          "weight": 5,
+          "value": "advanced_fishing:gameplay/fishing/dead/tier_4",
+          "weight": 15,
           "quality": 6
         }
       ]

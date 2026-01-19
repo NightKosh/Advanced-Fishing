@@ -7,13 +7,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:bone_fish",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
-          "name": "advanced_fishing:spookyfin",
-          "weight": 50
+          "name": "advanced_fishing:green_jellyfish",
+          "weight": 100
         }
       ]
     }

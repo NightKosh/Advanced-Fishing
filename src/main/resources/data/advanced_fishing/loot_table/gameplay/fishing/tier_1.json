@@ -8,12 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:cod",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
-          "name": "advanced_fishing:squid",
-          "weight": 50
+          "weight": 100
         }
       ]
     }

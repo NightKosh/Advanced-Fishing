@@ -14,7 +14,7 @@
         {
           "type": "minecraft:loot_table",
           "value": "advanced_fishing:gameplay/fishing/nether/tier_2",
-          "weight": 40,
+          "weight": 35,
           "quality": 7
         },
         {
@@ -26,7 +26,7 @@
         {
           "type": "minecraft:loot_table",
           "value": "advanced_fishing:gameplay/fishing/nether/tier_4",
-          "weight": 5,
+          "weight": 10,
           "quality": 6
         }
       ]
