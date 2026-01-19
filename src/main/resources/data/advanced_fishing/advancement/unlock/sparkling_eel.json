@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:sparkling_eel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_sparkling_eel",
+      "advanced_fishing:smelting/cooked_sparkling_eel",
+      "advanced_fishing:smoking/cooked_sparkling_eel"
+    ]
+  }
+}

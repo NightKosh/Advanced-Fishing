@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:flarefin_koi"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_glowstone_dust",
+      "advanced_fishing:campfire/cooked_flarefin_koi",
+      "advanced_fishing:smelting/cooked_flarefin_koi",
+      "advanced_fishing:smoking/cooked_flarefin_koi"
+    ]
+  }
+}

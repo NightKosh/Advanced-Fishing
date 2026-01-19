@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:pearl_sardine"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_ender_pearl",
+      "advanced_fishing:campfire/cooked_pearl_sardine",
+      "advanced_fishing:smelting/cooked_pearl_sardine",
+      "advanced_fishing:smoking/cooked_pearl_sardine"
+    ]
+  }
+}

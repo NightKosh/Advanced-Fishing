@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:cursed_koi"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_cursed_koi",
+      "advanced_fishing:smelting/cooked_cursed_koi",
+      "advanced_fishing:smoking/cooked_cursed_koi"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:pike"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_pike",
+      "advanced_fishing:smelting/cooked_pike",
+      "advanced_fishing:smoking/cooked_pike"
+    ]
+  }
+}

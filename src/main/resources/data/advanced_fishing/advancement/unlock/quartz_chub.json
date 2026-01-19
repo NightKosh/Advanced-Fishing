@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:quartz_chub"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_quartz",
+      "advanced_fishing:campfire/cooked_quartz_chub",
+      "advanced_fishing:smelting/cooked_quartz_chub",
+      "advanced_fishing:smoking/cooked_quartz_chub"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:snowy_walleye"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_snow",
+      "advanced_fishing:campfire/cooked_snowy_walleye",
+      "advanced_fishing:smelting/cooked_snowy_walleye",
+      "advanced_fishing:smoking/cooked_snowy_walleye"
+    ]
+  }
+}

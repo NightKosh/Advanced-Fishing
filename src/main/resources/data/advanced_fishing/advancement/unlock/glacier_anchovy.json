@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:glacier_anchovy"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_packet_ice",
+      "advanced_fishing:campfire/cooked_glacier_anchovy",
+      "advanced_fishing:smelting/cooked_glacier_anchovy",
+      "advanced_fishing:smoking/cooked_glacier_anchovy"
+    ]
+  }
+}

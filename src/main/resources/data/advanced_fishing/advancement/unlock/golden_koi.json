@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:golden_koi"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_golden_koi",
+      "advanced_fishing:smelting/cooked_golden_koi",
+      "advanced_fishing:smoking/cooked_golden_koi"
+    ]
+  }
+}

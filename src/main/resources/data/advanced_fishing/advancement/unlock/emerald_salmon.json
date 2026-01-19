@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:emerald_salmon"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_emerald",
+      "advanced_fishing:campfire/cooked_emerald_salmon",
+      "advanced_fishing:smelting/cooked_emerald_salmon",
+      "advanced_fishing:smoking/cooked_emerald_salmon"
+    ]
+  }
+}

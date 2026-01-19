@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:mandarinfish"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_mandarinfish",
+      "advanced_fishing:smelting/cooked_mandarinfish",
+      "advanced_fishing:smoking/cooked_mandarinfish"
+    ]
+  }
+}

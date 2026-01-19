@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:amethyst_catfish"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_amethyst",
+      "advanced_fishing:campfire/cooked_amethyst_catfish",
+      "advanced_fishing:smelting/cooked_amethyst_catfish",
+      "advanced_fishing:smoking/cooked_amethyst_catfish"
+    ]
+  }
+}

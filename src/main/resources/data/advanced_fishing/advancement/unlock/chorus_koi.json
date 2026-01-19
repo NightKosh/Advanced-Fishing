@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:chorus_koi"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_chorus_fruit",
+      "advanced_fishing:campfire/cooked_chorus_koi",
+      "advanced_fishing:smelting/cooked_chorus_koi",
+      "advanced_fishing:smoking/cooked_chorus_koi"
+    ]
+  }
+}

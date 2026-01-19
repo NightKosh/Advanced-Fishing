@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:cave_trout"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_cave_trout",
+      "advanced_fishing:smelting/cooked_cave_trout",
+      "advanced_fishing:smoking/cooked_cave_trout"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:blaze_pike"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_blaze_rod",
+      "advanced_fishing:campfire/cooked_blaze_pike",
+      "advanced_fishing:smelting/cooked_blaze_pike",
+      "advanced_fishing:smoking/cooked_blaze_pike"
+    ]
+  }
+}

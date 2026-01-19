@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:explosive_crucian"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_gunpowder",
+      "advanced_fishing:campfire/cooked_explosive_crucian",
+      "advanced_fishing:smelting/cooked_explosive_crucian",
+      "advanced_fishing:smoking/cooked_explosive_crucian"
+    ]
+  }
+}

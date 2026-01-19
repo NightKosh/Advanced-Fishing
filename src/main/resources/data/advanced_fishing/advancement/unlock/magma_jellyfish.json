@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:magma_jellyfish"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_lava",
+      "advanced_fishing:fish_to_magma_cream",
+      "advanced_fishing:campfire/cooked_magma_jellyfish",
+      "advanced_fishing:smelting/cooked_magma_jellyfish",
+      "advanced_fishing:smoking/cooked_magma_jellyfish"
+    ]
+  }
+}

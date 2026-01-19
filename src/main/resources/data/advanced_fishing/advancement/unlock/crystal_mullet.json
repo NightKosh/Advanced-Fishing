@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:crystal_mullet"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_lazurit",
+      "advanced_fishing:campfire/cooked_crystal_mullet",
+      "advanced_fishing:smelting/cooked_crystal_mullet",
+      "advanced_fishing:smoking/cooked_crystal_mullet"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:ruffe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_ruffe",
+      "advanced_fishing:smelting/cooked_ruffe",
+      "advanced_fishing:smoking/cooked_ruffe"
+    ]
+  }
+}

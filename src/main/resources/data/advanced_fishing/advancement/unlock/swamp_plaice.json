@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:swamp_plaice"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:fish_to_lily_pad",
+      "advanced_fishing:campfire/cooked_swamp_plaice",
+      "advanced_fishing:smelting/cooked_swamp_plaice",
+      "advanced_fishing:smoking/cooked_swamp_plaice"
+    ]
+  }
+}
