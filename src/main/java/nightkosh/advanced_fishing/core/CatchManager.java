@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -137,7 +138,7 @@ public class CatchManager implements ICatchManager {
     }
 
     public static List<ItemStack> getWaterCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck) {
-        int chance = level.random.nextInt(100) + Math.round(luck);
+        int chance = getChance(level.random, luck);
 
         if (AFConfig.DEBUG_MODE.get()) {
             LOGGER.info("Get fishing catch from water");
@@ -148,36 +149,26 @@ public class CatchManager implements ICatchManager {
                 LOGGER.info("Going to catch junk");
             }
             return getCatch(lootBuilder, level, LootTables.FISHING_JUNK);
-        } else if (chance < 90) {
+        } else if (chance < 95) {
             List<ItemStack> list = new ArrayList<>();
-            if (!level.canSeeSky(pos)) {
-                chance = level.random.nextInt(100) + Math.round(luck);
-                if (chance >= 95) {
-                    if (AFConfig.DEBUG_MODE.get()) {
-                        LOGGER.info("Fishing in cave.");
-                    }
-                    if (pos.getY() < 30) {//TODO old value 50
-                        list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_50));
-                        if (AFConfig.DEBUG_MODE.get()) {
-                            LOGGER.info("Fishing depth {}", pos.getY());
-                        }
-                        if (pos.getY() < 15) {//TODO old value 40
-                            list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_40));
-                            if (AFConfig.DEBUG_MODE.get()) {
-                                LOGGER.info("Fishing depth {}", pos.getY());
-                            }
-                            if (pos.getY() < -30) {//TODO old value 25
-                                list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_25));
-                                if (AFConfig.DEBUG_MODE.get()) {
-                                    LOGGER.info("Fishing depth {}", pos.getY());
-                                }
-                            }
-                        }
-                    }
+            if (!level.canSeeSky(pos) && getChance(level.random, luck) >= 30) {
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("Fishing in cave at depth {}", pos.getY());
                 }
-            }
-
-            if (list.isEmpty()) {
+                if (pos.getY() < -30) {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE__30));
+                } else if (pos.getY() < -10) {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE__10));
+                } else if (pos.getY() < 15) {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_15));
+                } else if (pos.getY() < 30) {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_30));
+                } else if (pos.getY() < 50) {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE_50));
+                } else {
+                    list.addAll(getCatch(lootBuilder, level, LootTables.FISHING_CAVE));
+                }
+            } else {
                 var biomeHolder = level.getBiome(pos);
 
                 if (AFConfig.DEBUG_MODE.get()) {
@@ -189,13 +180,14 @@ public class CatchManager implements ICatchManager {
                         list.addAll(CATCH_WATER.get(condition).getCatch(lootBuilder, level, biomeHolder, luck));
                     }
                 }
+            }
 
-                if (list.isEmpty()) {
-                    if (AFConfig.DEBUG_MODE.get()) {
-                        LOGGER.info("No specific catch! Trying to get default catch.");
-                    }
-                    list = getCatch(lootBuilder, level, LootTables.FISHING);
+            // in case of unsupported biomes or other problems get default catch
+            if (list.isEmpty()) {
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("No specific catch! Trying to get default catch.");
                 }
+                list = getCatch(lootBuilder, level, LootTables.FISHING);
 
                 if (list.isEmpty()) {
                     if (AFConfig.DEBUG_MODE.get()) {
@@ -263,7 +255,7 @@ public class CatchManager implements ICatchManager {
         }
 
         if (biomeHolder.is(BiomeTags.IS_NETHER)) {
-            int chance = level.random.nextInt(100) + Math.round(luck);
+            int chance = getChance(level.random, luck);
             if (chance < 95) {
                 List<ItemStack> list = new ArrayList<>();
                 if (AFConfig.DEBUG_MODE.get()) {
@@ -330,6 +322,10 @@ public class CatchManager implements ICatchManager {
         return biomeHolder.unwrapKey()
                 .map(ResourceKey::identifier)
                 .orElse(null);
+    }
+
+    private static int getChance(RandomSource random, float luck) {
+        return random.nextInt(100) + Math.round(luck);
     }
 
 }

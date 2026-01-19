@@ -36,15 +36,16 @@ public class LootTables {
 
     public static final Identifier FISHING_OCEAN_DEEP = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/ocean_deep/fishing");
 
-    public static final Identifier FISHING_BEACH = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing_beach");
-
     public static final Identifier FISHING_END = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/end/fishing");
 
     public static final Identifier FISHING_MUSHROOM = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/mushroom/fishing");
 
+    public static final Identifier FISHING_CAVE = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/default");
     public static final Identifier FISHING_CAVE_50 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/50");
-    public static final Identifier FISHING_CAVE_40 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/40");
-    public static final Identifier FISHING_CAVE_25 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/25");
+    public static final Identifier FISHING_CAVE_30 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/30");
+    public static final Identifier FISHING_CAVE_15 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/15");
+    public static final Identifier FISHING_CAVE__10 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/-10");
+    public static final Identifier FISHING_CAVE__30 = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/cave/-30");
 
     public static final Identifier FISHING_LAVA = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/lava/fishing");
 

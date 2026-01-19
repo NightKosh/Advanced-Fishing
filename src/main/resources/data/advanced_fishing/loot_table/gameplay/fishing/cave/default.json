@@ -2,17 +2,17 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_cave_25",
+      "name": "fishing_cave_default",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:crystal_mullet",
+          "name": "advanced_fishing:coal_crucian",
           "weight": 50
         },
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:charged_bullhead",
+          "name": "advanced_fishing:copper_minnow",
           "weight": 50
         }
       ]

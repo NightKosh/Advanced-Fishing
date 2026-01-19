@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_cave__30",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:iron_bass",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:crystal_mullet",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:charged_bullhead",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:amethyst_catfish",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:emerald_salmon",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:diamond_koi",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:specular_snapper",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:cave_trout",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

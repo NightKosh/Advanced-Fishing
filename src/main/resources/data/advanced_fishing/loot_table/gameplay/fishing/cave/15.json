@@ -2,7 +2,7 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_cave_50",
+      "name": "fishing_cave_30",
       "rolls": 1,
       "entries": [
         {
@@ -12,13 +12,18 @@
         },
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:copper_minnow",
-          "weight": 30
+          "name": "advanced_fishing:iron_bass",
+          "weight": 50
         },
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:iron_bass",
-          "weight": 40
+          "name": "advanced_fishing:specular_snapper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:cave_trout",
+          "weight": 10
         }
       ]
     }

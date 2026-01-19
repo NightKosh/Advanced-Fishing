@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_cave__10",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:iron_bass",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:crystal_mullet",
+          "weight": 33
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:charged_bullhead",
+          "weight": 33
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:specular_snapper",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:cave_trout",
+          "weight": 7
+        }
+      ]
+    }
+  ]
+}
