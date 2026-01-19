@@ -2,6 +2,7 @@ package nightkosh.advanced_fishing.entity.projectile;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -34,6 +35,8 @@ import static nightkosh.advanced_fishing.ModAdvancedFishing.LOGGER;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class AdvancedFishHook extends AFishHook {
+
+    private static final Identifier FISHING_ADVANCEMENT = Identifier.withDefaultNamespace("husbandry/fishy_business");
 
     public AdvancedFishHook(EntityType<? extends AdvancedFishHook> entityType, Level level) {
         super(entityType, level);
@@ -199,7 +202,7 @@ public class AdvancedFishHook extends AFishHook {
                 }
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer) player, itemStack, this, catchList);
 
-                for (ItemStack stack : catchList) {
+                for (var stack : catchList) {
                     var entityItem = getCatchEntityItem(stack);
                     double d0 = player.getX() - this.getX();
                     double d1 = player.getY() - this.getY();
@@ -216,6 +219,11 @@ public class AdvancedFishHook extends AFishHook {
 
                     if (stack.is(ItemTags.FISHES)) {
                         player.awardStat(Stats.FISH_CAUGHT, 1);
+
+                        if (player instanceof ServerPlayer serverPlayer) {
+                            var adv = this.level().getServer().getAdvancements().get(FISHING_ADVANCEMENT);
+                            serverPlayer.getAdvancements().award(adv, "cod");
+                        }
                     }
                 }
 
