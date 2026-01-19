@@ -33,7 +33,7 @@ public class ItemBlazingFishingRod extends AbstractFishingRod {
                 .rarity(Rarity.EPIC)
                 .durability(250)
                 .repairable(Items.BLAZE_ROD)
-                .enchantable(1)
+                .enchantable(25)
                 .setId(RK));
     }
 
