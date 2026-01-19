@@ -34,7 +34,7 @@ public class AFItems {
             ITEMS_REGISTER.register("blazing_fishing_pole", () -> new ItemBlazingFishingRod(
                     new Item.Properties()
                             .fireResistant()
-                            .rarity(Rarity.RARE)
+                            .rarity(Rarity.EPIC)
                             .durability(250)
                             .repairable(Items.BLAZE_ROD)
                             .enchantable(1)
