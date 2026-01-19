@@ -151,7 +151,7 @@ public class CatchManager implements ICatchManager {
             return getCatch(lootBuilder, level, LootTables.FISHING_JUNK);
         } else if (chance < 95) {
             List<ItemStack> list = new ArrayList<>();
-            if (!level.canSeeSky(pos) && getChance(level.random, luck) >= 30) {
+            if (!level.canSeeSky(pos.above()) && getChance(level.random, luck) >= 30) {
                 if (AFConfig.DEBUG_MODE.get()) {
                     LOGGER.info("Fishing in cave at depth {}", pos.getY());
                 }
