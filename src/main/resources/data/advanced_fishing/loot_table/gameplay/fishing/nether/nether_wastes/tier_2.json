@@ -2,17 +2,17 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_lava_nether_tier_3",
+      "name": "fishing_nether_wastes_tier_2",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:quartz_chub",
+          "name": "advanced_fishing:magma_jellyfish",
           "weight": 50
         },
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:fungi_catfish",
+          "name": "advanced_fishing:obsidian_bream",
           "weight": 50
         }
       ]

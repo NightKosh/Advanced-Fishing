@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_lava",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/lava/tier_1",
+          "weight": 52,
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/lava/tier_2",
+          "weight": 32,
+          "quality": 7
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/lava/tier_3",
+          "weight": 13,
+          "quality": 7
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/lava/treasure",
+          "weight": 3,
+          "quality": 5
+        }
+      ]
+    }
+  ]
+}

@@ -2,12 +2,12 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_lava_tier_1",
+      "name": "fishing_nether_wastes_tier_1",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "advanced_fishing:obsidian_bream",
+          "name": "advanced_fishing:nether_sturgeon",
           "weight": 100
         }
       ]

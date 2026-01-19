@@ -15,7 +15,7 @@ import java.util.List;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 @FunctionalInterface
-public interface IWaterCatch {
+public interface ILiquidCatch {
 
     /**
      * Used to get list of items which will be caught in water

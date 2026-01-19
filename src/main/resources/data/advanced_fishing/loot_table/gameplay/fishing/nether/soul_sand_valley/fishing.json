@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_soul_sand_valley",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/soul_sand_valley/tier_1",
+          "weight": 40,
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/soul_sand_valley/tier_2",
+          "weight": 40,
+          "quality": 7
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/soul_sand_valley/tier_3",
+          "weight": 15,
+          "quality": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/soul_sand_valley/tier_4",
+          "weight": 5,
+          "quality": 6
+        }
+      ]
+    }
+  ]
+}

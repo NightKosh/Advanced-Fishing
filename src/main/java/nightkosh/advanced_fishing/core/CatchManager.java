@@ -17,7 +17,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatch;
 import nightkosh.advanced_fishing.api.fishing_catch.ICatchManager;
-import nightkosh.advanced_fishing.api.fishing_catch.IWaterCatch;
+import nightkosh.advanced_fishing.api.fishing_catch.ILiquidCatch;
 import nightkosh.advanced_fishing.api.fishing_catch.IWaterCondition;
 
 import javax.annotation.Nullable;
@@ -36,7 +36,8 @@ public class CatchManager implements ICatchManager {
     public static final CatchManager INSTANCE = new CatchManager();
 
     private static final Map<Block, ICatch> CATCH = new HashMap<>();
-    private static final Map<IWaterCondition, IWaterCatch> CATCH_WATER = new HashMap<>();
+    private static final Map<IWaterCondition, ILiquidCatch> CATCH_WATER = new HashMap<>();
+    private static final Map<IWaterCondition, ILiquidCatch> CATCH_LAVA = new HashMap<>();
 
     static {
         CATCH.put(Blocks.WATER, CatchManager::getWaterCatch);
@@ -73,6 +74,11 @@ public class CatchManager implements ICatchManager {
             return h.is(Biomes.MUSHROOM_FIELDS);//TODO tags?
         }, CatchManager::getMushroomCatch);
         CATCH_WATER.put(h -> h.is(BiomeTags.IS_BADLANDS), CatchManager::getDeadCatch);
+
+        CATCH_LAVA.put(h -> h.is(Biomes.BASALT_DELTAS), CatchManager::getBasaltDeltas);
+        CATCH_LAVA.put(h -> h.is(Biomes.CRIMSON_FOREST) || h.is(Biomes.WARPED_FOREST), CatchManager::getNetherForests);
+        CATCH_LAVA.put(h -> h.is(Biomes.NETHER_WASTES), CatchManager::getNetherWastes);
+        CATCH_LAVA.put(h -> h.is(Biomes.SOUL_SAND_VALLEY), CatchManager::getNetherSoulSandValley);
     }
 
     @Override
@@ -81,7 +87,7 @@ public class CatchManager implements ICatchManager {
     }
 
     @Override
-    public void addWaterCatch(IWaterCondition condition, IWaterCatch waterCatch) {
+    public void addWaterCatch(IWaterCondition condition, ILiquidCatch waterCatch) {
         CATCH_WATER.put(condition, waterCatch);
     }
 
@@ -259,13 +265,46 @@ public class CatchManager implements ICatchManager {
         if (biomeHolder.is(BiomeTags.IS_NETHER)) {
             int chance = level.random.nextInt(100) + Math.round(luck);
             if (chance < 95) {
-                return getCatch(lootBuilder, level, LootTables.FISHING_LAVA_NETHER);
+                List<ItemStack> list = new ArrayList<>();
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("Fishing in " + getBiomeRes(biomeHolder));
+                }
+
+                for (var condition : CATCH_LAVA.keySet()) {
+                    if (condition.shouldGetCatch(biomeHolder)) {
+                        list.addAll(CATCH_LAVA.get(condition).getCatch(lootBuilder, level, biomeHolder, luck));
+                    }
+                }
+
+                if (list.isEmpty()) {
+                    if (AFConfig.DEBUG_MODE.get()) {
+                        LOGGER.info("No specific catch! Trying to get default catch.");
+                    }
+                    list = getCatch(lootBuilder, level, LootTables.FISHING_NETHER);
+                }
+                return list;
             } else {
-                return getCatch(lootBuilder, level, LootTables.FISHING_LAVA_NETHER_TREASURE);
+                return getCatch(lootBuilder, level, LootTables.FISHING_NETHER_TREASURE);
             }
         } else {
             return getCatch(lootBuilder, level, LootTables.FISHING_LAVA);
         }
+    }
+
+    public static List<ItemStack> getBasaltDeltas(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+        return getCatch(lootBuilder, level, LootTables.FISHING_NETHER_BASALT_DELTAS);
+    }
+
+    public static List<ItemStack> getNetherForests(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+        return getCatch(lootBuilder, level, LootTables.FISHING_NETHER_FORESTS);
+    }
+
+    public static List<ItemStack> getNetherWastes(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+        return getCatch(lootBuilder, level, LootTables.FISHING_NETHER_WASTES);
+    }
+
+    public static List<ItemStack> getNetherSoulSandValley(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
+        return getCatch(lootBuilder, level, LootTables.FISHING_NETHER_SOUL_SAND_VALLEY);
     }
 
     public static List<ItemStack> getCatch(LootParams.Builder lootBuilder, Level level, Identifier lootTableRes) {

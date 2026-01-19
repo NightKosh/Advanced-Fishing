@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_nether_tier_4",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:flarefin_koi",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blaze_pike",
+          "weight": 50
+        }
+      ]
+    }
+  ]
+}

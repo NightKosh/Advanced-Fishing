@@ -2,18 +2,13 @@
   "type": "minecraft:fishing",
   "pools": [
     {
-      "name": "fishing_lava_nether_tier_2",
+      "name": "fishing_crimson_and_warped_forest_tier_2",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "advanced_fishing:magma_jellyfish",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
-          "name": "advanced_fishing:withered_crucian",
-          "weight": 50
+          "weight": 100
         }
       ]
     }

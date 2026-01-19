@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_basalt_deltas_tier_4",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blaze_pike",
+          "weight": 100
+        }
+      ]
+    }
+  ]
+}

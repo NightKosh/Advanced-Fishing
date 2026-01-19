@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_basalt_deltas",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/basalt_deltas/tier_1",
+          "weight": 40,
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/basalt_deltas/tier_2",
+          "weight": 40,
+          "quality": 7
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/basalt_deltas/tier_3",
+          "weight": 15,
+          "quality": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "advanced_fishing:gameplay/fishing/nether/basalt_deltas/tier_4",
+          "weight": 5,
+          "quality": 6
+        }
+      ]
+    }
+  ]
+}

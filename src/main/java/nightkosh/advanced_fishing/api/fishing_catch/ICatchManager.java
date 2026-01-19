@@ -35,7 +35,7 @@ public interface ICatchManager {
      * @param condition  instance of IWaterCondition functional interface
      * @param waterCatch instance of IWaterCatch functional interface
      */
-    void addWaterCatch(IWaterCondition condition, IWaterCatch waterCatch);
+    void addWaterCatch(IWaterCondition condition, ILiquidCatch waterCatch);
 
     /**
      * Gives you an instance of ICatch functional interface

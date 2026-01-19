@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_crimson_and_warped_forest_tier_3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:fungi_catfish",
+          "weight": 100
+        }
+      ]
+    }
+  ]
+}

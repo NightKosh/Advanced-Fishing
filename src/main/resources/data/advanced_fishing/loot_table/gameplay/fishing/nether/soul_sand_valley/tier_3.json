@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "name": "fishing_soul_sand_valley_tier_3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "advanced_fishing:withered_crucian",
+          "weight": 100
+        }
+      ]
+    }
+  ]
+}
