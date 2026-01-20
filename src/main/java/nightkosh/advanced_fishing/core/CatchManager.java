@@ -151,7 +151,7 @@ public class CatchManager implements ICatchManager {
             return getCatch(lootBuilder, level, LootTables.FISHING_JUNK);
         } else if (chance < 95) {
             List<ItemStack> list = new ArrayList<>();
-            if (!level.canSeeSky(pos.above()) && getChance(level.random, luck) >= 30) {
+            if (isInCave(level, pos) && getChance(level.random, luck) >= 30) {
                 if (AFConfig.DEBUG_MODE.get()) {
                     LOGGER.info("Fishing in cave at depth {}", pos.getY());
                 }
@@ -206,6 +206,12 @@ public class CatchManager implements ICatchManager {
         }
     }
 
+    public static boolean isInCave(Level level, BlockPos pos) {
+        while (!level.getBlockState(pos).isAir() || pos.getY() < 150) {
+            pos = pos.above();
+        }
+        return !level.canSeeSky(pos.above());
+    }
 
     public static List<ItemStack> getOceanCatch(LootParams.Builder lootBuilder, Level level, Holder<Biome> biomeHolder, float luck) {
         if (biomeHolder.is(BiomeTags.IS_DEEP_OCEAN)) {
