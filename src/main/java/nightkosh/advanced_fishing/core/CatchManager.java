@@ -207,7 +207,7 @@ public class CatchManager implements ICatchManager {
     }
 
     public static boolean isInCave(Level level, BlockPos pos) {
-        while (!level.getBlockState(pos).isAir() || pos.getY() < 150) {
+        while (!level.getBlockState(pos).isAir() && pos.getY() < 150) {
             pos = pos.above();
         }
         return !level.canSeeSky(pos.above());
