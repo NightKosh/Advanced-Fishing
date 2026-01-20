@@ -32,6 +32,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import nightkosh.advanced_fishing.core.AFConfig;
+import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
+import nightkosh.advanced_fishing.core.AFEnchantments;
 import nightkosh.advanced_fishing.core.AFItems;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
 import org.jspecify.annotations.Nullable;
@@ -64,7 +66,7 @@ public abstract class AFishHook extends FishingHook {
     }
 
     public AFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
-                     int luck, int lureSpeed, boolean hasGlowingEnchantment, boolean hasAutoFishing) {
+                     int luck, int lureSpeed, ItemStack fishingPole) {
         super(entityType, level, luck, lureSpeed);
         this.setOwner(player);
         float f = player.getXRot();
@@ -87,8 +89,9 @@ public abstract class AFishHook extends FishingHook {
         this.setXRot((float) (Mth.atan2(vec3.y, vec3.horizontalDistance()) * (180 / Math.PI)));
         this.yRotO = this.getYRot();
         this.xRotO = this.getXRot();
-        this.hasGlowingEnchantment(hasGlowingEnchantment);
-        this.hasAutoFishing(hasAutoFishing);
+
+        this.hasGlowingEnchantment(AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole));
+        this.hasAutoFishing(AFEnchantmentHelper.isEnchanted(level, AFEnchantments.AWAKENED_ROD, fishingPole));
         spawnLog();
     }
 

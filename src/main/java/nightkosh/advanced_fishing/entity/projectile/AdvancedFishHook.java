@@ -42,13 +42,13 @@ public class AdvancedFishHook extends AFishHook {
         super(entityType, level);
     }
 
-    public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed, boolean hasGlowingEnchantment, boolean hasAutoFishing) {
-        this(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed, hasGlowingEnchantment, hasAutoFishing);
+    public AdvancedFishHook(Player player, Level level, int luck, int lureSpeed, ItemStack fishingPole) {
+        this(AFEntities.getCustomFishHook(), player, level, luck, lureSpeed, fishingPole);
     }
 
     public AdvancedFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
-                            int luck, int lureSpeed, boolean hasGlowingEnchantment, boolean hasAutoFishing) {
-        super(entityType, player, level, luck, lureSpeed, hasGlowingEnchantment, hasAutoFishing);
+                            int luck, int lureSpeed, ItemStack fishingPole) {
+        super(entityType, player, level, luck, lureSpeed, fishingPole);
     }
 
     @Override

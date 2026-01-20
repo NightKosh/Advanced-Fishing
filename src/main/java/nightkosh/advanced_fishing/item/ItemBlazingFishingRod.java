@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
@@ -39,10 +40,8 @@ public class ItemBlazingFishingRod extends AbstractFishingRod {
 
     @Nonnull
     @Override
-    protected AFishHook getHook(
-            Player player, Level level, int luck, int lureSpeed,
-            boolean hasGlowingEnchantment, boolean hasAutoFishing) {
-        return new LavaFishHook(player, level, luck, lureSpeed, hasGlowingEnchantment, hasAutoFishing);
+    protected AFishHook getHook(Player player, Level level, int luck, int lureSpeed, ItemStack fishingPole) {
+        return new LavaFishHook(player, level, luck, lureSpeed, fishingPole);
     }
 
 }

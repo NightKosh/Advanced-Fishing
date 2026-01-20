@@ -55,13 +55,11 @@ public class AFEventsHandler {
                             new LavaFishHook(player, level,
                                     EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
                                     (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
-                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole),
-                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.AWAKENED_ROD, fishingPole)) :
+                                    fishingPole) :
                             new AdvancedFishHook(player, level,
                                     EnchantmentHelper.getFishingLuckBonus(serverlevel, fishingPole, player),
                                     (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, fishingPole, player) * 20,
-                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.LUMINOUS_FLOAT, fishingPole),
-                                    AFEnchantmentHelper.isEnchanted(level, AFEnchantments.AWAKENED_ROD, fishingPole));
+                                    fishingPole);
 
                     level.addFreshEntity(newHook);
 
