@@ -1,5 +1,6 @@
 package nightkosh.advanced_fishing.entity.projectile;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
@@ -29,8 +30,8 @@ public class LavaFishHook extends AdvancedFishHook {
         super(entityType, level);
     }
 
-    public LavaFishHook(Player player, Level level, int luck, int lureSpeed, ItemStack fishingPole) {
-        super(AFEntities.getLavaFishHook(), player, level, luck, lureSpeed, fishingPole);
+    public LavaFishHook(Player player, ServerLevel level, int additionalLuck, int additionalLureSpeed, ItemStack fishingPole) {
+        super(AFEntities.getLavaFishHook(), player, level, additionalLuck, additionalLureSpeed, fishingPole);
     }
 
     @Override

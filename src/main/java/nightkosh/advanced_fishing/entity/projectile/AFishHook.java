@@ -20,6 +20,7 @@ import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.slot.SlotCollection;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -65,9 +66,16 @@ public abstract class AFishHook extends FishingHook {
         spawnLog();
     }
 
-    public AFishHook(EntityType<? extends AFishHook> entityType, Player player, Level level,
-                     int luck, int lureSpeed, ItemStack fishingPole) {
-        super(entityType, level, luck, lureSpeed);
+    public AFishHook(EntityType<? extends AFishHook> entityType, Player player, ServerLevel level,
+                     int additionalLuck, int additionalLureSpeed, ItemStack fishingPole) {
+        super(entityType, level,
+                EnchantmentHelper.getFishingLuckBonus(level, fishingPole, player) + additionalLuck,
+                (int) (EnchantmentHelper.getFishingTimeReduction(level, fishingPole, player)) * 20 + additionalLureSpeed * 100);
+        if (AFConfig.DEBUG_MODE.get()) {
+            LOGGER.info("Fishing hook created with next params:");
+            LOGGER.info("Additional luck {}, additional speed {}", additionalLuck, additionalLureSpeed * 100);
+            LOGGER.info("Final luck {}, final lureSpeed {}", this.luck, this.lureSpeed);
+        }
         this.setOwner(player);
         float f = player.getXRot();
         float f1 = player.getYRot();

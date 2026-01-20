@@ -2,12 +2,12 @@ package nightkosh.advanced_fishing.item;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.Level;
 import nightkosh.advanced_fishing.api.ModInfo;
 import nightkosh.advanced_fishing.entity.projectile.AFishHook;
 import nightkosh.advanced_fishing.entity.projectile.LavaFishHook;
@@ -40,8 +40,8 @@ public class ItemBlazingFishingRod extends AbstractFishingRod {
 
     @Nonnull
     @Override
-    protected AFishHook getHook(Player player, Level level, int luck, int lureSpeed, ItemStack fishingPole) {
-        return new LavaFishHook(player, level, luck, lureSpeed, fishingPole);
+    protected AFishHook getHook(Player player, ServerLevel level, ItemStack fishingPole) {
+        return new LavaFishHook(player, level, 1, 1, fishingPole);
     }
 
 }

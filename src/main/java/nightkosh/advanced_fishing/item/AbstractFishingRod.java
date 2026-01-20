@@ -11,10 +11,10 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import nightkosh.advanced_fishing.entity.projectile.AFishHook;
+import nightkosh.advanced_fishing.entity.projectile.AdvancedFishHook;
 
 import javax.annotation.Nonnull;
 
@@ -46,10 +46,7 @@ public abstract class AbstractFishingRod extends FishingRodItem {
             playBobberThrowSound(level, player);
             if (!level.isClientSide() && level instanceof ServerLevel serverlevel) {
                 Projectile.spawnProjectile(
-                        getHook(player, level,
-                                EnchantmentHelper.getFishingLuckBonus(serverlevel, stack, player),
-                                (int) EnchantmentHelper.getFishingTimeReduction(serverlevel, stack, player) * 20,
-                                stack),
+                        getHook(player, serverlevel, stack),
                         serverlevel, stack);
             }
 
@@ -61,7 +58,9 @@ public abstract class AbstractFishingRod extends FishingRodItem {
     }
 
     @Nonnull
-    protected abstract AFishHook getHook(Player player, Level level, int luck, int lureSpeed, ItemStack fishingPole);
+    protected AFishHook getHook(Player player, ServerLevel level, ItemStack fishingPole) {
+        return new AdvancedFishHook(player, level, 0, 0, fishingPole);
+    }
 
     protected void playBobberRetrieveSound(Level level, Player player) {
         level.playSound(null, player.getX(), player.getY(), player.getZ(),
