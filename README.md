@@ -89,3 +89,7 @@ For more information, look at "minecraft NeoForge" README.txt file (it's not inc
     ```
         /enchant @s advanced_fishing:curse_of_scorching_line 1
     ``` 
+4. Curse of Misfortune of the Sea
+    ```
+        /enchant @s advanced_fishing:curse_of_misfortune_of_the_sea 3
+    ``` 

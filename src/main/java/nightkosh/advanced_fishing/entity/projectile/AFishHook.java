@@ -68,9 +68,9 @@ public abstract class AFishHook extends FishingHook {
 
     public AFishHook(EntityType<? extends AFishHook> entityType, Player player, ServerLevel level,
                      int additionalLuck, int additionalLureSpeed, ItemStack fishingPole) {
-        super(entityType, level,
-                EnchantmentHelper.getFishingLuckBonus(level, fishingPole, player) + additionalLuck,
-                (int) (EnchantmentHelper.getFishingTimeReduction(level, fishingPole, player)) * 20 + additionalLureSpeed * 100);
+        super(entityType, level, 0, 0);
+        this.luck = AFEnchantmentHelper.getLuckBonus(level, fishingPole, player) + additionalLuck;
+        this.lureSpeed = (int) (EnchantmentHelper.getFishingTimeReduction(level, fishingPole, player)) * 20 + additionalLureSpeed * 100;
         if (AFConfig.DEBUG_MODE.get()) {
             LOGGER.info("Fishing hook created with next params:");
             LOGGER.info("Additional luck {}, additional speed {}", additionalLuck, additionalLureSpeed * 100);

@@ -1,0 +1,20 @@
+{
+  "weight": 1,
+  "max_level": 3,
+  "anvil_cost": 4,
+  "description": {
+    "translate": "enchantment.advanced_fishing.curse_of_misfortune_of_the_sea"
+  },
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 20,
+    "per_level_above_first": 9
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/fishing"
+}

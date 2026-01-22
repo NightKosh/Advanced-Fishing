@@ -6,10 +6,28 @@
       "rolls": 1,
       "entries": [
         {
+          "weight": 20,
           "type": "minecraft:item",
           "name": "minecraft:wither_skeleton_skull"
         },
         {
+          "weight": 40,
+          "type": "minecraft:item",
+          "name": "advanced_fishing:blazing_fishing_pole",
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.25,
+                "min": 0
+              },
+              "function": "minecraft:set_damage"
+            }
+          ]
+        },
+        {
+          "weight": 30,
           "type": "minecraft:item",
           "name": "advanced_fishing:blazing_fishing_pole",
           "functions": [
@@ -23,8 +41,8 @@
               "function": "minecraft:set_damage"
             },
             {
+              "levels": 30,
               "function": "minecraft:enchant_with_levels",
-              "levels": 30.0,
               "options": "#minecraft:on_random_loot"
             }
           ]

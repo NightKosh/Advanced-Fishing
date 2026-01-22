@@ -33,4 +33,7 @@ public class AFEnchantments {
     public static final ResourceKey<Enchantment> CURSE_OF_SCORCHING_LINE =
             ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_scorching_line"));
 
+    public static final ResourceKey<Enchantment> CURSE_OF_MISFORTUNE_OF_THE_SEA =
+            ResourceKey.create(Registries.ENCHANTMENT, fromNamespaceAndPath(ModInfo.ID, "curse_of_misfortune_of_the_sea"));
+
 }

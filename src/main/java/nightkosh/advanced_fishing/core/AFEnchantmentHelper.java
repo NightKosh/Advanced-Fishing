@@ -68,20 +68,29 @@ public class AFEnchantmentHelper {
         }
     }
 
+    public static int getLuckBonus(ServerLevel level, ItemStack fishingPole, Player player) {
+        return EnchantmentHelper.getFishingLuckBonus(level, fishingPole, player) -
+                getLevel(getEnchantmentHolder(level, AFEnchantments.CURSE_OF_MISFORTUNE_OF_THE_SEA), fishingPole) * 10;
+    }
+
     public static boolean isEnchanted(Level level, ResourceKey<Enchantment> key, ItemStack item) {
         return isEnchanted(getEnchantmentHolder(level, key), item);
     }
 
     public static boolean isEnchanted(Holder<Enchantment> enchantment, ItemStack item) {
+        return getLevel(enchantment, item) > 0;
+    }
+
+    public static int getLevel(Holder<Enchantment> enchantment, ItemStack item) {
         try {
             if (item == null) {
-                return false;
+                return 0;
             } else {
-                return EnchantmentHelper.getItemEnchantmentLevel(enchantment, item) > 0;
+                return EnchantmentHelper.getItemEnchantmentLevel(enchantment, item);
             }
         } catch (Exception e) {
             LOGGER.error("Cant get Enchantment", e);
-            return false;
+            return 0;
         }
     }
 
