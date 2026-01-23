@@ -16,5 +16,6 @@
   "slots": [
     "mainhand"
   ],
+  "exclusive_set": "minecraft:luck_of_the_sea",
   "supported_items": "#minecraft:enchantable/fishing"
 }
