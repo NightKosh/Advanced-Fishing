@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "advanced_fishing:item/cooked_fish/catfish"
+    }
+}

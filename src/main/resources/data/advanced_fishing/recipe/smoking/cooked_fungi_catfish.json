@@ -1,11 +1,10 @@
 {
   "type": "minecraft:smoking",
-  "group" : "cooked_cod",
+  "group" : "cooked_catfish",
   "category": "food",
   "ingredient": "advanced_fishing:fungi_catfish",
   "result": {
-    "id": "minecraft:cooked_cod",
-    "count": 2
+    "id": "advanced_fishing:cooked_catfish"
   },
   "experience": 0.35,
   "cookingtime": 100

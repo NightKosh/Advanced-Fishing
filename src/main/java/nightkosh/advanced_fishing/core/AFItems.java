@@ -56,6 +56,14 @@ public class AFItems {
                             .saturationModifier(0.7F)//11.2
                             .build())));
 
+    public static final DeferredHolder<Item, Item> COOKED_CATFISH =
+            ITEMS_REGISTER.register("cooked_catfish", () -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "cooked_catfish")))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(15)
+                            .saturationModifier(0.2F)//6
+                            .build())));
+
     public static void register(IEventBus eventBus) {
         ITEMS_REGISTER.register(eventBus);
     }
