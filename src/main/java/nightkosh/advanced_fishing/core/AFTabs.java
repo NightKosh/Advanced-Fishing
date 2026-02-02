@@ -31,6 +31,9 @@ public class AFTabs {
                         for (var fishType : EnumFishType.values()) {
                             output.accept(new ItemStack(AFItems.getFish(fishType)));
                         }
+
+                        output.accept(AFItems.COOKED_PIKE.get());
+
                     })
                     .build()
             );

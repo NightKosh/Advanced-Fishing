@@ -4,8 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,7 +31,9 @@ public class AFItems {
     private static final DeferredHolder<Item, ItemBlazingFishingRod> BLAZING_FISHING_POLE =
             ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
 
+    // fish
     private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();
+
     static {
         for (var fishType : EnumFishType.values()) {
             FISHES.put(fishType, ITEMS_REGISTER.register(fishType.getName(), () -> new ItemFish(fishType, new Item.Properties()
@@ -46,6 +46,15 @@ public class AFItems {
                             .build()))));
         }
     }
+
+    // cooked fish
+    public static final DeferredHolder<Item, Item> COOKED_PIKE =
+            ITEMS_REGISTER.register("cooked_pike", () -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "cooked_pike")))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.7F)//11.2
+                            .build())));
 
     public static void register(IEventBus eventBus) {
         ITEMS_REGISTER.register(eventBus);
