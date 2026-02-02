@@ -1,10 +1,10 @@
 {
   "type": "minecraft:campfire_cooking",
-  "group" : "cooked_cod",
+  "group" : "cooked_eel",
   "category": "food",
   "ingredient": "advanced_fishing:sparkling_eel",
   "result": {
-    "id": "minecraft:cooked_cod"
+    "id": "advanced_fishing:cooked_eel"
   },
   "experience": 0.35,
   "cookingtime": 600

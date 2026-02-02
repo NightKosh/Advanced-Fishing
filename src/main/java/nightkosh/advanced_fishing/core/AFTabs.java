@@ -35,6 +35,7 @@ public class AFTabs {
                         output.accept(AFItems.COOKED_PIKE.get());
                         output.accept(AFItems.COOKED_CATFISH.get());
                         output.accept(AFItems.COOKED_CRUCIAN.get());
+                        output.accept(AFItems.COOKED_EEL.get());
 
                     })
                     .build()
