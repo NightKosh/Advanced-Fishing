@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smelting",
-  "group" : "cooked_cod",
+  "group" : "cooked_crucian",
   "category": "food",
   "ingredient": "advanced_fishing:withered_crucian",
   "result": {
-    "id": "minecraft:cooked_cod"
+    "id": "advanced_fishing:cooked_crucian"
   },
   "experience": 0.35,
   "cookingtime": 200
