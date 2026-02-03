@@ -80,6 +80,14 @@ public class AFItems {
                             .saturationModifier(0.9F)//9
                             .build())));
 
+    public static final DeferredHolder<Item, Item> COOKED_KOI =
+            ITEMS_REGISTER.register("cooked_koi", () -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "cooked_koi")))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(2F)//16
+                            .build())));
+
     public static void register(IEventBus eventBus) {
         ITEMS_REGISTER.register(eventBus);
     }

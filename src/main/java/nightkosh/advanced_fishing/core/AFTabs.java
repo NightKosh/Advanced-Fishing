@@ -36,6 +36,7 @@ public class AFTabs {
                         output.accept(AFItems.COOKED_CATFISH.get());
                         output.accept(AFItems.COOKED_CRUCIAN.get());
                         output.accept(AFItems.COOKED_EEL.get());
+                        output.accept(AFItems.COOKED_KOI.get());
 
                     })
                     .build()
