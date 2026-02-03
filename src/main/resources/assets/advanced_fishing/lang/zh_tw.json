@@ -1,6 +1,10 @@
 {
   "itemGroup.advanced_fishing": "進階釣魚",
+
   "item.advanced_fishing.blazing_fishing_pole": "烈焰釣竿",
+  "item.advanced_fishing.chum_bucket": "Chum Bucket",
+  "item.advanced_fishing.chum_bucket.description": "Toss it into the water to attract fish",
+
   "item.advanced_fishing.blue_jellyfish": "水母",
   "item.advanced_fishing.magma_jellyfish": "熔岩水母",
   "item.advanced_fishing.mud_tuna": "泥沼鮪魚",

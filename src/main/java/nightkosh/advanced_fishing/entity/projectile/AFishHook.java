@@ -36,6 +36,7 @@ import nightkosh.advanced_fishing.core.AFConfig;
 import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
 import nightkosh.advanced_fishing.core.AFEnchantments;
 import nightkosh.advanced_fishing.core.AFItems;
+import nightkosh.advanced_fishing.entity.Chum;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
 import org.jspecify.annotations.Nullable;
 
@@ -230,6 +231,7 @@ public abstract class AFishHook extends FishingHook {
                 if (flag) {
                     this.setDeltaMovement(this.getDeltaMovement().multiply(0.3, 0.2, 0.3));
                     this.currentState = FishingHook.FishHookState.BOBBING;
+                    checkChumLureSpeedBonus();
                     return;
                 }
 
@@ -355,6 +357,23 @@ public abstract class AFishHook extends FishingHook {
 
     protected ItemEntity getFireproofCatchEntityItem(ItemStack stack) {
         return new FireproofItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
+    }
+
+    protected void checkChumLureSpeedBonus() {
+        var chums = this.level().getEntitiesOfClass(Chum.class, new AABB(
+                this.blockPosition().getX() - 3,
+                this.blockPosition().getY() - 3,
+                this.blockPosition().getZ() - 3,
+                this.blockPosition().getX() + 3,
+                this.blockPosition().getY() + 3,
+                this.blockPosition().getZ() + 3
+        ));
+        boolean hasChum = chums != null && !chums.isEmpty();
+        this.lureSpeed = Math.max(lureSpeed, hasChum ? 300 : 0);
+
+        if (AFConfig.DEBUG_MODE.get() && hasChum) {
+            LOGGER.info("Has chum, new lure speed {}", this.lureSpeed);
+        }
     }
 
     protected abstract void spawnLog();

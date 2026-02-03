@@ -9,6 +9,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import nightkosh.advanced_fishing.api.EnumFishType;
 import nightkosh.advanced_fishing.api.ModInfo;
+import nightkosh.advanced_fishing.item.ChumBucketItem;
 import nightkosh.advanced_fishing.item.ItemBlazingFishingRod;
 import nightkosh.advanced_fishing.item.ItemFish;
 
@@ -30,6 +31,9 @@ public class AFItems {
 
     private static final DeferredHolder<Item, ItemBlazingFishingRod> BLAZING_FISHING_POLE =
             ITEMS_REGISTER.register("blazing_fishing_pole", ItemBlazingFishingRod::new);
+
+    public static final DeferredHolder<Item, ChumBucketItem> CHUM_BUCKET =
+            ITEMS_REGISTER.register("chum_bucket", ChumBucketItem::new);
 
     // fish
     private static final Map<EnumFishType, DeferredHolder<Item, ItemFish>> FISHES = new HashMap<>();

@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bucket",
+              "minecraft:bread",
+              "minecraft:bone",
+              "minecraft:spider_eye",
+              "minecraft:rotten_flesh"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:chum_bucket"
+    ]
+  }
+}

@@ -1,6 +1,10 @@
 {
   "itemGroup.advanced_fishing": "Advanced Fishing",
+
   "item.advanced_fishing.blazing_fishing_pole": "Vara de Pescar Brilhante",
+  "item.advanced_fishing.chum_bucket": "Chum Bucket",
+  "item.advanced_fishing.chum_bucket.description": "Toss it into the water to attract fish",
+
   "item.advanced_fishing.blue_jellyfish": "Água-Viva",
   "item.advanced_fishing.magma_jellyfish": "Água-Viva de Magma",
   "item.advanced_fishing.mud_tuna": "Atum de Lama",

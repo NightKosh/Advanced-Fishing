@@ -27,6 +27,7 @@ public class AFTabs {
                     .title(Component.translatable("itemGroup." + ModInfo.ID))
                     .displayItems((parameters, output) -> {
                         output.accept(AFItems.getBlazingFishingPole());
+                        output.accept(AFItems.CHUM_BUCKET.get());
 
                         for (var fishType : EnumFishType.values()) {
                             output.accept(new ItemStack(AFItems.getFish(fishType)));

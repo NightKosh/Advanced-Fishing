@@ -1,6 +1,10 @@
 {
   "itemGroup.advanced_fishing": "Advanced Fishing",
+
   "item.advanced_fishing.blazing_fishing_pole": "Пылающая удочка",
+  "item.advanced_fishing.chum_bucket": "Прикормка",
+  "item.advanced_fishing.chum_bucket.description": "Бросьте в воду, что бы привлечь рыбу.",
+
   "item.advanced_fishing.blue_jellyfish": "Медуза",
   "item.advanced_fishing.magma_jellyfish": "Лавовая медуза",
   "item.advanced_fishing.mud_tuna": "Грязевой тунец",

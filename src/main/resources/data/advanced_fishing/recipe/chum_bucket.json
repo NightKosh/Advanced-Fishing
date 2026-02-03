@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group" : "chum_bucket",
+  "category": "misc",
+  "pattern": [
+    "fef",
+    "sws",
+    "fbf"
+  ],
+  "key": {
+    "f": "minecraft:rotten_flesh",
+    "w": "minecraft:bread",
+    "s": "minecraft:bone",
+    "e": "minecraft:spider_eye",
+    "b": "minecraft:bucket"
+  },
+  "result": {
+    "id": "advanced_fishing:chum_bucket"
+  }
+}

@@ -1,6 +1,10 @@
 {
   "itemGroup.advanced_fishing": "Advanced Fishing",
+
   "item.advanced_fishing.blazing_fishing_pole": "Canna da Pesca Fiammante",
+  "item.advanced_fishing.chum_bucket": "Chum Bucket",
+  "item.advanced_fishing.chum_bucket.description": "Toss it into the water to attract fish",
+
   "item.advanced_fishing.blue_jellyfish": "Medusa",
   "item.advanced_fishing.magma_jellyfish": "Medusa Magma",
   "item.advanced_fishing.mud_tuna": "Tonno di Fango",
