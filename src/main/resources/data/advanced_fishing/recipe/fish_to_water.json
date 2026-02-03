@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "group" : "water_bucket",
   "category": "misc",
   "ingredients": [
     "advanced_fishing:blue_jellyfish",
