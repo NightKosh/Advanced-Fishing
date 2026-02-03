@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "has_my_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:green_jellyfish"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "advanced_fishing:campfire/cooked_green_jellyfish",
+      "advanced_fishing:smelting/cooked_green_jellyfish",
+      "advanced_fishing:smoking/cooked_green_jellyfish"
+    ]
+  }
+}

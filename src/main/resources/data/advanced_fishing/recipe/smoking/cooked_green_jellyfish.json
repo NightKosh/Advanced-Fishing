@@ -1,11 +1,11 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:smoking",
   "group" : "cooked_jellyfish",
   "category": "food",
-  "ingredient": "advanced_fishing:magma_jellyfish",
+  "ingredient": "advanced_fishing:green_jellyfish",
   "result": {
     "id": "advanced_fishing:cooked_jellyfish"
   },
   "experience": 0.35,
-  "cookingtime": 200
+  "cookingtime": 100
 }

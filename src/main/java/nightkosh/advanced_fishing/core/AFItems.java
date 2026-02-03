@@ -88,6 +88,14 @@ public class AFItems {
                             .saturationModifier(2F)//16
                             .build())));
 
+    public static final DeferredHolder<Item, Item> COOKED_JELLYFISH =
+            ITEMS_REGISTER.register("cooked_jellyfish", () -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, fromNamespaceAndPath(ModInfo.ID, "cooked_jellyfish")))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(3)
+                            .saturationModifier(0.8F)//4.8
+                            .build())));
+
     public static void register(IEventBus eventBus) {
         ITEMS_REGISTER.register(eventBus);
     }

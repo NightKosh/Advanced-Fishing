@@ -1,10 +1,10 @@
 {
   "type": "minecraft:campfire_cooking",
-  "group" : "cooked_cod",
+  "group" : "cooked_jellyfish",
   "category": "food",
   "ingredient": "advanced_fishing:magma_jellyfish",
   "result": {
-    "id": "minecraft:cooked_cod"
+    "id": "advanced_fishing:cooked_jellyfish"
   },
   "experience": 0.35,
   "cookingtime": 600

@@ -2,7 +2,7 @@
   "type": "minecraft:smelting",
   "group" : "cooked_jellyfish",
   "category": "food",
-  "ingredient": "advanced_fishing:magma_jellyfish",
+  "ingredient": "advanced_fishing:green_jellyfish",
   "result": {
     "id": "advanced_fishing:cooked_jellyfish"
   },
