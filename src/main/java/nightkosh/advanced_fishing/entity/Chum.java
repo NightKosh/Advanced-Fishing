@@ -50,6 +50,12 @@ public class Chum extends Entity {
                         this.getZ() + random.nextInt(5) - 2.5,
                         1,
                         0, 0, 0, 0);
+                serverLevel.sendParticles(ParticleTypes.BUBBLE,
+                        this.getX() + random.nextInt(5) - 2.5,
+                        this.getY(),
+                        this.getZ() + random.nextInt(5) - 2.5,
+                        1,
+                        0, 0, 0, 0);
             }
 
             this.setDeltaMovement(Vec3.ZERO);
