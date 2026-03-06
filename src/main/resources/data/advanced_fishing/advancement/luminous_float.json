@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:feeding_frenzy",
+  "display": {
+    "icon": { "id": "minecraft:nether_star" },
+    "title": { "translate": "advancement.advanced_fishing.luminous_float" },
+    "description": { "translate": "advancement.advanced_fishing.luminous_float.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

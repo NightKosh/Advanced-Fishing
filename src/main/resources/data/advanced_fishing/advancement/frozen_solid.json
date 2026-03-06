@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:frozen_waters",
+  "display": {
+    "icon": { "id": "advanced_fishing:glacier_anchovy" },
+    "title": { "translate": "advancement.advanced_fishing.frozen_solid" },
+    "description": { "translate": "advancement.advanced_fishing.frozen_solid.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:glacier_anchovy"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

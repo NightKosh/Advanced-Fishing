@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:molten_seas",
+  "display": {
+    "icon": { "id": "advanced_fishing:blaze_pike" },
+    "title": { "translate": "advancement.advanced_fishing.fishing_for_blaze" },
+    "description": { "translate": "advancement.advanced_fishing.fishing_for_blaze.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:blaze_pike"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

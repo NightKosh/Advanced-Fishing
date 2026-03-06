@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:feeding_frenzy",
+  "display": {
+    "icon": { "id": "minecraft:heart_of_the_sea" },
+    "title": { "translate": "advancement.advanced_fishing.awakened_rod" },
+    "description": { "translate": "advancement.advanced_fishing.awakened_rod.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

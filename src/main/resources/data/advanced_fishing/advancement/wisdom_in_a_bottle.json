@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:exotic_catch",
+  "display": {
+    "icon": { "id": "minecraft:experience_bottle" },
+    "title": { "translate": "advancement.advanced_fishing.wisdom_in_a_bottle" },
+    "description": { "translate": "advancement.advanced_fishing.wisdom_in_a_bottle.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

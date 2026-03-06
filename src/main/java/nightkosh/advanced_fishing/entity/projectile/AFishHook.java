@@ -32,10 +32,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import nightkosh.advanced_fishing.core.AFConfig;
-import nightkosh.advanced_fishing.core.AFEnchantmentHelper;
-import nightkosh.advanced_fishing.core.AFEnchantments;
-import nightkosh.advanced_fishing.core.AFItems;
+import nightkosh.advanced_fishing.core.*;
 import nightkosh.advanced_fishing.entity.Chum;
 import nightkosh.advanced_fishing.entity.item.FireproofItemEntity;
 import org.jspecify.annotations.Nullable;
@@ -218,6 +215,10 @@ public abstract class AFishHook extends FishingHook {
             var fluidstate = this.level().getFluidState(blockpos);
             if (isInSupportedLiquid(fluidstate)) {
                 f = fluidstate.getHeight(this.level(), blockpos);
+
+                if (fluidstate.is(FluidTags.LAVA) && this.getPlayerOwner() != null) {
+                    AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.THATS_NOT_WATER);
+                }
             }
 
             boolean flag = f > 0;
@@ -313,6 +314,10 @@ public abstract class AFishHook extends FishingHook {
                     rod.use(level(), player, InteractionHand.OFF_HAND);
                 }
             }
+
+            if (this.getPlayerOwner() != null) {
+                AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.AWAKENED_ROD);
+            }
         }
     }
 
@@ -336,6 +341,10 @@ public abstract class AFishHook extends FishingHook {
 
     public void hasGlowingEnchantment(boolean hasGlowingEnchantment) {
         this.getEntityData().set(GLOWING_ENCH, hasGlowingEnchantment);
+
+        if (hasGlowingEnchantment && this.getPlayerOwner() != null) {
+            AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.LUMINOUS_FLOAT);
+        }
     }
 
     public boolean hasAutoFishing() {
@@ -371,8 +380,13 @@ public abstract class AFishHook extends FishingHook {
         boolean hasChum = chums != null && !chums.isEmpty();
         this.lureSpeed = Math.max(lureSpeed, hasChum ? 300 : 0);
 
-        if (AFConfig.DEBUG_MODE.get() && hasChum) {
-            LOGGER.info("Has chum, new lure speed {}", this.lureSpeed);
+        if (hasChum) {
+            if (AFConfig.DEBUG_MODE.get()) {
+                LOGGER.info("Has chum, new lure speed {}", this.lureSpeed);
+            }
+            if (this.getPlayerOwner() != null) {
+                AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.FEEDING_FRENZY);
+            }
         }
     }
 

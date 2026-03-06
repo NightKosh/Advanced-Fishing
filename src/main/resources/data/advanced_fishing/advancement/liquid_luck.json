@@ -1,0 +1,28 @@
+{
+  "parent": "advanced_fishing:open_waters",
+  "display": {
+    "icon": {
+      "id": "minecraft:potion",
+      "neoforge:ingredient_type": "neoforge:components",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:luck"
+        }
+      }
+    },
+    "title": { "translate": "advancement.advanced_fishing.liquid_luck" },
+    "description": { "translate": "advancement.advanced_fishing.liquid_luck.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "brew_luck_potion": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": "minecraft:luck"
+      }
+    }
+  }
+}

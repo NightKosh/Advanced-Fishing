@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:bad_omen",
+  "display": {
+    "icon": { "id": "minecraft:zombie_head" },
+    "title": { "translate": "advancement.advanced_fishing.grim_catch" },
+    "description": { "translate": "advancement.advanced_fishing.grim_catch.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

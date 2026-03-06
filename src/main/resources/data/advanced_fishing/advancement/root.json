@@ -1,0 +1,83 @@
+{
+  "display": {
+    "icon": { "id": "advanced_fishing:golden_koi" },
+    "title": { "translate": "advancement.advanced_fishing.root" },
+    "description": { "translate": "advancement.advanced_fishing.root.desc" },
+    "background": "minecraft:block/light_blue_concrete_powder",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:pike",
+              "advanced_fishing:catfish",
+              "advanced_fishing:explosive_crucian",
+
+              "advanced_fishing:red_shroomfin",
+              "advanced_fishing:brown_shroomfin",
+
+              "advanced_fishing:ruffe",
+              "advanced_fishing:mud_tuna",
+              "advanced_fishing:swamp_plaice",
+
+              "advanced_fishing:piranha",
+              "advanced_fishing:sparkling_eel",
+              "advanced_fishing:mandarinfish",
+
+              "advanced_fishing:sandy_bass",
+              "advanced_fishing:golden_koi",
+              "advanced_fishing:sunfish",
+
+              "advanced_fishing:snowy_walleye",
+              "advanced_fishing:frost_minnow",
+              "advanced_fishing:glacier_anchovy",
+
+              "advanced_fishing:squid",
+              "advanced_fishing:angelfish",
+              "advanced_fishing:blue_jellyfish",
+              "advanced_fishing:abyssal_lurker",
+              "advanced_fishing:sponge_eater",
+              "advanced_fishing:angler_fish",
+
+              "advanced_fishing:coal_crucian",
+              "advanced_fishing:copper_minnow",
+              "advanced_fishing:iron_bass",
+              "advanced_fishing:crystal_mullet",
+              "advanced_fishing:charged_bullhead",
+              "advanced_fishing:amethyst_catfish",
+              "advanced_fishing:emerald_salmon",
+              "advanced_fishing:diamond_koi",
+              "advanced_fishing:specular_snapper",
+              "advanced_fishing:cave_trout",
+
+              "advanced_fishing:nether_sturgeon",
+              "advanced_fishing:magma_jellyfish",
+              "advanced_fishing:obsidian_bream",
+              "advanced_fishing:withered_crucian",
+              "advanced_fishing:quartz_chub",
+              "advanced_fishing:fungi_catfish",
+              "advanced_fishing:flarefin_koi",
+              "advanced_fishing:blaze_pike",
+
+              "advanced_fishing:ender_shad",
+              "advanced_fishing:pearl_sardine",
+              "advanced_fishing:chorus_koi",
+
+              "advanced_fishing:green_jellyfish",
+              "advanced_fishing:bone_fish",
+              "advanced_fishing:spookyfin",
+              "advanced_fishing:cursed_koi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

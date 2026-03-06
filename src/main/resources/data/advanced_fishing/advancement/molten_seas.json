@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:thats_not_water",
+  "display": {
+    "icon": { "id": "advanced_fishing:nether_sturgeon" },
+    "title": { "translate": "advancement.advanced_fishing.molten_seas" },
+    "description": { "translate": "advancement.advanced_fishing.molten_seas.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

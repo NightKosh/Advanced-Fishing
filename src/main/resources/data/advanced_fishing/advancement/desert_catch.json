@@ -1,0 +1,28 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:sandy_bass" },
+    "title": { "translate": "advancement.advanced_fishing.desert_catch" },
+    "description": { "translate": "advancement.advanced_fishing.desert_catch.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:sandy_bass",
+              "advanced_fishing:golden_koi",
+              "advanced_fishing:sunfish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

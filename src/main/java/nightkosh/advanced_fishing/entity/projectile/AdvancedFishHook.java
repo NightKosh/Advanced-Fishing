@@ -7,6 +7,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -14,6 +16,7 @@ import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -267,6 +270,17 @@ public class AdvancedFishHook extends AFishHook {
             }
         } else {
             result.add(tempList.get(this.random.nextInt(tempList.size())));
+
+            if (this.getPlayerOwner() != null) {
+                if (this.level().getBiome(this.blockPosition()).is(BiomeTags.IS_NETHER)) {
+                    AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.MOLTEN_SEAS);
+                    if (result.stream().anyMatch(i -> i.is(Items.WITHER_SKELETON_SKULL))) {
+                        AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.NOT_A_FISH);
+                    }
+                } else if (result.stream().anyMatch(i -> i.is(Items.SKELETON_SKULL) || i.is(Items.ZOMBIE_HEAD))) {
+                    AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.GRIM_CATCH);
+                }
+            }
         }
 
         return result;

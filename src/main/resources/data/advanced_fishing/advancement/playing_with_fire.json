@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:infernal_line",
+  "display": {
+    "icon": { "id": "advanced_fishing:blazing_fishing_pole" },
+    "title": { "translate": "advancement.advanced_fishing.playing_with_fire" },
+    "description": { "translate": "advancement.advanced_fishing.playing_with_fire.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:blazing_fishing_pole"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

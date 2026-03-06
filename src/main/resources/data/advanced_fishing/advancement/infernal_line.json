@@ -1,0 +1,30 @@
+{
+  "parent": "advanced_fishing:feeding_frenzy",
+  "display": {
+    "icon": { "id": "minecraft:blaze_powder" },
+    "title": { "translate": "advancement.advanced_fishing.infernal_line" },
+    "description": { "translate": "advancement.advanced_fishing.infernal_line.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "wear_or_have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "advanced_fishing:infernal_line"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

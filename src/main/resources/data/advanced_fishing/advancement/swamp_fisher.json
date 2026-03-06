@@ -1,0 +1,28 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:mud_tuna" },
+    "title": { "translate": "advancement.advanced_fishing.swamp_fisher" },
+    "description": { "translate": "advancement.advanced_fishing.swamp_fisher.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:ruffe",
+              "advanced_fishing:mud_tuna",
+              "advanced_fishing:swamp_plaice"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

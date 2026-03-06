@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:beyond_the_void",
+  "display": {
+    "icon": { "id": "advanced_fishing:chorus_koi" },
+    "title": { "translate": "advancement.advanced_fishing.warped_catch" },
+    "description": { "translate": "advancement.advanced_fishing.warped_catch.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:chorus_koi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

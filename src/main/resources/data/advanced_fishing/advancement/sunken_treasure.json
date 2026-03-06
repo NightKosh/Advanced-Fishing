@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:desert_catch",
+  "display": {
+    "icon": { "id": "advanced_fishing:sunfish" },
+    "title": { "translate": "advancement.advanced_fishing.sunken_treasure" },
+    "description": { "translate": "advancement.advanced_fishing.sunken_treasure.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:sunfish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

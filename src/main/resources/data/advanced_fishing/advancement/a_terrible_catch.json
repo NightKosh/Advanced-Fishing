@@ -1,0 +1,29 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:bone_fish" },
+    "title": { "translate": "advancement.advanced_fishing.a_terrible_catch" },
+    "description": { "translate": "advancement.advanced_fishing.a_terrible_catch.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:green_jellyfish",
+              "advanced_fishing:bone_fish",
+              "advanced_fishing:spookyfin",
+              "advanced_fishing:cursed_koi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

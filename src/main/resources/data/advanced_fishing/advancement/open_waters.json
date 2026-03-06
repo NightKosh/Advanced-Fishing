@@ -1,0 +1,31 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:squid" },
+    "title": { "translate": "advancement.advanced_fishing.open_waters" },
+    "description": { "translate": "advancement.advanced_fishing.open_waters.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:squid",
+              "advanced_fishing:angelfish",
+              "advanced_fishing:blue_jellyfish",
+              "advanced_fishing:abyssal_lurker",
+              "advanced_fishing:sponge_eater",
+              "advanced_fishing:angler_fish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

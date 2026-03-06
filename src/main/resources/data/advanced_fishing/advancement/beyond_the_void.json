@@ -1,0 +1,28 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:ender_shad" },
+    "title": { "translate": "advancement.advanced_fishing.beyond_the_void" },
+    "description": { "translate": "advancement.advanced_fishing.beyond_the_void.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:ender_shad",
+              "advanced_fishing:pearl_sardine",
+              "advanced_fishing:chorus_koi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:enchanted_catch",
+  "display": {
+    "icon": { "id": "advanced_fishing:emerald_salmon" },
+    "title": { "translate": "advancement.advanced_fishing.is_this_tradable" },
+    "description": { "translate": "advancement.advanced_fishing.is_this_tradable.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:emerald_salmon"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:a_terrible_catch",
+  "display": {
+    "icon": { "id": "advanced_fishing:cursed_koi" },
+    "title": { "translate": "advancement.advanced_fishing.bad_omen" },
+    "description": { "translate": "advancement.advanced_fishing.bad_omen.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:cursed_koi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

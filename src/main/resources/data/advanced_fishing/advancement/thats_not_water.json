@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:infernal_line",
+  "display": {
+    "icon": { "id": "minecraft:lava_bucket" },
+    "title": { "translate": "advancement.advanced_fishing.thats_not_water" },
+    "description": { "translate": "advancement.advanced_fishing.thats_not_water.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:piranha" },
+    "title": { "translate": "advancement.advanced_fishing.jungle_fishing" },
+    "description": { "translate": "advancement.advanced_fishing.jungle_fishing.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:piranha",
+              "advanced_fishing:sparkling_eel",
+              "advanced_fishing:mandarinfish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

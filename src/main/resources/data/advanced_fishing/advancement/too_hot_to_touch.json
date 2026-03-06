@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:thats_not_water",
+  "display": {
+    "icon": { "id": "advanced_fishing:magma_jellyfish" },
+    "title": { "translate": "advancement.advanced_fishing.too_hot_to_touch" },
+    "description": { "translate": "advancement.advanced_fishing.too_hot_to_touch.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:magma_jellyfish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

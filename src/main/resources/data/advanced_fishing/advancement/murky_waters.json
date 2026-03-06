@@ -1,0 +1,26 @@
+{
+  "parent": "advanced_fishing:swamp_fisher",
+  "display": {
+    "icon": { "id": "advanced_fishing:swamp_plaice" },
+    "title": { "translate": "advancement.advanced_fishing.murky_waters" },
+    "description": { "translate": "advancement.advanced_fishing.murky_waters.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "advanced_fishing:swamp_plaice"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

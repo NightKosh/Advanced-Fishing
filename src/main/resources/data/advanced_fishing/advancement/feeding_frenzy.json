@@ -1,0 +1,17 @@
+{
+  "parent": "advanced_fishing:root",
+  "display": {
+    "icon": { "id": "advanced_fishing:chum_bucket" },
+    "title": { "translate": "advancement.advanced_fishing.feeding_frenzy" },
+    "description": { "translate": "advancement.advanced_fishing.feeding_frenzy.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
