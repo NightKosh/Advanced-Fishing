@@ -74,7 +74,6 @@ public class CatchManager implements ICatchManager {
         CATCH_WATER.put(h -> {
             return h.is(Biomes.MUSHROOM_FIELDS);//TODO tags?
         }, CatchManager::getMushroomCatch);
-        CATCH_WATER.put(h -> h.is(BiomeTags.IS_BADLANDS), CatchManager::getDeadCatch);
 
         CATCH_LAVA.put(h -> h.is(Biomes.BASALT_DELTAS), CatchManager::getBasaltDeltas);
         CATCH_LAVA.put(h -> h.is(Biomes.CRIMSON_FOREST) || h.is(Biomes.WARPED_FOREST), CatchManager::getNetherForests);
