@@ -323,7 +323,7 @@ public class CatchManager implements ICatchManager {
     }
 
     @Nullable
-    private static Identifier getBiomeRes(Holder<Biome> biomeHolder) {
+    public static Identifier getBiomeRes(Holder<Biome> biomeHolder) {
         return biomeHolder.unwrapKey()
                 .map(ResourceKey::identifier)
                 .orElse(null);
