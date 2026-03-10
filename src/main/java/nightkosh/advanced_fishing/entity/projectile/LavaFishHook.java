@@ -34,6 +34,11 @@ public class LavaFishHook extends AdvancedFishHook {
         super(AFEntities.getLavaFishHook(), player, level, additionalLuck, additionalLureSpeed, fishingPole);
     }
 
+    public LavaFishHook(EntityType<? extends LavaFishHook> entityType, Player player, ServerLevel level,
+                            int additionalLuck, int additionalLureSpeed, ItemStack fishingPole) {
+        super(entityType, player, level, additionalLuck, additionalLureSpeed, fishingPole);
+    }
+
     @Override
     protected void spawnLog() {
         if (AFConfig.DEBUG_MODE.get()) {
