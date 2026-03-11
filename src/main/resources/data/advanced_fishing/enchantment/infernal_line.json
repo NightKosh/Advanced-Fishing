@@ -17,5 +17,5 @@
     "base": 25,
     "per_level_above_first": 25
   },
-  "supported_items": "#minecraft:enchantable/fishing"
+  "supported_items": "#advanced_fishing:enchantable/fishing_except_infernal"
 }

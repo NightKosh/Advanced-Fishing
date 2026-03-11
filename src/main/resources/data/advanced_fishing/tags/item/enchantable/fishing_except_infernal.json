@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:enchantable/fishing"
+  ],
+  "remove": [
+    "advanced_fishing:blazing_fishing_pole"
+  ]
+}
