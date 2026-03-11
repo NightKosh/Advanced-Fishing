@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -71,7 +72,9 @@ public class ChumBucket extends ThrowableItemProjectile {
     public void tick() {
         super.tick();
 
-        if (!this.level().isClientSide() && this.isInFluidType()) {
+        if (!this.level().isClientSide() &&
+                this.isInFluidType() &&
+                this.level().getFluidState(this.blockPosition()).is(FluidTags.WATER)) {
             this.onHitWater();
         }
     }
