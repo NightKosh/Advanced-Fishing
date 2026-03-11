@@ -55,6 +55,7 @@ public class LootTables {
     public static final Identifier FISHING_NETHER_TREASURE = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/nether/treasure");
 
     public static final Identifier FISHING_DEAD = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/dead/fishing");
+    public static final Identifier FISHING_DEAD_TREASURE = fromNamespaceAndPath(ModInfo.ID, "gameplay/fishing/dead/treasure");
 
     public static final Identifier INJECT_NETHER_BRIDGE = fromNamespaceAndPath(ModInfo.ID, "inject/nether_bridge");
 
