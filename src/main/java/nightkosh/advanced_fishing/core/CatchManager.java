@@ -329,7 +329,7 @@ public class CatchManager implements ICatchManager {
                 .orElse(null);
     }
 
-    private static int getChance(RandomSource random, float luck) {
+    public static int getChance(RandomSource random, float luck) {
         return random.nextInt(100) + Math.round(luck);
     }
 
