@@ -406,6 +406,43 @@ public abstract class AFishHook extends FishingHook {
         }
     }
 
+    @Override
+    protected void doWaterSplashEffect() {
+        if (this.level() instanceof ServerLevel serverLevel) {
+            var vec3 = this.getDeltaMovement();
+            float f1 = Math.min(1, (float) Math.sqrt(vec3.x * vec3.x * 0.2F + vec3.y * vec3.y + vec3.z * vec3.z * 0.2F) * 0.2F);
+            if (f1 < 0.25F) {
+                this.playSound(this.getSwimSplashSound(), f1, 1 + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
+            } else {
+                this.playSound(this.getSwimHighSpeedSplashSound(), f1, 1 + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
+            }
+
+            var liquidBlock = serverLevel.getBlockState(BlockPos.containing(this.getX(), this.getY() - 0.5, this.getZ()))
+                    .getBlock();
+
+            float y = Mth.floor(this.getY()) + 1;
+            double dx = (this.random.nextDouble() * 2 - 1) * this.dimensions.width();
+            double dz = (this.random.nextDouble() * 2 - 1) * this.dimensions.width();
+            ParticlesManager.INSTANCE.getBubbleParticles(liquidBlock).spawn(
+                    serverLevel,
+                    this.getX() + dx, y, this.getZ() + dz,
+                    (int) (1 + this.getBbWidth() * 20),
+                    vec3.x, vec3.y - this.random.nextDouble() * 0.2F, vec3.z,
+                    0);
+
+            dx = (this.random.nextDouble() * 2 - 1) * this.dimensions.width();
+            dz = (this.random.nextDouble() * 2 - 1) * this.dimensions.width();
+            ParticlesManager.INSTANCE.getFishingParticles(liquidBlock).spawn(
+                    serverLevel,
+                    this.getX() + dx, y, this.getZ() + dz,
+                    (int) (1 + this.getBbWidth() * 20),
+                    vec3.x, vec3.y, vec3.z,
+                    0);
+
+            this.gameEvent(GameEvent.SPLASH);
+        }
+    }
+
     protected abstract void spawnLog();
 
 }
