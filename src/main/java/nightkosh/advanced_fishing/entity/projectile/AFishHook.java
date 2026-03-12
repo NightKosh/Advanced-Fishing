@@ -232,7 +232,7 @@ public abstract class AFishHook extends FishingHook {
                 if (flag) {
                     this.setDeltaMovement(this.getDeltaMovement().multiply(0.3, 0.2, 0.3));
                     this.currentState = FishingHook.FishHookState.BOBBING;
-                    checkChumLureSpeedBonus();
+                    checkLuckAndLureSpeedBonus();
                     return;
                 }
 
@@ -368,24 +368,40 @@ public abstract class AFishHook extends FishingHook {
         return new FireproofItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
     }
 
-    protected void checkChumLureSpeedBonus() {
-        var chums = this.level().getEntitiesOfClass(Chum.class, new AABB(
-                this.blockPosition().getX() - 3,
-                this.blockPosition().getY() - 3,
-                this.blockPosition().getZ() - 3,
-                this.blockPosition().getX() + 3,
-                this.blockPosition().getY() + 3,
-                this.blockPosition().getZ() + 3
-        ));
-        boolean hasChum = chums != null && !chums.isEmpty();
-        this.lureSpeed = Math.max(lureSpeed, hasChum ? 300 : 0);
+    protected void checkLuckAndLureSpeedBonus() {
+        if (!this.level().isClientSide()) {
+            var chums = this.level().getEntitiesOfClass(Chum.class, new AABB(
+                    this.blockPosition().getX() - 3,
+                    this.blockPosition().getY() - 3,
+                    this.blockPosition().getZ() - 3,
+                    this.blockPosition().getX() + 3,
+                    this.blockPosition().getY() + 3,
+                    this.blockPosition().getZ() + 3
+            ));
+            boolean hasChum = chums != null && !chums.isEmpty();
+            this.lureSpeed = Math.max(lureSpeed, hasChum ? 300 : 0);
 
-        if (hasChum) {
-            if (AFConfig.DEBUG_MODE.get()) {
-                LOGGER.info("Has chum, new lure speed {}", this.lureSpeed);
+            if (hasChum) {
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("Has chum, new lure speed {}", this.lureSpeed);
+                }
+                if (this.getPlayerOwner() != null) {
+                    AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.FEEDING_FRENZY);
+                }
             }
-            if (this.getPlayerOwner() != null) {
-                AFAdvancements.giveAdvancement(this.getPlayerOwner(), this.level(), AFAdvancements.FEEDING_FRENZY);
+
+            if (this.level().isThundering()) {
+                this.luck += 1;
+                this.lureSpeed += 100;
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("Fishing in the thunder!  Luck and Lure speed increased, new values {}, {}.",
+                            this.luck, this.lureSpeed);
+                }
+            } else if (this.level().isRaining()) {
+                this.lureSpeed += 100;
+                if (AFConfig.DEBUG_MODE.get()) {
+                    LOGGER.info("Fishing in the rain! Lure speed increased. New value {}", this.lureSpeed);
+                }
             }
         }
     }
