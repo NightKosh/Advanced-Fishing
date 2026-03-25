@@ -30,8 +30,6 @@ import javax.annotation.Nonnull;
  */
 public class ChumBucket extends ThrowableItemProjectile {
 
-    private static final ItemStack PARTICLE_ITEM = new ItemStack(Items.ROTTEN_FLESH);
-
     public ChumBucket(EntityType<? extends ChumBucket> entityType, Level level) {
         super(entityType, level);
     }
@@ -51,7 +49,7 @@ public class ChumBucket extends ThrowableItemProjectile {
     }
 
     private ParticleOptions getParticle() {
-        return new ItemParticleOption(ParticleTypes.ITEM, PARTICLE_ITEM);
+        return new ItemParticleOption(ParticleTypes.ITEM, Items.ROTTEN_FLESH);
     }
 
     @Override
@@ -73,7 +71,6 @@ public class ChumBucket extends ThrowableItemProjectile {
         super.tick();
 
         if (!this.level().isClientSide() &&
-                this.isInFluidType() &&
                 this.level().getFluidState(this.blockPosition()).is(FluidTags.WATER)) {
             this.onHitWater();
         }

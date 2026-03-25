@@ -25,7 +25,7 @@ public class FireproofItemEntity extends ItemEntity {
     public FireproofItemEntity(Level level, double posX, double posY, double posZ, ItemStack stack) {
         super(AFEntities.getFireproofItem(), level);
         this.setPos(posX, posY, posZ);
-        this.setDeltaMovement(level.random.nextDouble() * 0.2 - 0.1, 0.2, level.random.nextDouble() * 0.2 - 0.1);
+        this.setDeltaMovement(level.getRandom().nextDouble() * 0.2 - 0.1, 0.2, level.getRandom().nextDouble() * 0.2 - 0.1);
         this.setItem(stack);
         this.lifespan = stack.getEntityLifespan(level);
         if (AFConfig.DEBUG_MODE.get()) {

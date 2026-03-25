@@ -137,7 +137,7 @@ public class CatchManager implements ICatchManager {
     }
 
     public static List<ItemStack> getWaterCatch(LootParams.Builder lootBuilder, Level level, BlockPos pos, float luck) {
-        int chance = getChance(level.random, luck);
+        int chance = getChance(level.getRandom(), luck);
 
         if (AFConfig.DEBUG_MODE.get()) {
             LOGGER.info("Get fishing catch from water");
@@ -150,7 +150,7 @@ public class CatchManager implements ICatchManager {
             return getCatch(lootBuilder, level, LootTables.FISHING_JUNK);
         } else if (chance < 95) {
             List<ItemStack> list = new ArrayList<>();
-            if (isInCave(level, pos) && getChance(level.random, luck) >= 30) {
+            if (isInCave(level, pos) && getChance(level.getRandom(), luck) >= 30) {
                 if (AFConfig.DEBUG_MODE.get()) {
                     LOGGER.info("Fishing in cave at depth {}", pos.getY());
                 }
@@ -260,7 +260,7 @@ public class CatchManager implements ICatchManager {
         }
 
         if (biomeHolder.is(BiomeTags.IS_NETHER)) {
-            int chance = getChance(level.random, luck);
+            int chance = getChance(level.getRandom(), luck);
             if (chance < 95) {
                 List<ItemStack> list = new ArrayList<>();
                 if (AFConfig.DEBUG_MODE.get()) {

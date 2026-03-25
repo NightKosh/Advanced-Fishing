@@ -27,7 +27,7 @@ public class AFEnchantmentHelper {
         if (player != null && !level.isClientSide()) {
             var mainItem = player.getMainHandItem();
             var offhandItem = player.getOffhandItem();
-            if (level.random.nextInt(10) < 3) {
+            if (level.getRandom().nextInt(10) < 3) {
                 var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_FALSE_BITE);
                 if (isEnchanted(ench, mainItem) || isEnchanted(ench, offhandItem)) {
                     if (AFConfig.DEBUG_MODE.get()) {
@@ -38,7 +38,7 @@ public class AFEnchantmentHelper {
                 }
             }
             var ench = getEnchantmentHolder(level, AFEnchantments.CURSE_OF_THE_ABYSS);
-            if (level.random.nextInt(10) < 2 &&
+            if (level.getRandom().nextInt(10) < 2 &&
                     (isEnchanted(ench, mainItem) || isEnchanted(ench, offhandItem))) {
                 if (AFConfig.DEBUG_MODE.get()) {
                     LOGGER.info("Summon drowned near player {} due to CURSE_OF_THE_ABYSS", player.getScoreboardName());
