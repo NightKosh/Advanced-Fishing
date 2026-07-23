@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -45,7 +45,7 @@ public class AFEnchantmentHelper {
                 }
 
                 var hook = event.getHookEntity();
-                var drowned = EntityType.DROWNED.create(level, EntitySpawnReason.TRIGGERED);
+                var drowned = EntityTypes.DROWNED.create(level, EntitySpawnReason.TRIGGERED);
                 drowned.snapTo(hook.getX(), hook.getY(), hook.getZ());
                 if (level instanceof ServerLevel serverLevel) {
                     ParticlesManager.spawnLavaFishingParticles(serverLevel,
