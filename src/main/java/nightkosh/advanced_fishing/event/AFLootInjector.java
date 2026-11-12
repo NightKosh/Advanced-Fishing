@@ -29,11 +29,14 @@ public class AFLootInjector {
                 LOGGER.info("LootTableLoadEvent event triggered. Going to inject additional nether_bridge loot.");
             }
 
+            var holder = event.getRegistries()
+                    .lookupOrThrow(Registries.LOOT_TABLE)
+                    .getOrThrow(ResourceKey.create(Registries.LOOT_TABLE, LootTables.INJECT_NETHER_BRIDGE));
+
             event.getTable().addPool(
                     LootPool.lootPool()
                             .name("advanced_fishing_nether_bridge_inject")
-                            .add(NestedLootTable.lootTableReference(
-                                            ResourceKey.create(Registries.LOOT_TABLE, LootTables.INJECT_NETHER_BRIDGE))
+                            .add(NestedLootTable.lootTableReference(holder)
                                     .setWeight(1))
                             .build());
         }

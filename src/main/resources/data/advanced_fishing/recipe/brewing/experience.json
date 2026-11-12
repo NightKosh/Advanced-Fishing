@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "advanced_fishing:mandarinfish"
+  },
+  "output": {
+    "id": "minecraft:experience_bottle"
+  }
+}

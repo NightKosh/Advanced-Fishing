@@ -26,7 +26,7 @@ public class ModAdvancedFishing {
     public ModAdvancedFishing(IEventBus eventBus, ModContainer container) {
         INSTANCE = this;
 
-        container.registerConfig(ModConfig.Type.COMMON, AFConfig.SPEC, ModInfo.ID + ".toml");
+        container.registerConfig(ModConfig.Type.LOCAL, AFConfig.SPEC, ModInfo.ID + ".toml");
 
         AFTabs.register(eventBus);
         AFItems.register(eventBus);

@@ -21,7 +21,9 @@
     "brew_luck_potion": {
       "trigger": "minecraft:brewed_potion",
       "conditions": {
-        "potion": "minecraft:luck"
+        "potion": {
+          "potions": "minecraft:luck"
+        }
       }
     }
   }
